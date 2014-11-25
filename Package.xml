@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="ToolChainPackage">
+  <Name>GCC ToolChain</Name>
+  <Version>4.8.0.0</Version>
+  <Description>GCC Toolchain for ARM Embedded Processors.</Description>
+  <RepoUri>https://github.com/danwalmsley/VEClangToolChain.git</RepoUri>
+  <IncludePaths>
+    <string>arm-none-eabi\4.8.4\include</string>
+  </IncludePaths>
+  <WorkingDirectory>bin</WorkingDirectory>
+</Package>
