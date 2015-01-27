@@ -62,6 +62,12 @@
 /* True if long double supported and it is equal to double.  */
 #define _LDBL_EQ_DBL 1
  
+/* Define if uintptr_t is unsigned long on this architecture */
+/* #undef _UINTPTR_EQ_ULONG */
+
+/* Define if uintptr_t is unsigned long long on this architecture */
+/* #undef _UINTPTR_EQ_ULONGLONG */
+
 /* Define if ivo supported in streamio.  */
 #define _FVWRITE_IN_STREAMIO 1
 
@@ -79,6 +85,9 @@
 
 /* Define if declare atexit data as global.  */
 /* #undef _REENT_GLOBAL_ATEXIT */
+
+/* Define if small footprint nano-formatted-IO implementation used.  */
+/* #undef _NANO_FORMATTED_IO */
 
 /*
  * Iconv encodings enabled ("to" direction)
