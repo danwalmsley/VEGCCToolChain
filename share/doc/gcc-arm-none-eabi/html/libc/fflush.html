@@ -32,13 +32,22 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.9 <code>fflush</code>&mdash;flush buffered file output</h3>
+<h3 class="section">4.9 <code>fflush</code>, <code>fflush_unlocked</code>&mdash;flush buffered file output</h3>
 
-<p><a name="index-fflush-162"></a><a name="index-g_t_005ffflush_005fr-163"></a><strong>Synopsis</strong>
+<p><a name="index-fflush-165"></a><a name="index-fflush_005funlocked-166"></a><a name="index-g_t_005ffflush_005fr-167"></a><a name="index-g_t_005ffflush_005funlocked_005fr-168"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fflush(FILE *<var>fp</var>);
      
+     #define _BSD_SOURCE
+     #include &lt;stdio.h&gt;
+     int fflush_unlocked(FILE *<var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
      int _fflush_r(struct _reent *<var>reent</var>, FILE *<var>fp</var>);
+     
+     #define _BSD_SOURCE
+     #include &lt;stdio.h&gt;
+     int _fflush_unlocked_r(struct _reent *<var>reent</var>, FILE *<var>fp</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -56,9 +65,18 @@ descriptor, set the position of the file descriptor to match next
 unread byte, useful for obeying POSIX semantics when ending a process
 without consuming all input from the stream.
 
-   <p>The alternate function <code>_fflush_r</code> is a reentrant version, where the
-extra argument <var>reent</var> is a pointer to a reentrancy structure, and
-<var>fp</var> must not be NULL.
+   <p><code>fflush_unlocked</code> is a non-thread-safe version of <code>fflush</code>. 
+<code>fflush_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fflush_unlocked</code> is equivalent to <code>fflush</code>.
+
+   <p>The alternate functions <code>_fflush_r</code> and <code>_fflush_unlocked_r</code> are
+reentrant versions, where the extra argument <var>reent</var> is a pointer to
+a reentrancy structure, and <var>fp</var> must not be NULL.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -69,6 +87,8 @@ situation, it returns <code>EOF</code>.
 <strong>Portability</strong><br>
 ANSI C requires <code>fflush</code>.  The behavior on input streams is only
 specified by POSIX, and not all implementations follow POSIX rules.
+
+   <p><code>fflush_unlocked</code> is a BSD extension also provided by GNU libc.
 
    <p>No supporting OS subroutines are required.
 

@@ -32,14 +32,21 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.12 <code>fgets</code>&mdash;get character string from a file or stream</h3>
+<h3 class="section">4.12 <code>fgets</code>, <code>fgets_unlocked</code>&mdash;get character string from a file or stream</h3>
 
-<p><a name="index-fgets-168"></a><a name="index-g_t_005ffgets_005fr-169"></a><strong>Synopsis</strong>
+<p><a name="index-fgets-175"></a><a name="index-fgets_005funlocked-176"></a><a name="index-g_t_005ffgets_005fr-177"></a><a name="index-g_t_005ffgets_005funlocked_005fr-178"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      char *fgets(char *restrict <var>buf</var>, int <var>n</var>, FILE *restrict <var>fp</var>);
      
+     #define _GNU_SOURCE
+     #include &lt;stdio.h&gt;
+     char *fgets_unlocked(char *restrict <var>buf</var>, int <var>n</var>, FILE *restrict <var>fp</var>);
+     
      #include &lt;stdio.h&gt;
      char *_fgets_r(struct _reent *<var>ptr</var>, char *restrict <var>buf</var>, int <var>n</var>, FILE *restrict <var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
+     char *_fgets_unlocked_r(struct _reent *<var>ptr</var>, char *restrict <var>buf</var>, int <var>n</var>, FILE *restrict <var>fp</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -47,9 +54,18 @@ Reads at most <var>n-1</var> characters from <var>fp</var> until a newline
 is found. The characters including to the newline are stored
 in <var>buf</var>. The buffer is terminated with a 0.
 
-   <p>The <code>_fgets_r</code> function is simply the reentrant version of
-<code>fgets</code> and is passed an additional reentrancy structure
-pointer: <var>ptr</var>.
+   <p><code>fgets_unlocked</code> is a non-thread-safe version of <code>fgets</code>. 
+<code>fgets_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fgets_unlocked</code> is equivalent to <code>fgets</code>.
+
+   <p>The functions <code>_fgets_r</code> and <code>_fgets_unlocked_r</code> are simply
+reentrant versions that are passed the additional reentrant structure
+pointer argument: <var>ptr</var>.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -63,6 +79,8 @@ no data are read, NULL is returned instead.
 <code>fgets</code> should replace all uses of <code>gets</code>. Note however
 that <code>fgets</code> returns all of the data, while <code>gets</code> removes
 the trailing newline (with no indication that it has done so.)
+
+   <p><code>fgets_unlocked</code> is a GNU extension.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.

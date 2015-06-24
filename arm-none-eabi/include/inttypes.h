@@ -13,6 +13,8 @@
 #ifndef _INTTYPES_H
 #define _INTTYPES_H
 
+#include <newlib.h>
+#include <sys/config.h>
 #include <sys/_intsup.h>
 #include <stdint.h>
 #define __need_wchar_t
@@ -22,7 +24,20 @@
 
 /* 8-bit types */
 #define __PRI8(x) __STRINGIFY(x)
-#define __SCN8(x) __STRINGIFY(hh##x)
+
+/* NOTICE: scanning 8-bit types requires use of the hh specifier
+ * which is only supported on newlib platforms that
+ * are built with C99 I/O format support enabled.  If the flag in
+ * newlib.h hasn't been set during configuration to indicate this, the 8-bit
+ * scanning format macros are disabled here as they result in undefined
+ * behaviour which can include memory overwrite.  Overriding the flag after the
+ * library has been built is not recommended as it will expose the underlying
+ * undefined behaviour.
+ */
+
+#if defined(_WANT_IO_C99_FORMATS)
+  #define __SCN8(x) __STRINGIFY(hh##x)
+#endif /* _WANT_IO_C99_FORMATS */
 
 
 #define PRId8		__PRI8(d)
@@ -32,11 +47,16 @@
 #define PRIx8		__PRI8(x)
 #define PRIX8		__PRI8(X)
 
+/* Macros below are only enabled for a newlib built with C99 I/O format support. */
+#if defined(_WANT_IO_C99_FORMATS)
+
 #define SCNd8		__SCN8(d)
 #define SCNi8		__SCN8(i)
 #define SCNo8		__SCN8(o)
 #define SCNu8		__SCN8(u)
 #define SCNx8		__SCN8(x)
+
+#endif /* _WANT_IO_C99_FORMATS */
 
 
 #define PRIdLEAST8	__PRI8(d)
@@ -46,12 +66,16 @@
 #define PRIxLEAST8	__PRI8(x)
 #define PRIXLEAST8	__PRI8(X)
 
-#define SCNdLEAST8	__SCN8(d)
-#define SCNiLEAST8	__SCN8(i)
-#define SCNoLEAST8	__SCN8(o)
-#define SCNuLEAST8	__SCN8(u)
-#define SCNxLEAST8	__SCN8(x)
+/* Macros below are only enabled for a newlib built with C99 I/O format support. */
+#if defined(_WANT_IO_C99_FORMATS)
 
+  #define SCNdLEAST8	__SCN8(d)
+  #define SCNiLEAST8	__SCN8(i)
+  #define SCNoLEAST8	__SCN8(o)
+  #define SCNuLEAST8	__SCN8(u)
+  #define SCNxLEAST8	__SCN8(x)
+
+#endif /* _WANT_IO_C99_FORMATS */
 
 #define PRIdFAST8	__PRI8(d)
 #define PRIiFAST8	__PRI8(i)
@@ -60,11 +84,16 @@
 #define PRIxFAST8	__PRI8(x)
 #define PRIXFAST8	__PRI8(X)
 
-#define SCNdFAST8	__SCN8(d)
-#define SCNiFAST8	__SCN8(i)
-#define SCNoFAST8	__SCN8(o)
-#define SCNuFAST8	__SCN8(u)
-#define SCNxFAST8	__SCN8(x)
+/* Macros below are only enabled for a newlib built with C99 I/O format support. */
+#if defined(_WANT_IO_C99_FORMATS)
+
+  #define SCNdFAST8	__SCN8(d)
+  #define SCNiFAST8	__SCN8(i)
+  #define SCNoFAST8	__SCN8(o)
+  #define SCNuFAST8	__SCN8(u)
+  #define SCNxFAST8	__SCN8(x)
+
+#endif /* _WANT_IO_C99_FORMATS */
 
 /* 16-bit types */
 #define __PRI16(x) __STRINGIFY(x)
@@ -113,7 +142,7 @@
 #define SCNxFAST16	__SCN16(x)
 
 /* 32-bit types */
-#if __have_long32
+#if defined (_INT32_EQ_LONG)
 #define __PRI32(x) __STRINGIFY(l##x)
 #define __SCN32(x) __STRINGIFY(l##x)
 #else
@@ -243,10 +272,10 @@
 #define SCNxMAX		__SCNMAX(x)
 
 /* ptr types */
-#if defined(_UINTPTR_EQ_ULONGLONG)
+#if defined (_INTPTR_EQ_LONGLONG)
 # define __PRIPTR(x) __STRINGIFY(ll##x)
 # define __SCNPTR(x) __STRINGIFY(ll##x)
-#elif defined(_UINTPTR_EQ_ULONG)
+#elif defined (_INTPTR_EQ_LONG)
 # define __PRIPTR(x) __STRINGIFY(l##x)
 # define __SCNPTR(x) __STRINGIFY(l##x)
 #else

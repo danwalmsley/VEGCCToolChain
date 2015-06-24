@@ -584,7 +584,15 @@ registers after writing to their lower 32-bit half.
      <p>Enabled for Alpha, AArch64 and x86 at levels <samp><span class="option">-O2</span></samp>,
 <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-flive-range-shrinkage</code><dd><a name="index-flive_002drange_002dshrinkage-831"></a>Attempt to decrease register pressure through register live range
+     <br><dt><code>-fno-lifetime-dse</code><dd><a name="index-fno_002dlifetime_002ddse-831"></a>In C++ the value of an object is only affected by changes within its
+lifetime: when the constructor begins, the object has an indeterminate
+value, and any changes during the lifetime of the object are dead when
+the object is destroyed.  Normally dead store elimination will take
+advantage of this; if your code relies on the value of the object
+storage persisting beyond the lifetime of the object, you can use this
+flag to disable this optimization.
+
+     <br><dt><code>-flive-range-shrinkage</code><dd><a name="index-flive_002drange_002dshrinkage-832"></a>Attempt to decrease register pressure through register live range
 shrinkage.  This is helpful for fast processors with small or moderate
 size register sets.
 
@@ -615,39 +623,39 @@ This typically results in the smallest code size, and is enabled by default for
 
      </dl>
 
-     <br><dt><code>-fira-hoist-pressure</code><dd><a name="index-fira_002dhoist_002dpressure-832"></a>Use IRA to evaluate register pressure in the code hoisting pass for
+     <br><dt><code>-fira-hoist-pressure</code><dd><a name="index-fira_002dhoist_002dpressure-833"></a>Use IRA to evaluate register pressure in the code hoisting pass for
 decisions to hoist expressions.  This option usually results in smaller
 code, but it can slow the compiler down.
 
      <p>This option is enabled at level <samp><span class="option">-Os</span></samp> for all targets.
 
-     <br><dt><code>-fira-loop-pressure</code><dd><a name="index-fira_002dloop_002dpressure-833"></a>Use IRA to evaluate register pressure in loops for decisions to move
+     <br><dt><code>-fira-loop-pressure</code><dd><a name="index-fira_002dloop_002dpressure-834"></a>Use IRA to evaluate register pressure in loops for decisions to move
 loop invariants.  This option usually results in generation
 of faster and smaller code on machines with large register files (&gt;= 32
 registers), but it can slow the compiler down.
 
      <p>This option is enabled at level <samp><span class="option">-O3</span></samp> for some targets.
 
-     <br><dt><code>-fno-ira-share-save-slots</code><dd><a name="index-fno_002dira_002dshare_002dsave_002dslots-834"></a>Disable sharing of stack slots used for saving call-used hard
+     <br><dt><code>-fno-ira-share-save-slots</code><dd><a name="index-fno_002dira_002dshare_002dsave_002dslots-835"></a>Disable sharing of stack slots used for saving call-used hard
 registers living through a call.  Each hard register gets a
 separate stack slot, and as a result function stack frames are
 larger.
 
-     <br><dt><code>-fno-ira-share-spill-slots</code><dd><a name="index-fno_002dira_002dshare_002dspill_002dslots-835"></a>Disable sharing of stack slots allocated for pseudo-registers.  Each
+     <br><dt><code>-fno-ira-share-spill-slots</code><dd><a name="index-fno_002dira_002dshare_002dspill_002dslots-836"></a>Disable sharing of stack slots allocated for pseudo-registers.  Each
 pseudo-register that does not get a hard register gets a separate
 stack slot, and as a result function stack frames are larger.
 
-     <br><dt><code>-fira-verbose=</code><var>n</var><dd><a name="index-fira_002dverbose-836"></a>Control the verbosity of the dump file for the integrated register allocator. 
+     <br><dt><code>-fira-verbose=</code><var>n</var><dd><a name="index-fira_002dverbose-837"></a>Control the verbosity of the dump file for the integrated register allocator. 
 The default value is 5.  If the value <var>n</var> is greater or equal to 10,
 the dump output is sent to stderr using the same format as <var>n</var> minus 10.
 
-     <br><dt><code>-fdelayed-branch</code><dd><a name="index-fdelayed_002dbranch-837"></a>If supported for the target machine, attempt to reorder instructions
+     <br><dt><code>-fdelayed-branch</code><dd><a name="index-fdelayed_002dbranch-838"></a>If supported for the target machine, attempt to reorder instructions
 to exploit instruction slots available after delayed branch
 instructions.
 
      <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fschedule-insns</code><dd><a name="index-fschedule_002dinsns-838"></a>If supported for the target machine, attempt to reorder instructions to
+     <br><dt><code>-fschedule-insns</code><dd><a name="index-fschedule_002dinsns-839"></a>If supported for the target machine, attempt to reorder instructions to
 eliminate execution stalls due to required data being unavailable.  This
 helps machines that have slow floating point or memory load instructions
 by allowing other instructions to be issued until the result of the load
@@ -655,22 +663,22 @@ or floating-point instruction is required.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-fschedule-insns2</code><dd><a name="index-fschedule_002dinsns2-839"></a>Similar to <samp><span class="option">-fschedule-insns</span></samp>, but requests an additional pass of
+     <br><dt><code>-fschedule-insns2</code><dd><a name="index-fschedule_002dinsns2-840"></a>Similar to <samp><span class="option">-fschedule-insns</span></samp>, but requests an additional pass of
 instruction scheduling after register allocation has been done.  This is
 especially useful on machines with a relatively small number of
 registers and where memory load instructions take more than one cycle.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fno-sched-interblock</code><dd><a name="index-fno_002dsched_002dinterblock-840"></a>Don't schedule instructions across basic blocks.  This is normally
+     <br><dt><code>-fno-sched-interblock</code><dd><a name="index-fno_002dsched_002dinterblock-841"></a>Don't schedule instructions across basic blocks.  This is normally
 enabled by default when scheduling before register allocation, i.e. 
 with <samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fno-sched-spec</code><dd><a name="index-fno_002dsched_002dspec-841"></a>Don't allow speculative motion of non-load instructions.  This is normally
+     <br><dt><code>-fno-sched-spec</code><dd><a name="index-fno_002dsched_002dspec-842"></a>Don't allow speculative motion of non-load instructions.  This is normally
 enabled by default when scheduling before register allocation, i.e. 
 with <samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-pressure</code><dd><a name="index-fsched_002dpressure-842"></a>Enable register pressure sensitive insn scheduling before register
+     <br><dt><code>-fsched-pressure</code><dd><a name="index-fsched_002dpressure-843"></a>Enable register pressure sensitive insn scheduling before register
 allocation.  This only makes sense when scheduling before register
 allocation is enabled, i.e. with <samp><span class="option">-fschedule-insns</span></samp> or at
 <samp><span class="option">-O2</span></samp> or higher.  Usage of this option can improve the
@@ -678,15 +686,15 @@ generated code and decrease its size by preventing register pressure
 increase above the number of available hard registers and subsequent
 spills in register allocation.
 
-     <br><dt><code>-fsched-spec-load</code><dd><a name="index-fsched_002dspec_002dload-843"></a>Allow speculative motion of some load instructions.  This only makes
+     <br><dt><code>-fsched-spec-load</code><dd><a name="index-fsched_002dspec_002dload-844"></a>Allow speculative motion of some load instructions.  This only makes
 sense when scheduling before register allocation, i.e. with
 <samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-spec-load-dangerous</code><dd><a name="index-fsched_002dspec_002dload_002ddangerous-844"></a>Allow speculative motion of more load instructions.  This only makes
+     <br><dt><code>-fsched-spec-load-dangerous</code><dd><a name="index-fsched_002dspec_002dload_002ddangerous-845"></a>Allow speculative motion of more load instructions.  This only makes
 sense when scheduling before register allocation, i.e. with
 <samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-stalled-insns</code><dt><code>-fsched-stalled-insns=</code><var>n</var><dd><a name="index-fsched_002dstalled_002dinsns-845"></a>Define how many insns (if any) can be moved prematurely from the queue
+     <br><dt><code>-fsched-stalled-insns</code><dt><code>-fsched-stalled-insns=</code><var>n</var><dd><a name="index-fsched_002dstalled_002dinsns-846"></a>Define how many insns (if any) can be moved prematurely from the queue
 of stalled insns into the ready list during the second scheduling pass. 
 <samp><span class="option">-fno-sched-stalled-insns</span></samp> means that no insns are moved
 prematurely, <samp><span class="option">-fsched-stalled-insns=0</span></samp> means there is no limit
@@ -694,7 +702,7 @@ on how many queued insns can be moved prematurely.
 <samp><span class="option">-fsched-stalled-insns</span></samp> without a value is equivalent to
 <samp><span class="option">-fsched-stalled-insns=1</span></samp>.
 
-     <br><dt><code>-fsched-stalled-insns-dep</code><dt><code>-fsched-stalled-insns-dep=</code><var>n</var><dd><a name="index-fsched_002dstalled_002dinsns_002ddep-846"></a>Define how many insn groups (cycles) are examined for a dependency
+     <br><dt><code>-fsched-stalled-insns-dep</code><dt><code>-fsched-stalled-insns-dep=</code><var>n</var><dd><a name="index-fsched_002dstalled_002dinsns_002ddep-847"></a>Define how many insn groups (cycles) are examined for a dependency
 on a stalled insn that is a candidate for premature removal from the queue
 of stalled insns.  This has an effect only during the second scheduling pass,
 and only if <samp><span class="option">-fsched-stalled-insns</span></samp> is used. 
@@ -703,7 +711,7 @@ and only if <samp><span class="option">-fsched-stalled-insns</span></samp> is us
 <samp><span class="option">-fsched-stalled-insns-dep</span></samp> without a value is equivalent to
 <samp><span class="option">-fsched-stalled-insns-dep=1</span></samp>.
 
-     <br><dt><code>-fsched2-use-superblocks</code><dd><a name="index-fsched2_002duse_002dsuperblocks-847"></a>When scheduling after register allocation, use superblock scheduling. 
+     <br><dt><code>-fsched2-use-superblocks</code><dd><a name="index-fsched2_002duse_002dsuperblocks-848"></a>When scheduling after register allocation, use superblock scheduling. 
 This allows motion across basic block boundaries,
 resulting in faster schedules.  This option is experimental, as not all machine
 descriptions used by GCC model the CPU closely enough to avoid unreliable
@@ -712,62 +720,62 @@ results from the algorithm.
      <p>This only makes sense when scheduling after register allocation, i.e. with
 <samp><span class="option">-fschedule-insns2</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-group-heuristic</code><dd><a name="index-fsched_002dgroup_002dheuristic-848"></a>Enable the group heuristic in the scheduler.  This heuristic favors
+     <br><dt><code>-fsched-group-heuristic</code><dd><a name="index-fsched_002dgroup_002dheuristic-849"></a>Enable the group heuristic in the scheduler.  This heuristic favors
 the instruction that belongs to a schedule group.  This is enabled
 by default when scheduling is enabled, i.e. with <samp><span class="option">-fschedule-insns</span></samp>
 or <samp><span class="option">-fschedule-insns2</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-critical-path-heuristic</code><dd><a name="index-fsched_002dcritical_002dpath_002dheuristic-849"></a>Enable the critical-path heuristic in the scheduler.  This heuristic favors
+     <br><dt><code>-fsched-critical-path-heuristic</code><dd><a name="index-fsched_002dcritical_002dpath_002dheuristic-850"></a>Enable the critical-path heuristic in the scheduler.  This heuristic favors
 instructions on the critical path.  This is enabled by default when
 scheduling is enabled, i.e. with <samp><span class="option">-fschedule-insns</span></samp>
 or <samp><span class="option">-fschedule-insns2</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-spec-insn-heuristic</code><dd><a name="index-fsched_002dspec_002dinsn_002dheuristic-850"></a>Enable the speculative instruction heuristic in the scheduler.  This
+     <br><dt><code>-fsched-spec-insn-heuristic</code><dd><a name="index-fsched_002dspec_002dinsn_002dheuristic-851"></a>Enable the speculative instruction heuristic in the scheduler.  This
 heuristic favors speculative instructions with greater dependency weakness. 
 This is enabled by default when scheduling is enabled, i.e. 
 with <samp><span class="option">-fschedule-insns</span></samp> or <samp><span class="option">-fschedule-insns2</span></samp>
 or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-rank-heuristic</code><dd><a name="index-fsched_002drank_002dheuristic-851"></a>Enable the rank heuristic in the scheduler.  This heuristic favors
+     <br><dt><code>-fsched-rank-heuristic</code><dd><a name="index-fsched_002drank_002dheuristic-852"></a>Enable the rank heuristic in the scheduler.  This heuristic favors
 the instruction belonging to a basic block with greater size or frequency. 
 This is enabled by default when scheduling is enabled, i.e. 
 with <samp><span class="option">-fschedule-insns</span></samp> or <samp><span class="option">-fschedule-insns2</span></samp> or
 at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-last-insn-heuristic</code><dd><a name="index-fsched_002dlast_002dinsn_002dheuristic-852"></a>Enable the last-instruction heuristic in the scheduler.  This heuristic
+     <br><dt><code>-fsched-last-insn-heuristic</code><dd><a name="index-fsched_002dlast_002dinsn_002dheuristic-853"></a>Enable the last-instruction heuristic in the scheduler.  This heuristic
 favors the instruction that is less dependent on the last instruction
 scheduled.  This is enabled by default when scheduling is enabled,
 i.e. with <samp><span class="option">-fschedule-insns</span></samp> or <samp><span class="option">-fschedule-insns2</span></samp> or
 at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched-dep-count-heuristic</code><dd><a name="index-fsched_002ddep_002dcount_002dheuristic-853"></a>Enable the dependent-count heuristic in the scheduler.  This heuristic
+     <br><dt><code>-fsched-dep-count-heuristic</code><dd><a name="index-fsched_002ddep_002dcount_002dheuristic-854"></a>Enable the dependent-count heuristic in the scheduler.  This heuristic
 favors the instruction that has more instructions depending on it. 
 This is enabled by default when scheduling is enabled, i.e. 
 with <samp><span class="option">-fschedule-insns</span></samp> or <samp><span class="option">-fschedule-insns2</span></samp> or
 at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-freschedule-modulo-scheduled-loops</code><dd><a name="index-freschedule_002dmodulo_002dscheduled_002dloops-854"></a>Modulo scheduling is performed before traditional scheduling.  If a loop
+     <br><dt><code>-freschedule-modulo-scheduled-loops</code><dd><a name="index-freschedule_002dmodulo_002dscheduled_002dloops-855"></a>Modulo scheduling is performed before traditional scheduling.  If a loop
 is modulo scheduled, later scheduling passes may change its schedule. 
 Use this option to control that behavior.
 
-     <br><dt><code>-fselective-scheduling</code><dd><a name="index-fselective_002dscheduling-855"></a>Schedule instructions using selective scheduling algorithm.  Selective
+     <br><dt><code>-fselective-scheduling</code><dd><a name="index-fselective_002dscheduling-856"></a>Schedule instructions using selective scheduling algorithm.  Selective
 scheduling runs instead of the first scheduler pass.
 
-     <br><dt><code>-fselective-scheduling2</code><dd><a name="index-fselective_002dscheduling2-856"></a>Schedule instructions using selective scheduling algorithm.  Selective
+     <br><dt><code>-fselective-scheduling2</code><dd><a name="index-fselective_002dscheduling2-857"></a>Schedule instructions using selective scheduling algorithm.  Selective
 scheduling runs instead of the second scheduler pass.
 
-     <br><dt><code>-fsel-sched-pipelining</code><dd><a name="index-fsel_002dsched_002dpipelining-857"></a>Enable software pipelining of innermost loops during selective scheduling. 
+     <br><dt><code>-fsel-sched-pipelining</code><dd><a name="index-fsel_002dsched_002dpipelining-858"></a>Enable software pipelining of innermost loops during selective scheduling. 
 This option has no effect unless one of <samp><span class="option">-fselective-scheduling</span></samp> or
 <samp><span class="option">-fselective-scheduling2</span></samp> is turned on.
 
-     <br><dt><code>-fsel-sched-pipelining-outer-loops</code><dd><a name="index-fsel_002dsched_002dpipelining_002douter_002dloops-858"></a>When pipelining loops during selective scheduling, also pipeline outer loops. 
+     <br><dt><code>-fsel-sched-pipelining-outer-loops</code><dd><a name="index-fsel_002dsched_002dpipelining_002douter_002dloops-859"></a>When pipelining loops during selective scheduling, also pipeline outer loops. 
 This option has no effect unless <samp><span class="option">-fsel-sched-pipelining</span></samp> is turned on.
 
-     <br><dt><code>-fshrink-wrap</code><dd><a name="index-fshrink_002dwrap-859"></a>Emit function prologues only before parts of the function that need it,
+     <br><dt><code>-fshrink-wrap</code><dd><a name="index-fshrink_002dwrap-860"></a>Emit function prologues only before parts of the function that need it,
 rather than at the top of the function.  This flag is enabled by default at
 <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-fcaller-saves</code><dd><a name="index-fcaller_002dsaves-860"></a>Enable allocation of values to registers that are clobbered by
+     <br><dt><code>-fcaller-saves</code><dd><a name="index-fcaller_002dsaves-861"></a>Enable allocation of values to registers that are clobbered by
 function calls, by emitting extra instructions to save and restore the
 registers around such calls.  Such allocation is done only when it
 seems to result in better code.
@@ -777,73 +785,73 @@ those which have no call-preserved registers to use instead.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fcombine-stack-adjustments</code><dd><a name="index-fcombine_002dstack_002dadjustments-861"></a>Tracks stack adjustments (pushes and pops) and stack memory references
+     <br><dt><code>-fcombine-stack-adjustments</code><dd><a name="index-fcombine_002dstack_002dadjustments-862"></a>Tracks stack adjustments (pushes and pops) and stack memory references
 and then tries to find ways to combine them.
 
      <p>Enabled by default at <samp><span class="option">-O1</span></samp> and higher.
 
-     <br><dt><code>-fconserve-stack</code><dd><a name="index-fconserve_002dstack-862"></a>Attempt to minimize stack usage.  The compiler attempts to use less
+     <br><dt><code>-fconserve-stack</code><dd><a name="index-fconserve_002dstack-863"></a>Attempt to minimize stack usage.  The compiler attempts to use less
 stack space, even if that makes the program slower.  This option
 implies setting the <samp><span class="option">large-stack-frame</span></samp> parameter to 100
 and the <samp><span class="option">large-stack-frame-growth</span></samp> parameter to 400.
 
-     <br><dt><code>-ftree-reassoc</code><dd><a name="index-ftree_002dreassoc-863"></a>Perform reassociation on trees.  This flag is enabled by default
+     <br><dt><code>-ftree-reassoc</code><dd><a name="index-ftree_002dreassoc-864"></a>Perform reassociation on trees.  This flag is enabled by default
 at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-pre</code><dd><a name="index-ftree_002dpre-864"></a>Perform partial redundancy elimination (PRE) on trees.  This flag is
+     <br><dt><code>-ftree-pre</code><dd><a name="index-ftree_002dpre-865"></a>Perform partial redundancy elimination (PRE) on trees.  This flag is
 enabled by default at <samp><span class="option">-O2</span></samp> and <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-ftree-partial-pre</code><dd><a name="index-ftree_002dpartial_002dpre-865"></a>Make partial redundancy elimination (PRE) more aggressive.  This flag is
+     <br><dt><code>-ftree-partial-pre</code><dd><a name="index-ftree_002dpartial_002dpre-866"></a>Make partial redundancy elimination (PRE) more aggressive.  This flag is
 enabled by default at <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-ftree-forwprop</code><dd><a name="index-ftree_002dforwprop-866"></a>Perform forward propagation on trees.  This flag is enabled by default
+     <br><dt><code>-ftree-forwprop</code><dd><a name="index-ftree_002dforwprop-867"></a>Perform forward propagation on trees.  This flag is enabled by default
 at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-fre</code><dd><a name="index-ftree_002dfre-867"></a>Perform full redundancy elimination (FRE) on trees.  The difference
+     <br><dt><code>-ftree-fre</code><dd><a name="index-ftree_002dfre-868"></a>Perform full redundancy elimination (FRE) on trees.  The difference
 between FRE and PRE is that FRE only considers expressions
 that are computed on all paths leading to the redundant computation. 
 This analysis is faster than PRE, though it exposes fewer redundancies. 
 This flag is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-phiprop</code><dd><a name="index-ftree_002dphiprop-868"></a>Perform hoisting of loads from conditional pointers on trees.  This
+     <br><dt><code>-ftree-phiprop</code><dd><a name="index-ftree_002dphiprop-869"></a>Perform hoisting of loads from conditional pointers on trees.  This
 pass is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-fhoist-adjacent-loads</code><dd><a name="index-hoist_002dadjacent_002dloads-869"></a>Speculatively hoist loads from both branches of an if-then-else if the
+     <br><dt><code>-fhoist-adjacent-loads</code><dd><a name="index-hoist_002dadjacent_002dloads-870"></a>Speculatively hoist loads from both branches of an if-then-else if the
 loads are from adjacent locations in the same structure and the target
 architecture has a conditional move instruction.  This flag is enabled
 by default at <samp><span class="option">-O2</span></samp> and higher.
 
-     <br><dt><code>-ftree-copy-prop</code><dd><a name="index-ftree_002dcopy_002dprop-870"></a>Perform copy propagation on trees.  This pass eliminates unnecessary
+     <br><dt><code>-ftree-copy-prop</code><dd><a name="index-ftree_002dcopy_002dprop-871"></a>Perform copy propagation on trees.  This pass eliminates unnecessary
 copy operations.  This flag is enabled by default at <samp><span class="option">-O</span></samp> and
 higher.
 
-     <br><dt><code>-fipa-pure-const</code><dd><a name="index-fipa_002dpure_002dconst-871"></a>Discover which functions are pure or constant. 
+     <br><dt><code>-fipa-pure-const</code><dd><a name="index-fipa_002dpure_002dconst-872"></a>Discover which functions are pure or constant. 
 Enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-fipa-reference</code><dd><a name="index-fipa_002dreference-872"></a>Discover which static variables do not escape the
+     <br><dt><code>-fipa-reference</code><dd><a name="index-fipa_002dreference-873"></a>Discover which static variables do not escape the
 compilation unit. 
 Enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-fipa-pta</code><dd><a name="index-fipa_002dpta-873"></a>Perform interprocedural pointer analysis and interprocedural modification
+     <br><dt><code>-fipa-pta</code><dd><a name="index-fipa_002dpta-874"></a>Perform interprocedural pointer analysis and interprocedural modification
 and reference analysis.  This option can cause excessive memory and
 compile-time usage on large compilation units.  It is not enabled by
 default at any optimization level.
 
-     <br><dt><code>-fipa-profile</code><dd><a name="index-fipa_002dprofile-874"></a>Perform interprocedural profile propagation.  The functions called only from
+     <br><dt><code>-fipa-profile</code><dd><a name="index-fipa_002dprofile-875"></a>Perform interprocedural profile propagation.  The functions called only from
 cold functions are marked as cold. Also functions executed once (such as
 <code>cold</code>, <code>noreturn</code>, static constructors or destructors) are identified. Cold
 functions and loop less parts of functions executed once are then optimized for
 size. 
 Enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-fipa-cp</code><dd><a name="index-fipa_002dcp-875"></a>Perform interprocedural constant propagation. 
+     <br><dt><code>-fipa-cp</code><dd><a name="index-fipa_002dcp-876"></a>Perform interprocedural constant propagation. 
 This optimization analyzes the program to determine when values passed
 to functions are constants and then optimizes accordingly. 
 This optimization can substantially increase performance
 if the application has constants passed to functions. 
 This flag is enabled by default at <samp><span class="option">-O2</span></samp>, <samp><span class="option">-Os</span></samp> and <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-fipa-cp-clone</code><dd><a name="index-fipa_002dcp_002dclone-876"></a>Perform function cloning to make interprocedural constant propagation stronger. 
+     <br><dt><code>-fipa-cp-clone</code><dd><a name="index-fipa_002dcp_002dclone-877"></a>Perform function cloning to make interprocedural constant propagation stronger. 
 When enabled, interprocedural constant propagation performs function cloning
 when externally visible function can be called with constant arguments. 
 Because this optimization can create multiple copies of functions,
@@ -861,15 +869,15 @@ attribute.  Isolate those paths from the main control flow and turn the
 statement with erroneous or undefined behaviour into a trap.  This is not
 currently enabled, but may be enabled by <code>-O2</code> in the future.
 
-     <br><dt><code>-ftree-sink</code><dd><a name="index-ftree_002dsink-877"></a>Perform forward store motion  on trees.  This flag is
+     <br><dt><code>-ftree-sink</code><dd><a name="index-ftree_002dsink-878"></a>Perform forward store motion  on trees.  This flag is
 enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-bit-ccp</code><dd><a name="index-ftree_002dbit_002dccp-878"></a>Perform sparse conditional bit constant propagation on trees and propagate
+     <br><dt><code>-ftree-bit-ccp</code><dd><a name="index-ftree_002dbit_002dccp-879"></a>Perform sparse conditional bit constant propagation on trees and propagate
 pointer alignment information. 
 This pass only operates on local scalar variables and is enabled by default
 at <samp><span class="option">-O</span></samp> and higher.  It requires that <samp><span class="option">-ftree-ccp</span></samp> is enabled.
 
-     <br><dt><code>-ftree-ccp</code><dd><a name="index-ftree_002dccp-879"></a>Perform sparse conditional constant propagation (CCP) on trees.  This
+     <br><dt><code>-ftree-ccp</code><dd><a name="index-ftree_002dccp-880"></a>Perform sparse conditional constant propagation (CCP) on trees.  This
 pass only operates on local scalar variables and is enabled by default
 at <samp><span class="option">-O</span></samp> and higher.
 
@@ -884,39 +892,39 @@ in this pass can
 be limited using <samp><span class="option">max-tail-merge-comparisons</span></samp> parameter and
 <samp><span class="option">max-tail-merge-iterations</span></samp> parameter.
 
-     <br><dt><code>-ftree-dce</code><dd><a name="index-ftree_002ddce-880"></a>Perform dead code elimination (DCE) on trees.  This flag is enabled by
+     <br><dt><code>-ftree-dce</code><dd><a name="index-ftree_002ddce-881"></a>Perform dead code elimination (DCE) on trees.  This flag is enabled by
 default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-builtin-call-dce</code><dd><a name="index-ftree_002dbuiltin_002dcall_002ddce-881"></a>Perform conditional dead code elimination (DCE) for calls to built-in functions
+     <br><dt><code>-ftree-builtin-call-dce</code><dd><a name="index-ftree_002dbuiltin_002dcall_002ddce-882"></a>Perform conditional dead code elimination (DCE) for calls to built-in functions
 that may set <code>errno</code> but are otherwise side-effect free.  This flag is
 enabled by default at <samp><span class="option">-O2</span></samp> and higher if <samp><span class="option">-Os</span></samp> is not also
 specified.
 
-     <br><dt><code>-ftree-dominator-opts</code><dd><a name="index-ftree_002ddominator_002dopts-882"></a>Perform a variety of simple scalar cleanups (constant/copy
+     <br><dt><code>-ftree-dominator-opts</code><dd><a name="index-ftree_002ddominator_002dopts-883"></a>Perform a variety of simple scalar cleanups (constant/copy
 propagation, redundancy elimination, range propagation and expression
 simplification) based on a dominator tree traversal.  This also
 performs jump threading (to reduce jumps to jumps). This flag is
 enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-dse</code><dd><a name="index-ftree_002ddse-883"></a>Perform dead store elimination (DSE) on trees.  A dead store is a store into
+     <br><dt><code>-ftree-dse</code><dd><a name="index-ftree_002ddse-884"></a>Perform dead store elimination (DSE) on trees.  A dead store is a store into
 a memory location that is later overwritten by another store without
 any intervening loads.  In this case the earlier store can be deleted.  This
 flag is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-ch</code><dd><a name="index-ftree_002dch-884"></a>Perform loop header copying on trees.  This is beneficial since it increases
+     <br><dt><code>-ftree-ch</code><dd><a name="index-ftree_002dch-885"></a>Perform loop header copying on trees.  This is beneficial since it increases
 effectiveness of code motion optimizations.  It also saves one jump.  This flag
 is enabled by default at <samp><span class="option">-O</span></samp> and higher.  It is not enabled
 for <samp><span class="option">-Os</span></samp>, since it usually increases code size.
 
-     <br><dt><code>-ftree-loop-optimize</code><dd><a name="index-ftree_002dloop_002doptimize-885"></a>Perform loop optimizations on trees.  This flag is enabled by default
+     <br><dt><code>-ftree-loop-optimize</code><dd><a name="index-ftree_002dloop_002doptimize-886"></a>Perform loop optimizations on trees.  This flag is enabled by default
 at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-loop-linear</code><dd><a name="index-ftree_002dloop_002dlinear-886"></a>Perform loop interchange transformations on tree.  Same as
+     <br><dt><code>-ftree-loop-linear</code><dd><a name="index-ftree_002dloop_002dlinear-887"></a>Perform loop interchange transformations on tree.  Same as
 <samp><span class="option">-floop-interchange</span></samp>.  To use this code transformation, GCC has
 to be configured with <samp><span class="option">--with-ppl</span></samp> and <samp><span class="option">--with-cloog</span></samp> to
 enable the Graphite loop transformation infrastructure.
 
-     <br><dt><code>-floop-interchange</code><dd><a name="index-floop_002dinterchange-887"></a>Perform loop interchange transformations on loops.  Interchanging two
+     <br><dt><code>-floop-interchange</code><dd><a name="index-floop_002dinterchange-888"></a>Perform loop interchange transformations on loops.  Interchanging two
 nested loops switches the inner and outer loops.  For example, given a
 loop like:
      <pre class="smallexample">          DO J = 1, M
@@ -941,7 +949,7 @@ Fortran.  To use this code transformation, GCC has to be configured
 with <samp><span class="option">--with-ppl</span></samp> and <samp><span class="option">--with-cloog</span></samp> to enable the
 Graphite loop transformation infrastructure.
 
-     <br><dt><code>-floop-strip-mine</code><dd><a name="index-floop_002dstrip_002dmine-888"></a>Perform loop strip mining transformations on loops.  Strip mining
+     <br><dt><code>-floop-strip-mine</code><dd><a name="index-floop_002dstrip_002dmine-889"></a>Perform loop strip mining transformations on loops.  Strip mining
 splits a loop into two nested loops.  The outer loop has strides
 equal to the strip size and the inner loop has strides of the
 original loop within a strip.  The strip length can be changed
@@ -963,7 +971,7 @@ not limited to Fortran.  To use this code transformation, GCC has to
 be configured with <samp><span class="option">--with-ppl</span></samp> and <samp><span class="option">--with-cloog</span></samp> to
 enable the Graphite loop transformation infrastructure.
 
-     <br><dt><code>-floop-block</code><dd><a name="index-floop_002dblock-889"></a>Perform loop blocking transformations on loops.  Blocking strip mines
+     <br><dt><code>-floop-block</code><dd><a name="index-floop_002dblock-890"></a>Perform loop blocking transformations on loops.  Blocking strip mines
 each loop in the loop nest such that the memory accesses of the
 element loops fit inside caches.  The strip length can be changed
 using the <samp><span class="option">loop-block-tile-size</span></samp> parameter.  For example, given
@@ -993,24 +1001,24 @@ code transformation, GCC has to be configured with <samp><span class="option">--
 and <samp><span class="option">--with-cloog</span></samp> to enable the Graphite loop transformation
 infrastructure.
 
-     <br><dt><code>-fgraphite-identity</code><dd><a name="index-fgraphite_002didentity-890"></a>Enable the identity transformation for graphite.  For every SCoP we generate
+     <br><dt><code>-fgraphite-identity</code><dd><a name="index-fgraphite_002didentity-891"></a>Enable the identity transformation for graphite.  For every SCoP we generate
 the polyhedral representation and transform it back to gimple.  Using
 <samp><span class="option">-fgraphite-identity</span></samp> we can check the costs or benefits of the
 GIMPLE -&gt; GRAPHITE -&gt; GIMPLE transformation.  Some minimal optimizations
 are also performed by the code generator CLooG, like index splitting and
 dead code elimination in loops.
 
-     <br><dt><code>-floop-nest-optimize</code><dd><a name="index-floop_002dnest_002doptimize-891"></a>Enable the ISL based loop nest optimizer.  This is a generic loop nest
+     <br><dt><code>-floop-nest-optimize</code><dd><a name="index-floop_002dnest_002doptimize-892"></a>Enable the ISL based loop nest optimizer.  This is a generic loop nest
 optimizer based on the Pluto optimization algorithms.  It calculates a loop
 structure optimized for data-locality and parallelism.  This option
 is experimental.
 
-     <br><dt><code>-floop-parallelize-all</code><dd><a name="index-floop_002dparallelize_002dall-892"></a>Use the Graphite data dependence analysis to identify loops that can
+     <br><dt><code>-floop-parallelize-all</code><dd><a name="index-floop_002dparallelize_002dall-893"></a>Use the Graphite data dependence analysis to identify loops that can
 be parallelized.  Parallelize all the loops that can be analyzed to
 not contain loop carried dependences without checking that it is
 profitable to parallelize the loops.
 
-     <br><dt><code>-fcheck-data-deps</code><dd><a name="index-fcheck_002ddata_002ddeps-893"></a>Compare the results of several data dependence analyzers.  This option
+     <br><dt><code>-fcheck-data-deps</code><dd><a name="index-fcheck_002ddata_002ddeps-894"></a>Compare the results of several data dependence analyzers.  This option
 is used for debugging the data dependence analyzers.
 
      <br><dt><code>-ftree-loop-if-convert</code><dd>Attempt to transform conditional jumps in the innermost loops to
@@ -1069,22 +1077,22 @@ memset zero.  For example, the loop
 </pre>
      <p>and the initialization loop is transformed into a call to memset zero.
 
-     <br><dt><code>-ftree-loop-im</code><dd><a name="index-ftree_002dloop_002dim-894"></a>Perform loop invariant motion on trees.  This pass moves only invariants that
+     <br><dt><code>-ftree-loop-im</code><dd><a name="index-ftree_002dloop_002dim-895"></a>Perform loop invariant motion on trees.  This pass moves only invariants that
 are hard to handle at RTL level (function calls, operations that expand to
 nontrivial sequences of insns).  With <samp><span class="option">-funswitch-loops</span></samp> it also moves
 operands of conditions that are invariant out of the loop, so that we can use
 just trivial invariantness analysis in loop unswitching.  The pass also includes
 store motion.
 
-     <br><dt><code>-ftree-loop-ivcanon</code><dd><a name="index-ftree_002dloop_002divcanon-895"></a>Create a canonical counter for number of iterations in loops for which
+     <br><dt><code>-ftree-loop-ivcanon</code><dd><a name="index-ftree_002dloop_002divcanon-896"></a>Create a canonical counter for number of iterations in loops for which
 determining number of iterations requires complicated analysis.  Later
 optimizations then may determine the number easily.  Useful especially
 in connection with unrolling.
 
-     <br><dt><code>-fivopts</code><dd><a name="index-fivopts-896"></a>Perform induction variable optimizations (strength reduction, induction
+     <br><dt><code>-fivopts</code><dd><a name="index-fivopts-897"></a>Perform induction variable optimizations (strength reduction, induction
 variable merging and induction variable elimination) on trees.
 
-     <br><dt><code>-ftree-parallelize-loops=n</code><dd><a name="index-ftree_002dparallelize_002dloops-897"></a>Parallelize loops, i.e., split their iteration space to run in n threads. 
+     <br><dt><code>-ftree-parallelize-loops=n</code><dd><a name="index-ftree_002dparallelize_002dloops-898"></a>Parallelize loops, i.e., split their iteration space to run in n threads. 
 This is only possible for loops whose iterations are independent
 and can be arbitrarily reordered.  The optimization is only
 profitable on multiprocessor machines, for loops that are CPU-intensive,
@@ -1092,19 +1100,19 @@ rather than constrained e.g. by memory bandwidth.  This option
 implies <samp><span class="option">-pthread</span></samp>, and thus is only supported on targets
 that have support for <samp><span class="option">-pthread</span></samp>.
 
-     <br><dt><code>-ftree-pta</code><dd><a name="index-ftree_002dpta-898"></a>Perform function-local points-to analysis on trees.  This flag is
+     <br><dt><code>-ftree-pta</code><dd><a name="index-ftree_002dpta-899"></a>Perform function-local points-to analysis on trees.  This flag is
 enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-sra</code><dd><a name="index-ftree_002dsra-899"></a>Perform scalar replacement of aggregates.  This pass replaces structure
+     <br><dt><code>-ftree-sra</code><dd><a name="index-ftree_002dsra-900"></a>Perform scalar replacement of aggregates.  This pass replaces structure
 references with scalars to prevent committing structures to memory too
 early.  This flag is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-copyrename</code><dd><a name="index-ftree_002dcopyrename-900"></a>Perform copy renaming on trees.  This pass attempts to rename compiler
+     <br><dt><code>-ftree-copyrename</code><dd><a name="index-ftree_002dcopyrename-901"></a>Perform copy renaming on trees.  This pass attempts to rename compiler
 temporaries to other variables at copy locations, usually resulting in
 variable names which more closely resemble the original variables.  This flag
 is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-coalesce-inlined-vars</code><dd><a name="index-ftree_002dcoalesce_002dinlined_002dvars-901"></a>Tell the copyrename pass (see <samp><span class="option">-ftree-copyrename</span></samp>) to attempt to
+     <br><dt><code>-ftree-coalesce-inlined-vars</code><dd><a name="index-ftree_002dcoalesce_002dinlined_002dvars-902"></a>Tell the copyrename pass (see <samp><span class="option">-ftree-copyrename</span></samp>) to attempt to
 combine small user-defined variables too, but only if they were inlined
 from other functions.  It is a more limited form of
 <samp><span class="option">-ftree-coalesce-vars</span></samp>.  This may harm debug information of such
@@ -1113,34 +1121,34 @@ function apart from each other, such that they are more likely to
 contain the expected values in a debugging session.  This was the
 default in GCC versions older than 4.7.
 
-     <br><dt><code>-ftree-coalesce-vars</code><dd><a name="index-ftree_002dcoalesce_002dvars-902"></a>Tell the copyrename pass (see <samp><span class="option">-ftree-copyrename</span></samp>) to attempt to
+     <br><dt><code>-ftree-coalesce-vars</code><dd><a name="index-ftree_002dcoalesce_002dvars-903"></a>Tell the copyrename pass (see <samp><span class="option">-ftree-copyrename</span></samp>) to attempt to
 combine small user-defined variables too, instead of just compiler
 temporaries.  This may severely limit the ability to debug an optimized
 program compiled with <samp><span class="option">-fno-var-tracking-assignments</span></samp>.  In the
 negated form, this flag prevents SSA coalescing of user variables,
 including inlined ones.  This option is enabled by default.
 
-     <br><dt><code>-ftree-ter</code><dd><a name="index-ftree_002dter-903"></a>Perform temporary expression replacement during the SSA-&gt;normal phase.  Single
+     <br><dt><code>-ftree-ter</code><dd><a name="index-ftree_002dter-904"></a>Perform temporary expression replacement during the SSA-&gt;normal phase.  Single
 use/single def temporaries are replaced at their use location with their
 defining expression.  This results in non-GIMPLE code, but gives the expanders
 much more complex trees to work on resulting in better RTL generation.  This is
 enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
-     <br><dt><code>-ftree-slsr</code><dd><a name="index-ftree_002dslsr-904"></a>Perform straight-line strength reduction on trees.  This recognizes related
+     <br><dt><code>-ftree-slsr</code><dd><a name="index-ftree_002dslsr-905"></a>Perform straight-line strength reduction on trees.  This recognizes related
 expressions involving multiplications and replaces them by less expensive
 calculations when possible.  This is enabled by default at <samp><span class="option">-O</span></samp> and
 higher.
 
-     <br><dt><code>-ftree-vectorize</code><dd><a name="index-ftree_002dvectorize-905"></a>Perform vectorization on trees. This flag enables <samp><span class="option">-ftree-loop-vectorize</span></samp>
+     <br><dt><code>-ftree-vectorize</code><dd><a name="index-ftree_002dvectorize-906"></a>Perform vectorization on trees. This flag enables <samp><span class="option">-ftree-loop-vectorize</span></samp>
 and <samp><span class="option">-ftree-slp-vectorize</span></samp> if not explicitly specified.
 
-     <br><dt><code>-ftree-loop-vectorize</code><dd><a name="index-ftree_002dloop_002dvectorize-906"></a>Perform loop vectorization on trees. This flag is enabled by default at
+     <br><dt><code>-ftree-loop-vectorize</code><dd><a name="index-ftree_002dloop_002dvectorize-907"></a>Perform loop vectorization on trees. This flag is enabled by default at
 <samp><span class="option">-O3</span></samp> and when <samp><span class="option">-ftree-vectorize</span></samp> is enabled.
 
-     <br><dt><code>-ftree-slp-vectorize</code><dd><a name="index-ftree_002dslp_002dvectorize-907"></a>Perform basic block vectorization on trees. This flag is enabled by default at
+     <br><dt><code>-ftree-slp-vectorize</code><dd><a name="index-ftree_002dslp_002dvectorize-908"></a>Perform basic block vectorization on trees. This flag is enabled by default at
 <samp><span class="option">-O3</span></samp> and when <samp><span class="option">-ftree-vectorize</span></samp> is enabled.
 
-     <br><dt><code>-fvect-cost-model=</code><var>model</var><dd><a name="index-fvect_002dcost_002dmodel-908"></a>Alter the cost model used for vectorization.  The <var>model</var> argument
+     <br><dt><code>-fvect-cost-model=</code><var>model</var><dd><a name="index-fvect_002dcost_002dmodel-909"></a>Alter the cost model used for vectorization.  The <var>model</var> argument
 should be one of <code>unlimited</code>, <code>dynamic</code> or <code>cheap</code>. 
 With the <code>unlimited</code> model the vectorized code-path is assumed
 to be profitable while with the <code>dynamic</code> model a runtime check
@@ -1153,13 +1161,13 @@ is equal to the <code>dynamic</code> model.
 The default cost model depends on other optimization flags and is
 either <code>dynamic</code> or <code>cheap</code>.
 
-     <br><dt><code>-fsimd-cost-model=</code><var>model</var><dd><a name="index-fsimd_002dcost_002dmodel-909"></a>Alter the cost model used for vectorization of loops marked with the OpenMP
+     <br><dt><code>-fsimd-cost-model=</code><var>model</var><dd><a name="index-fsimd_002dcost_002dmodel-910"></a>Alter the cost model used for vectorization of loops marked with the OpenMP
 or Cilk Plus simd directive.  The <var>model</var> argument should be one of
 <code>unlimited</code>, <code>dynamic</code>, <code>cheap</code>.  All values of <var>model</var>
 have the same meaning as described in <samp><span class="option">-fvect-cost-model</span></samp> and by
 default a cost model defined with <samp><span class="option">-fvect-cost-model</span></samp> is used.
 
-     <br><dt><code>-ftree-vrp</code><dd><a name="index-ftree_002dvrp-910"></a>Perform Value Range Propagation on trees.  This is similar to the
+     <br><dt><code>-ftree-vrp</code><dd><a name="index-ftree_002dvrp-911"></a>Perform Value Range Propagation on trees.  This is similar to the
 constant propagation pass, but instead of values, ranges of values are
 propagated.  This allows the optimizers to remove unnecessary range
 checks like array bound checks and null pointer checks.  This is
@@ -1167,21 +1175,21 @@ enabled by default at <samp><span class="option">-O2</span></samp> and higher.  
 elimination is only done if <samp><span class="option">-fdelete-null-pointer-checks</span></samp> is
 enabled.
 
-     <br><dt><code>-ftracer</code><dd><a name="index-ftracer-911"></a>Perform tail duplication to enlarge superblock size.  This transformation
+     <br><dt><code>-ftracer</code><dd><a name="index-ftracer-912"></a>Perform tail duplication to enlarge superblock size.  This transformation
 simplifies the control flow of the function allowing other optimizations to do
 a better job.
 
-     <br><dt><code>-funroll-loops</code><dd><a name="index-funroll_002dloops-912"></a>Unroll loops whose number of iterations can be determined at compile
+     <br><dt><code>-funroll-loops</code><dd><a name="index-funroll_002dloops-913"></a>Unroll loops whose number of iterations can be determined at compile
 time or upon entry to the loop.  <samp><span class="option">-funroll-loops</span></samp> implies
 <samp><span class="option">-frerun-cse-after-loop</span></samp>.  This option makes code larger,
 and may or may not make it run faster.
 
-     <br><dt><code>-funroll-all-loops</code><dd><a name="index-funroll_002dall_002dloops-913"></a>Unroll all loops, even if their number of iterations is uncertain when
+     <br><dt><code>-funroll-all-loops</code><dd><a name="index-funroll_002dall_002dloops-914"></a>Unroll all loops, even if their number of iterations is uncertain when
 the loop is entered.  This usually makes programs run more slowly. 
 <samp><span class="option">-funroll-all-loops</span></samp> implies the same options as
 <samp><span class="option">-funroll-loops</span></samp>,
 
-     <br><dt><code>-fsplit-ivs-in-unroller</code><dd><a name="index-fsplit_002divs_002din_002dunroller-914"></a>Enables expression of values of induction variables in later iterations
+     <br><dt><code>-fsplit-ivs-in-unroller</code><dd><a name="index-fsplit_002divs_002din_002dunroller-915"></a>Enables expression of values of induction variables in later iterations
 of the unrolled loop using the value in the first iteration.  This breaks
 long dependency chains, thus improving efficiency of the scheduling passes.
 
@@ -1192,22 +1200,22 @@ on some architectures due to restrictions in the CSE pass.
 
      <p>This optimization is enabled by default.
 
-     <br><dt><code>-fvariable-expansion-in-unroller</code><dd><a name="index-fvariable_002dexpansion_002din_002dunroller-915"></a>With this option, the compiler creates multiple copies of some
+     <br><dt><code>-fvariable-expansion-in-unroller</code><dd><a name="index-fvariable_002dexpansion_002din_002dunroller-916"></a>With this option, the compiler creates multiple copies of some
 local variables when unrolling a loop, which can result in superior code.
 
-     <br><dt><code>-fpartial-inlining</code><dd><a name="index-fpartial_002dinlining-916"></a>Inline parts of functions.  This option has any effect only
+     <br><dt><code>-fpartial-inlining</code><dd><a name="index-fpartial_002dinlining-917"></a>Inline parts of functions.  This option has any effect only
 when inlining itself is turned on by the <samp><span class="option">-finline-functions</span></samp>
 or <samp><span class="option">-finline-small-functions</span></samp> options.
 
      <p>Enabled at level <samp><span class="option">-O2</span></samp>.
 
-     <br><dt><code>-fpredictive-commoning</code><dd><a name="index-fpredictive_002dcommoning-917"></a>Perform predictive commoning optimization, i.e., reusing computations
+     <br><dt><code>-fpredictive-commoning</code><dd><a name="index-fpredictive_002dcommoning-918"></a>Perform predictive commoning optimization, i.e., reusing computations
 (especially memory loads and stores) performed in previous
 iterations of loops.
 
      <p>This option is enabled at level <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-fprefetch-loop-arrays</code><dd><a name="index-fprefetch_002dloop_002darrays-918"></a>If supported by the target machine, generate instructions to prefetch
+     <br><dt><code>-fprefetch-loop-arrays</code><dd><a name="index-fprefetch_002dloop_002darrays-919"></a>If supported by the target machine, generate instructions to prefetch
 memory to improve the performance of loops that access large arrays.
 
      <p>This option may generate better or worse code; results are highly
@@ -1215,7 +1223,7 @@ dependent on the structure of loops within the source code.
 
      <p>Disabled at level <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fno-peephole</code><dt><code>-fno-peephole2</code><dd><a name="index-fno_002dpeephole-919"></a><a name="index-fno_002dpeephole2-920"></a>Disable any machine-specific peephole optimizations.  The difference
+     <br><dt><code>-fno-peephole</code><dt><code>-fno-peephole2</code><dd><a name="index-fno_002dpeephole-920"></a><a name="index-fno_002dpeephole2-921"></a>Disable any machine-specific peephole optimizations.  The difference
 between <samp><span class="option">-fno-peephole</span></samp> and <samp><span class="option">-fno-peephole2</span></samp> is in how they
 are implemented in the compiler; some targets use one, some use the
 other, a few use both.
@@ -1223,7 +1231,7 @@ other, a few use both.
      <p><samp><span class="option">-fpeephole</span></samp> is enabled by default. 
 <samp><span class="option">-fpeephole2</span></samp> enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fno-guess-branch-probability</code><dd><a name="index-fno_002dguess_002dbranch_002dprobability-921"></a>Do not guess branch probabilities using heuristics.
+     <br><dt><code>-fno-guess-branch-probability</code><dd><a name="index-fno_002dguess_002dbranch_002dprobability-922"></a>Do not guess branch probabilities using heuristics.
 
      <p>GCC uses heuristics to guess branch probabilities if they are
 not provided by profiling feedback (<samp><span class="option">-fprofile-arcs</span></samp>).  These
@@ -1238,12 +1246,12 @@ of &lsquo;<samp><span class="samp">__builtin_expect</span></samp>&rsquo; are eas
      <p>The default is <samp><span class="option">-fguess-branch-probability</span></samp> at levels
 <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-freorder-blocks</code><dd><a name="index-freorder_002dblocks-922"></a>Reorder basic blocks in the compiled function in order to reduce number of
+     <br><dt><code>-freorder-blocks</code><dd><a name="index-freorder_002dblocks-923"></a>Reorder basic blocks in the compiled function in order to reduce number of
 taken branches and improve code locality.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-freorder-blocks-and-partition</code><dd><a name="index-freorder_002dblocks_002dand_002dpartition-923"></a>In addition to reordering basic blocks in the compiled function, in order
+     <br><dt><code>-freorder-blocks-and-partition</code><dd><a name="index-freorder_002dblocks_002dand_002dpartition-924"></a>In addition to reordering basic blocks in the compiled function, in order
 to reduce number of taken branches, partitions hot and cold basic blocks
 into separate sections of the assembly and .o files, to improve
 paging and cache locality performance.
@@ -1255,7 +1263,7 @@ sections.
 
      <p>Enabled for x86 at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-freorder-functions</code><dd><a name="index-freorder_002dfunctions-924"></a>Reorder functions in the object file in order to
+     <br><dt><code>-freorder-functions</code><dd><a name="index-freorder_002dfunctions-925"></a>Reorder functions in the object file in order to
 improve code locality.  This is implemented by using special
 subsections <code>.text.hot</code> for most frequently executed functions and
 <code>.text.unlikely</code> for unlikely executed functions.  Reordering is done by
@@ -1267,7 +1275,7 @@ place them in a reasonable way.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fstrict-aliasing</code><dd><a name="index-fstrict_002daliasing-925"></a>Allow the compiler to assume the strictest aliasing rules applicable to
+     <br><dt><code>-fstrict-aliasing</code><dd><a name="index-fstrict_002daliasing-926"></a>Allow the compiler to assume the strictest aliasing rules applicable to
 the language being compiled.  For C (and C++), this activates
 optimizations based on the type of expressions.  In particular, an
 object of one type is assumed never to reside at the same address as an
@@ -1312,7 +1320,7 @@ uses a union type, e.g.:
      <p>The <samp><span class="option">-fstrict-aliasing</span></samp> option is enabled at levels
 <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fstrict-overflow</code><dd><a name="index-fstrict_002doverflow-926"></a>Allow the compiler to assume strict signed overflow rules, depending
+     <br><dt><code>-fstrict-overflow</code><dd><a name="index-fstrict_002doverflow-927"></a>Allow the compiler to assume strict signed overflow rules, depending
 on the language being compiled.  For C (and C++) this means that
 overflow when doing arithmetic with signed numbers is undefined, which
 means that the compiler may assume that it does not happen.  This
@@ -1345,7 +1353,7 @@ arithmetic on constants, the overflowed value can still be used with
      <p>The <samp><span class="option">-fstrict-overflow</span></samp> option is enabled at levels
 <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-falign-functions</code><dt><code>-falign-functions=</code><var>n</var><dd><a name="index-falign_002dfunctions-927"></a>Align the start of functions to the next power-of-two greater than
+     <br><dt><code>-falign-functions</code><dt><code>-falign-functions=</code><var>n</var><dd><a name="index-falign_002dfunctions-928"></a>Align the start of functions to the next power-of-two greater than
 <var>n</var>, skipping up to <var>n</var> bytes.  For instance,
 <samp><span class="option">-falign-functions=32</span></samp> aligns functions to the next 32-byte
 boundary, but <samp><span class="option">-falign-functions=24</span></samp> aligns to the next
@@ -1361,7 +1369,7 @@ in that case, it is rounded up.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-falign-labels</code><dt><code>-falign-labels=</code><var>n</var><dd><a name="index-falign_002dlabels-928"></a>Align all branch targets to a power-of-two boundary, skipping up to
+     <br><dt><code>-falign-labels</code><dt><code>-falign-labels=</code><var>n</var><dd><a name="index-falign_002dlabels-929"></a>Align all branch targets to a power-of-two boundary, skipping up to
 <var>n</var> bytes like <samp><span class="option">-falign-functions</span></samp>.  This option can easily
 make code slower, because it must insert dummy operations for when the
 branch target is reached in the usual flow of the code.
@@ -1377,7 +1385,7 @@ which is very likely to be &lsquo;<samp><span class="samp">1</span></samp>&rsquo
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-falign-loops</code><dt><code>-falign-loops=</code><var>n</var><dd><a name="index-falign_002dloops-929"></a>Align loops to a power-of-two boundary, skipping up to <var>n</var> bytes
+     <br><dt><code>-falign-loops</code><dt><code>-falign-loops=</code><var>n</var><dd><a name="index-falign_002dloops-930"></a>Align loops to a power-of-two boundary, skipping up to <var>n</var> bytes
 like <samp><span class="option">-falign-functions</span></samp>.  If the loops are
 executed many times, this makes up for any execution of the dummy
 operations.
@@ -1389,7 +1397,7 @@ equivalent and mean that loops are not aligned.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-falign-jumps</code><dt><code>-falign-jumps=</code><var>n</var><dd><a name="index-falign_002djumps-930"></a>Align branch targets to a power-of-two boundary, for branch targets
+     <br><dt><code>-falign-jumps</code><dt><code>-falign-jumps=</code><var>n</var><dd><a name="index-falign_002djumps-931"></a>Align branch targets to a power-of-two boundary, for branch targets
 where the targets can only be reached by jumping, skipping up to <var>n</var>
 bytes like <samp><span class="option">-falign-functions</span></samp>.  In this case, no dummy operations
 need be executed.
@@ -1401,13 +1409,13 @@ equivalent and mean that loops are not aligned.
 
      <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
-     <br><dt><code>-funit-at-a-time</code><dd><a name="index-funit_002dat_002da_002dtime-931"></a>This option is left for compatibility reasons. <samp><span class="option">-funit-at-a-time</span></samp>
+     <br><dt><code>-funit-at-a-time</code><dd><a name="index-funit_002dat_002da_002dtime-932"></a>This option is left for compatibility reasons. <samp><span class="option">-funit-at-a-time</span></samp>
 has no effect, while <samp><span class="option">-fno-unit-at-a-time</span></samp> implies
 <samp><span class="option">-fno-toplevel-reorder</span></samp> and <samp><span class="option">-fno-section-anchors</span></samp>.
 
      <p>Enabled by default.
 
-     <br><dt><code>-fno-toplevel-reorder</code><dd><a name="index-fno_002dtoplevel_002dreorder-932"></a>Do not reorder top-level functions, variables, and <code>asm</code>
+     <br><dt><code>-fno-toplevel-reorder</code><dd><a name="index-fno_002dtoplevel_002dreorder-933"></a>Do not reorder top-level functions, variables, and <code>asm</code>
 statements.  Output them in the same order that they appear in the
 input file.  When this option is used, unreferenced static variables
 are not removed.  This option is intended to support existing code
@@ -1418,7 +1426,7 @@ use attributes when possible.
 <samp><span class="option">-fno-section-anchors</span></samp>, which is otherwise enabled at <samp><span class="option">-O0</span></samp> on some
 targets.
 
-     <br><dt><code>-fweb</code><dd><a name="index-fweb-933"></a>Constructs webs as commonly used for register allocation purposes and assign
+     <br><dt><code>-fweb</code><dd><a name="index-fweb-934"></a>Constructs webs as commonly used for register allocation purposes and assign
 each web individual pseudo register.  This allows the register allocation pass
 to operate on pseudos directly, but also strengthens several other optimization
 passes, such as CSE, loop optimizer and trivial dead code remover.  It can,
@@ -1427,7 +1435,7 @@ however, make debugging impossible, since variables no longer stay in a
 
      <p>Enabled by default with <samp><span class="option">-funroll-loops</span></samp>.
 
-     <br><dt><code>-fwhole-program</code><dd><a name="index-fwhole_002dprogram-934"></a>Assume that the current compilation unit represents the whole program being
+     <br><dt><code>-fwhole-program</code><dd><a name="index-fwhole_002dprogram-935"></a>Assume that the current compilation unit represents the whole program being
 compiled.  All public functions and variables with the exception of <code>main</code>
 and those merged by attribute <code>externally_visible</code> become static functions
 and in effect are optimized more aggressively by interprocedural optimizers.
@@ -1436,7 +1444,7 @@ and in effect are optimized more aggressively by interprocedural optimizers.
 Instead relying on a linker plugin should provide safer and more precise
 information.
 
-     <br><dt><code>-flto[=</code><var>n</var><code>]</code><dd><a name="index-flto-935"></a>This option runs the standard link-time optimizer.  When invoked
+     <br><dt><code>-flto[=</code><var>n</var><code>]</code><dd><a name="index-flto-936"></a>This option runs the standard link-time optimizer.  When invoked
 with source code, it generates GIMPLE (one of GCC's internal
 representations) and writes it to special ELF sections in the object
 file.  When the object files are linked together, all the function
@@ -1628,7 +1636,7 @@ You must prepend a &lsquo;<samp><span class="samp">+</span></samp>&rsquo; to the
 for this to work.  This option likely only works if <samp><span class="env">MAKE</span></samp> is
 GNU make.
 
-     <br><dt><code>-flto-partition=</code><var>alg</var><dd><a name="index-flto_002dpartition-936"></a>Specify the partitioning algorithm used by the link-time optimizer. 
+     <br><dt><code>-flto-partition=</code><var>alg</var><dd><a name="index-flto_002dpartition-937"></a>Specify the partitioning algorithm used by the link-time optimizer. 
 The value is either <code>1to1</code> to specify a partitioning mirroring
 the original source files or <code>balanced</code> to specify partitioning
 into equally sized chunks (whenever possible) or <code>max</code> to create
@@ -1672,7 +1680,7 @@ use it.
 and GCC was configured for use with
 a linker supporting plugins (GNU ld 2.21 or newer or gold).
 
-     <br><dt><code>-ffat-lto-objects</code><dd><a name="index-ffat_002dlto_002dobjects-937"></a>Fat LTO objects are object files that contain both the intermediate language
+     <br><dt><code>-ffat-lto-objects</code><dd><a name="index-ffat_002dlto_002dobjects-938"></a>Fat LTO objects are object files that contain both the intermediate language
 and the object code. This makes them usable for both LTO linking and normal
 linking. This option is effective only when compiling with <samp><span class="option">-flto</span></samp>
 and is ignored at link time.
@@ -1689,7 +1697,7 @@ to these tools. With non fat LTO makefiles need to be modified to use them.
      <p>The default is <samp><span class="option">-fno-fat-lto-objects</span></samp> on targets with linker plugin
 support.
 
-     <br><dt><code>-fcompare-elim</code><dd><a name="index-fcompare_002delim-938"></a>After register allocation and post-register allocation instruction splitting,
+     <br><dt><code>-fcompare-elim</code><dd><a name="index-fcompare_002delim-939"></a>After register allocation and post-register allocation instruction splitting,
 identify arithmetic instructions that compute processor flags similar to a
 comparison operation based on that arithmetic.  If possible, eliminate the
 explicit comparison operation.
@@ -1699,22 +1707,22 @@ the comparison operation before register allocation is complete.
 
      <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fuse-ld=bfd</code><dd><a name="index-fuse_002dld_003dbfd-939"></a>Use the <samp><span class="command">bfd</span></samp> linker instead of the default linker.
+     <br><dt><code>-fuse-ld=bfd</code><dd><a name="index-fuse_002dld_003dbfd-940"></a>Use the <samp><span class="command">bfd</span></samp> linker instead of the default linker.
 
-     <br><dt><code>-fuse-ld=gold</code><dd><a name="index-fuse_002dld_003dgold-940"></a>Use the <samp><span class="command">gold</span></samp> linker instead of the default linker.
+     <br><dt><code>-fuse-ld=gold</code><dd><a name="index-fuse_002dld_003dgold-941"></a>Use the <samp><span class="command">gold</span></samp> linker instead of the default linker.
 
-     <br><dt><code>-fcprop-registers</code><dd><a name="index-fcprop_002dregisters-941"></a>After register allocation and post-register allocation instruction splitting,
+     <br><dt><code>-fcprop-registers</code><dd><a name="index-fcprop_002dregisters-942"></a>After register allocation and post-register allocation instruction splitting,
 perform a copy-propagation pass to try to reduce scheduling dependencies
 and occasionally eliminate the copy.
 
      <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fprofile-correction</code><dd><a name="index-fprofile_002dcorrection-942"></a>Profiles collected using an instrumented binary for multi-threaded programs may
+     <br><dt><code>-fprofile-correction</code><dd><a name="index-fprofile_002dcorrection-943"></a>Profiles collected using an instrumented binary for multi-threaded programs may
 be inconsistent due to missed counter updates. When this option is specified,
 GCC uses heuristics to correct or smooth out such inconsistencies. By
 default, GCC emits an error message when an inconsistent profile is detected.
 
-     <br><dt><code>-fprofile-dir=</code><var>path</var><dd><a name="index-fprofile_002ddir-943"></a>
+     <br><dt><code>-fprofile-dir=</code><var>path</var><dd><a name="index-fprofile_002ddir-944"></a>
 Set the directory to search for the profile data files in to <var>path</var>. 
 This option affects only the profile data generated by
 <samp><span class="option">-fprofile-generate</span></samp>, <samp><span class="option">-ftest-coverage</span></samp>, <samp><span class="option">-fprofile-arcs</span></samp>
@@ -1723,7 +1731,7 @@ and its related options.  Both absolute and relative paths can be used.
 By default, GCC uses the current directory as <var>path</var>, thus the
 profile data file appears in the same directory as the object file.
 
-     <br><dt><code>-fprofile-generate</code><dt><code>-fprofile-generate=</code><var>path</var><dd><a name="index-fprofile_002dgenerate-944"></a>
+     <br><dt><code>-fprofile-generate</code><dt><code>-fprofile-generate=</code><var>path</var><dd><a name="index-fprofile_002dgenerate-945"></a>
 Enable options usually used for instrumenting application to produce
 profile useful for later recompilation with profile feedback based
 optimization.  You must use <samp><span class="option">-fprofile-generate</span></samp> both when
@@ -1734,7 +1742,7 @@ compiling and when linking your program.
      <p>If <var>path</var> is specified, GCC looks at the <var>path</var> to find
 the profile feedback data files. See <samp><span class="option">-fprofile-dir</span></samp>.
 
-     <br><dt><code>-fprofile-use</code><dt><code>-fprofile-use=</code><var>path</var><dd><a name="index-fprofile_002duse-945"></a>Enable profile feedback directed optimizations, and optimizations
+     <br><dt><code>-fprofile-use</code><dt><code>-fprofile-use=</code><var>path</var><dd><a name="index-fprofile_002duse-946"></a>Enable profile feedback directed optimizations, and optimizations
 generally profitable only with profile feedback available.
 
      <p>The following options are enabled: <code>-fbranch-probabilities</code>, <code>-fvpt</code>,
@@ -1755,11 +1763,11 @@ arithmetic.  These options trade off between speed and
 correctness.  All must be specifically enabled.
 
      <dl>
-<dt><code>-ffloat-store</code><dd><a name="index-ffloat_002dstore-946"></a>Do not store floating-point variables in registers, and inhibit other
+<dt><code>-ffloat-store</code><dd><a name="index-ffloat_002dstore-947"></a>Do not store floating-point variables in registers, and inhibit other
 options that might change whether a floating-point value is taken from a
 register or memory.
 
-     <p><a name="index-floating_002dpoint-precision-947"></a>This option prevents undesirable excess precision on machines such as
+     <p><a name="index-floating_002dpoint-precision-948"></a>This option prevents undesirable excess precision on machines such as
 the 68000 where the floating registers (of the 68881) keep more
 precision than a <code>double</code> is supposed to have.  Similarly for the
 x86 architecture.  For most programs, the excess precision does only
@@ -1767,7 +1775,7 @@ good, but a few programs rely on the precise definition of IEEE floating
 point.  Use <samp><span class="option">-ffloat-store</span></samp> for such programs, after modifying
 them to store all pertinent intermediate computations into variables.
 
-     <br><dt><code>-fexcess-precision=</code><var>style</var><dd><a name="index-fexcess_002dprecision-948"></a>This option allows further control over excess precision on machines
+     <br><dt><code>-fexcess-precision=</code><var>style</var><dd><a name="index-fexcess_002dprecision-949"></a>This option allows further control over excess precision on machines
 where floating-point registers have more precision than the IEEE
 <code>float</code> and <code>double</code> types and the processor does not
 support operations rounding to those types.  By default,
@@ -1782,7 +1790,7 @@ semantic types (whereas <samp><span class="option">-ffloat-store</span></samp> o
 assignments).  This option is enabled by default for C if a strict
 conformance option such as <samp><span class="option">-std=c99</span></samp> is used.
 
-     <p><a name="index-mfpmath-949"></a><samp><span class="option">-fexcess-precision=standard</span></samp> is not implemented for languages
+     <p><a name="index-mfpmath-950"></a><samp><span class="option">-fexcess-precision=standard</span></samp> is not implemented for languages
 other than C, and has no effect if
 <samp><span class="option">-funsafe-math-optimizations</span></samp> or <samp><span class="option">-ffast-math</span></samp> is
 specified.  On the x86, it also has no effect if <samp><span class="option">-mfpmath=sse</span></samp>
@@ -1790,7 +1798,7 @@ or <samp><span class="option">-mfpmath=sse+387</span></samp> is specified; in th
 semantics apply without excess precision, and in the latter, rounding
 is unpredictable.
 
-     <br><dt><code>-ffast-math</code><dd><a name="index-ffast_002dmath-950"></a>Sets <samp><span class="option">-fno-math-errno</span></samp>, <samp><span class="option">-funsafe-math-optimizations</span></samp>,
+     <br><dt><code>-ffast-math</code><dd><a name="index-ffast_002dmath-951"></a>Sets <samp><span class="option">-fno-math-errno</span></samp>, <samp><span class="option">-funsafe-math-optimizations</span></samp>,
 <samp><span class="option">-ffinite-math-only</span></samp>, <samp><span class="option">-fno-rounding-math</span></samp>,
 <samp><span class="option">-fno-signaling-nans</span></samp> and <samp><span class="option">-fcx-limited-range</span></samp>.
 
@@ -1802,7 +1810,7 @@ that depend on an exact implementation of IEEE or ISO rules/specifications
 for math functions. It may, however, yield faster code for programs
 that do not require the guarantees of these specifications.
 
-     <br><dt><code>-fno-math-errno</code><dd><a name="index-fno_002dmath_002derrno-951"></a>Do not set <code>errno</code> after calling math functions that are executed
+     <br><dt><code>-fno-math-errno</code><dd><a name="index-fno_002dmath_002derrno-952"></a>Do not set <code>errno</code> after calling math functions that are executed
 with a single instruction, e.g., <code>sqrt</code>.  A program that relies on
 IEEE exceptions for math error handling may want to use this flag
 for speed while maintaining IEEE arithmetic compatibility.
@@ -1819,7 +1827,7 @@ that do not require the guarantees of these specifications.
 therefore no reason for the compiler to consider the possibility that
 it might, and <samp><span class="option">-fno-math-errno</span></samp> is the default.
 
-     <br><dt><code>-funsafe-math-optimizations</code><dd><a name="index-funsafe_002dmath_002doptimizations-952"></a>
+     <br><dt><code>-funsafe-math-optimizations</code><dd><a name="index-funsafe_002dmath_002doptimizations-953"></a>
 Allow optimizations for floating-point arithmetic that (a) assume
 that arguments and results are valid and (b) may violate IEEE or
 ANSI standards.  When used at link-time, it may include libraries
@@ -1836,7 +1844,7 @@ Enables <samp><span class="option">-fno-signed-zeros</span></samp>, <samp><span 
 
      <p>The default is <samp><span class="option">-fno-unsafe-math-optimizations</span></samp>.
 
-     <br><dt><code>-fassociative-math</code><dd><a name="index-fassociative_002dmath-953"></a>
+     <br><dt><code>-fassociative-math</code><dd><a name="index-fassociative_002dmath-954"></a>
 Allow re-association of operands in series of floating-point operations. 
 This violates the ISO C and C++ language standard by possibly changing
 computation result.  NOTE: re-ordering may change the sign of zero as
@@ -1852,7 +1860,7 @@ is automatically enabled when both <samp><span class="option">-fno-signed-zeros<
 
      <p>The default is <samp><span class="option">-fno-associative-math</span></samp>.
 
-     <br><dt><code>-freciprocal-math</code><dd><a name="index-freciprocal_002dmath-954"></a>
+     <br><dt><code>-freciprocal-math</code><dd><a name="index-freciprocal_002dmath-955"></a>
 Allow the reciprocal of a value to be used instead of dividing by
 the value if this enables optimizations.  For example <code>x / y</code>
 can be replaced with <code>x * (1/y)</code>, which is useful if <code>(1/y)</code>
@@ -1861,7 +1869,7 @@ precision and increases the number of flops operating on the value.
 
      <p>The default is <samp><span class="option">-fno-reciprocal-math</span></samp>.
 
-     <br><dt><code>-ffinite-math-only</code><dd><a name="index-ffinite_002dmath_002donly-955"></a>Allow optimizations for floating-point arithmetic that assume
+     <br><dt><code>-ffinite-math-only</code><dd><a name="index-ffinite_002dmath_002donly-956"></a>Allow optimizations for floating-point arithmetic that assume
 that arguments and results are not NaNs or +-Infs.
 
      <p>This option is not turned on by any <samp><span class="option">-O</span></samp> option since
@@ -1872,7 +1880,7 @@ that do not require the guarantees of these specifications.
 
      <p>The default is <samp><span class="option">-fno-finite-math-only</span></samp>.
 
-     <br><dt><code>-fno-signed-zeros</code><dd><a name="index-fno_002dsigned_002dzeros-956"></a>Allow optimizations for floating-point arithmetic that ignore the
+     <br><dt><code>-fno-signed-zeros</code><dd><a name="index-fno_002dsigned_002dzeros-957"></a>Allow optimizations for floating-point arithmetic that ignore the
 signedness of zero.  IEEE arithmetic specifies the behavior of
 distinct +0.0 and &minus;0.0 values, which then prohibits simplification
 of expressions such as x+0.0 or 0.0*x (even with <samp><span class="option">-ffinite-math-only</span></samp>). 
@@ -1880,7 +1888,7 @@ This option implies that the sign of a zero result isn't significant.
 
      <p>The default is <samp><span class="option">-fsigned-zeros</span></samp>.
 
-     <br><dt><code>-fno-trapping-math</code><dd><a name="index-fno_002dtrapping_002dmath-957"></a>Compile code assuming that floating-point operations cannot generate
+     <br><dt><code>-fno-trapping-math</code><dd><a name="index-fno_002dtrapping_002dmath-958"></a>Compile code assuming that floating-point operations cannot generate
 user-visible traps.  These traps include division by zero, overflow,
 underflow, inexact result and invalid operation.  This option requires
 that <samp><span class="option">-fno-signaling-nans</span></samp> be in effect.  Setting this option may
@@ -1893,7 +1901,7 @@ math functions.
 
      <p>The default is <samp><span class="option">-ftrapping-math</span></samp>.
 
-     <br><dt><code>-frounding-math</code><dd><a name="index-frounding_002dmath-958"></a>Disable transformations and optimizations that assume default floating-point
+     <br><dt><code>-frounding-math</code><dd><a name="index-frounding_002dmath-959"></a>Disable transformations and optimizations that assume default floating-point
 rounding behavior.  This is round-to-zero for all floating point
 to integer conversions, and round-to-nearest for all other arithmetic
 truncations.  This option should be specified for programs that change
@@ -1911,7 +1919,7 @@ Future versions of GCC may provide finer control of this setting
 using C99's <code>FENV_ACCESS</code> pragma.  This command-line option
 will be used to specify the default state for <code>FENV_ACCESS</code>.
 
-     <br><dt><code>-fsignaling-nans</code><dd><a name="index-fsignaling_002dnans-959"></a>Compile code assuming that IEEE signaling NaNs may generate user-visible
+     <br><dt><code>-fsignaling-nans</code><dd><a name="index-fsignaling_002dnans-960"></a>Compile code assuming that IEEE signaling NaNs may generate user-visible
 traps during floating-point operations.  Setting this option disables
 optimizations that may change the number of exceptions visible with
 signaling NaNs.  This option implies <samp><span class="option">-ftrapping-math</span></samp>.
@@ -1924,10 +1932,10 @@ be defined.
      <p>This option is experimental and does not currently guarantee to
 disable all GCC optimizations that affect signaling NaN behavior.
 
-     <br><dt><code>-fsingle-precision-constant</code><dd><a name="index-fsingle_002dprecision_002dconstant-960"></a>Treat floating-point constants as single precision instead of
+     <br><dt><code>-fsingle-precision-constant</code><dd><a name="index-fsingle_002dprecision_002dconstant-961"></a>Treat floating-point constants as single precision instead of
 implicitly converting them to double-precision constants.
 
-     <br><dt><code>-fcx-limited-range</code><dd><a name="index-fcx_002dlimited_002drange-961"></a>When enabled, this option states that a range reduction step is not
+     <br><dt><code>-fcx-limited-range</code><dd><a name="index-fcx_002dlimited_002drange-962"></a>When enabled, this option states that a range reduction step is not
 needed when performing complex division.  Also, there is no checking
 whether the result of a complex multiplication or division is <code>NaN
 + I*NaN</code>, with an attempt to rescue the situation in that case.  The
@@ -1938,7 +1946,7 @@ default is <samp><span class="option">-fno-cx-limited-range</span></samp>, but i
 <code>CX_LIMITED_RANGE</code> pragma.  Nevertheless, the option applies to
 all languages.
 
-     <br><dt><code>-fcx-fortran-rules</code><dd><a name="index-fcx_002dfortran_002drules-962"></a>Complex multiplication and division follow Fortran rules.  Range
+     <br><dt><code>-fcx-fortran-rules</code><dd><a name="index-fcx_002dfortran_002drules-963"></a>Complex multiplication and division follow Fortran rules.  Range
 reduction is done as part of complex division, but there is no checking
 whether the result of a complex multiplication or division is <code>NaN
 + I*NaN</code>, with an attempt to rescue the situation in that case.
@@ -1952,7 +1960,7 @@ performance, but are not enabled by any <samp><span class="option">-O</span></sa
 section includes experimental options that may produce broken code.
 
      <dl>
-<dt><code>-fbranch-probabilities</code><dd><a name="index-fbranch_002dprobabilities-963"></a>After running a program compiled with <samp><span class="option">-fprofile-arcs</span></samp>
+<dt><code>-fbranch-probabilities</code><dd><a name="index-fbranch_002dprobabilities-964"></a>After running a program compiled with <samp><span class="option">-fprofile-arcs</span></samp>
 (see <a href="Debugging-Options.html#Debugging-Options">Options for Debugging Your Program or <samp><span class="command">gcc</span></samp></a>), you can compile it a second time using
 <samp><span class="option">-fbranch-probabilities</span></samp>, to improve optimizations based on
 the number of times each branch was taken.  When a program
@@ -1969,7 +1977,7 @@ used in one place: in <samp><span class="file">reorg.c</span></samp>, instead of
 branch is most likely to take, the &lsquo;<samp><span class="samp">REG_BR_PROB</span></samp>&rsquo; values are used to
 exactly determine which path is taken more often.
 
-     <br><dt><code>-fprofile-values</code><dd><a name="index-fprofile_002dvalues-964"></a>If combined with <samp><span class="option">-fprofile-arcs</span></samp>, it adds code so that some
+     <br><dt><code>-fprofile-values</code><dd><a name="index-fprofile_002dvalues-965"></a>If combined with <samp><span class="option">-fprofile-arcs</span></samp>, it adds code so that some
 data about values of expressions in the program is gathered.
 
      <p>With <samp><span class="option">-fbranch-probabilities</span></samp>, it reads back the data gathered
@@ -1977,13 +1985,13 @@ from profiling values of expressions for usage in optimizations.
 
      <p>Enabled with <samp><span class="option">-fprofile-generate</span></samp> and <samp><span class="option">-fprofile-use</span></samp>.
 
-     <br><dt><code>-fprofile-reorder-functions</code><dd><a name="index-fprofile_002dreorder_002dfunctions-965"></a>Function reordering based on profile instrumentation collects
+     <br><dt><code>-fprofile-reorder-functions</code><dd><a name="index-fprofile_002dreorder_002dfunctions-966"></a>Function reordering based on profile instrumentation collects
 first time of execution of a function and orders these functions
 in ascending order.
 
      <p>Enabled with <samp><span class="option">-fprofile-use</span></samp>.
 
-     <br><dt><code>-fvpt</code><dd><a name="index-fvpt-966"></a>If combined with <samp><span class="option">-fprofile-arcs</span></samp>, this option instructs the compiler
+     <br><dt><code>-fvpt</code><dd><a name="index-fvpt-967"></a>If combined with <samp><span class="option">-fprofile-arcs</span></samp>, this option instructs the compiler
 to add code to gather information about values of expressions.
 
      <p>With <samp><span class="option">-fbranch-probabilities</span></samp>, it reads back the data gathered
@@ -1991,7 +1999,7 @@ and actually performs the optimizations based on them.
 Currently the optimizations include specialization of division operations
 using the knowledge about the value of the denominator.
 
-     <br><dt><code>-frename-registers</code><dd><a name="index-frename_002dregisters-967"></a>Attempt to avoid false dependencies in scheduled code by making use
+     <br><dt><code>-frename-registers</code><dd><a name="index-frename_002dregisters-968"></a>Attempt to avoid false dependencies in scheduled code by making use
 of registers left over after register allocation.  This optimization
 most benefits processors with lots of registers.  Depending on the
 debug information format adopted by the target, however, it can
@@ -2000,13 +2008,13 @@ a &ldquo;home register&rdquo;.
 
      <p>Enabled by default with <samp><span class="option">-funroll-loops</span></samp> and <samp><span class="option">-fpeel-loops</span></samp>.
 
-     <br><dt><code>-ftracer</code><dd><a name="index-ftracer-968"></a>Perform tail duplication to enlarge superblock size.  This transformation
+     <br><dt><code>-ftracer</code><dd><a name="index-ftracer-969"></a>Perform tail duplication to enlarge superblock size.  This transformation
 simplifies the control flow of the function allowing other optimizations to do
 a better job.
 
      <p>Enabled with <samp><span class="option">-fprofile-use</span></samp>.
 
-     <br><dt><code>-funroll-loops</code><dd><a name="index-funroll_002dloops-969"></a>Unroll loops whose number of iterations can be determined at compile time or
+     <br><dt><code>-funroll-loops</code><dd><a name="index-funroll_002dloops-970"></a>Unroll loops whose number of iterations can be determined at compile time or
 upon entry to the loop.  <samp><span class="option">-funroll-loops</span></samp> implies
 <samp><span class="option">-frerun-cse-after-loop</span></samp>, <samp><span class="option">-fweb</span></samp> and <samp><span class="option">-frename-registers</span></samp>. 
 It also turns on complete loop peeling (i.e. complete removal of loops with
@@ -2015,24 +2023,24 @@ or may not make it run faster.
 
      <p>Enabled with <samp><span class="option">-fprofile-use</span></samp>.
 
-     <br><dt><code>-funroll-all-loops</code><dd><a name="index-funroll_002dall_002dloops-970"></a>Unroll all loops, even if their number of iterations is uncertain when
+     <br><dt><code>-funroll-all-loops</code><dd><a name="index-funroll_002dall_002dloops-971"></a>Unroll all loops, even if their number of iterations is uncertain when
 the loop is entered.  This usually makes programs run more slowly. 
 <samp><span class="option">-funroll-all-loops</span></samp> implies the same options as
 <samp><span class="option">-funroll-loops</span></samp>.
 
-     <br><dt><code>-fpeel-loops</code><dd><a name="index-fpeel_002dloops-971"></a>Peels loops for which there is enough information that they do not
+     <br><dt><code>-fpeel-loops</code><dd><a name="index-fpeel_002dloops-972"></a>Peels loops for which there is enough information that they do not
 roll much (from profile feedback).  It also turns on complete loop peeling
 (i.e. complete removal of loops with small constant number of iterations).
 
      <p>Enabled with <samp><span class="option">-fprofile-use</span></samp>.
 
-     <br><dt><code>-fmove-loop-invariants</code><dd><a name="index-fmove_002dloop_002dinvariants-972"></a>Enables the loop invariant motion pass in the RTL loop optimizer.  Enabled
+     <br><dt><code>-fmove-loop-invariants</code><dd><a name="index-fmove_002dloop_002dinvariants-973"></a>Enables the loop invariant motion pass in the RTL loop optimizer.  Enabled
 at level <samp><span class="option">-O1</span></samp>
 
-     <br><dt><code>-funswitch-loops</code><dd><a name="index-funswitch_002dloops-973"></a>Move branches with loop invariant conditions out of the loop, with duplicates
+     <br><dt><code>-funswitch-loops</code><dd><a name="index-funswitch_002dloops-974"></a>Move branches with loop invariant conditions out of the loop, with duplicates
 of the loop on both branches (modified according to result of the condition).
 
-     <br><dt><code>-ffunction-sections</code><dt><code>-fdata-sections</code><dd><a name="index-ffunction_002dsections-974"></a><a name="index-fdata_002dsections-975"></a>Place each function or data item into its own section in the output
+     <br><dt><code>-ffunction-sections</code><dt><code>-fdata-sections</code><dd><a name="index-ffunction_002dsections-975"></a><a name="index-fdata_002dsections-976"></a>Place each function or data item into its own section in the output
 file if the target supports arbitrary sections.  The name of the
 function or the name of the data item determines the section's name
 in the output file.
@@ -2050,32 +2058,32 @@ You cannot use <code>gprof</code> on all systems if you
 specify this option, and you may have problems with debugging if
 you specify both this option and <samp><span class="option">-g</span></samp>.
 
-     <br><dt><code>-fbranch-target-load-optimize</code><dd><a name="index-fbranch_002dtarget_002dload_002doptimize-976"></a>Perform branch target register load optimization before prologue / epilogue
+     <br><dt><code>-fbranch-target-load-optimize</code><dd><a name="index-fbranch_002dtarget_002dload_002doptimize-977"></a>Perform branch target register load optimization before prologue / epilogue
 threading. 
 The use of target registers can typically be exposed only during reload,
 thus hoisting loads out of loops and doing inter-block scheduling needs
 a separate optimization pass.
 
-     <br><dt><code>-fbranch-target-load-optimize2</code><dd><a name="index-fbranch_002dtarget_002dload_002doptimize2-977"></a>Perform branch target register load optimization after prologue / epilogue
+     <br><dt><code>-fbranch-target-load-optimize2</code><dd><a name="index-fbranch_002dtarget_002dload_002doptimize2-978"></a>Perform branch target register load optimization after prologue / epilogue
 threading.
 
-     <br><dt><code>-fbtr-bb-exclusive</code><dd><a name="index-fbtr_002dbb_002dexclusive-978"></a>When performing branch target register load optimization, don't reuse
+     <br><dt><code>-fbtr-bb-exclusive</code><dd><a name="index-fbtr_002dbb_002dexclusive-979"></a>When performing branch target register load optimization, don't reuse
 branch target registers within any basic block.
 
-     <br><dt><code>-fstack-protector</code><dd><a name="index-fstack_002dprotector-979"></a>Emit extra code to check for buffer overflows, such as stack smashing
+     <br><dt><code>-fstack-protector</code><dd><a name="index-fstack_002dprotector-980"></a>Emit extra code to check for buffer overflows, such as stack smashing
 attacks.  This is done by adding a guard variable to functions with
 vulnerable objects.  This includes functions that call <code>alloca</code>, and
 functions with buffers larger than 8 bytes.  The guards are initialized
 when a function is entered and then checked when the function exits. 
 If a guard check fails, an error message is printed and the program exits.
 
-     <br><dt><code>-fstack-protector-all</code><dd><a name="index-fstack_002dprotector_002dall-980"></a>Like <samp><span class="option">-fstack-protector</span></samp> except that all functions are protected.
+     <br><dt><code>-fstack-protector-all</code><dd><a name="index-fstack_002dprotector_002dall-981"></a>Like <samp><span class="option">-fstack-protector</span></samp> except that all functions are protected.
 
-     <br><dt><code>-fstack-protector-strong</code><dd><a name="index-fstack_002dprotector_002dstrong-981"></a>Like <samp><span class="option">-fstack-protector</span></samp> but includes additional functions to
+     <br><dt><code>-fstack-protector-strong</code><dd><a name="index-fstack_002dprotector_002dstrong-982"></a>Like <samp><span class="option">-fstack-protector</span></samp> but includes additional functions to
 be protected &mdash; those that have local array definitions, or have
 references to local frame addresses.
 
-     <br><dt><code>-fsection-anchors</code><dd><a name="index-fsection_002danchors-982"></a>Try to reduce the number of symbolic address calculations by using
+     <br><dt><code>-fsection-anchors</code><dd><a name="index-fsection_002danchors-983"></a>Try to reduce the number of symbolic address calculations by using
 shared &ldquo;anchor&rdquo; symbols to address nearby objects.  This transformation
 can help to reduce the number of GOT entries and GOT accesses on some
 targets.
@@ -2098,7 +2106,7 @@ following pseudocode (which isn't valid C):
 </pre>
      <p>Not all targets support this option.
 
-     <br><dt><code>--param </code><var>name</var><code>=</code><var>value</var><dd><a name="index-param-983"></a>In some places, GCC uses various constants to control the amount of
+     <br><dt><code>--param </code><var>name</var><code>=</code><var>value</var><dd><a name="index-param-984"></a>In some places, GCC uses various constants to control the amount of
 optimization that is done.  For example, GCC does not inline functions
 that contain more than a certain number of instructions.  You can
 control some of these constants on the command line using the

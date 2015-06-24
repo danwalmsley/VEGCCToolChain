@@ -32,14 +32,22 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.23 <code>fputws</code>&mdash;write a wide character string in a file or stream</h3>
+<h3 class="section">4.23 <code>fputws</code>, <code>fputws_unlocked</code>&mdash;write a wide character string in a file or stream</h3>
 
-<p><a name="index-fputws-192"></a><a name="index-g_t_005ffputws_005fr-193"></a><strong>Synopsis</strong>
+<p><a name="index-fputws-216"></a><a name="index-fputws_005funlocked-217"></a><a name="index-g_t_005ffputws_005fr-218"></a><a name="index-g_t_005ffputws_005funlocked_005fr-219"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      int fputws(const wchar_t *__restrict <var>ws</var>, FILE *__restrict <var>fp</var>);
      
+     #define _GNU_SOURCE
+     #include &lt;wchar.h&gt;
+     int fputws_unlocked(const wchar_t *__restrict <var>ws</var>, FILE *__restrict <var>fp</var>);
+     
      #include &lt;wchar.h&gt;
      int _fputws_r(struct _reent *<var>ptr</var>, const wchar_t *<var>ws</var>,
+         FILE *<var>fp</var>);
+     
+     #include &lt;wchar.h&gt;
+     int _fputws_unlocked_r(struct _reent *<var>ptr</var>, const wchar_t *<var>ws</var>,
          FILE *<var>fp</var>);
      
 </pre>
@@ -47,8 +55,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <code>fputws</code> writes the wide character string at <var>ws</var> (but without the
 trailing null) to the file or stream identified by <var>fp</var>.
 
-   <p><code>_fputws_r</code> is simply the reentrant version of <code>fputws</code> that takes
-an additional reentrant struct pointer argument: <var>ptr</var>.
+   <p><code>fputws_unlocked</code> is a non-thread-safe version of <code>fputws</code>. 
+<code>fputws_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fputws_unlocked</code> is equivalent to <code>fputws</code>.
+
+   <p><code>_fputws_r</code> and <code>_fputws_unlocked_r</code> are simply reentrant versions of the
+above that take an additional reentrant struct pointer argument: <var>ptr</var>.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -57,7 +74,9 @@ is <code>-1</code> to indicate an error.
 
    <p><br>
 <strong>Portability</strong><br>
-C99, POSIX.1-2001
+<code>fputws</code> is required by C99 and POSIX.1-2001.
+
+   <p><code>fputws_unlocked</code> is a GNU extension.
 
    <p><br>
 

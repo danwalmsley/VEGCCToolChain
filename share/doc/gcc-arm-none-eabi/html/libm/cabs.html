@@ -30,12 +30,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Complex.html#Complex">Complex</a>
 <hr>
 </div>
 
-<h3 class="section">2.1 <code>cabs</code>, <code>cabsf</code>&mdash;complex absolute-value</h3>
+<h3 class="section">2.1 <code>cabs</code>, <code>cabsf</code>, <code>cabsl</code>&mdash;complex absolute-value</h3>
 
-<p><a name="index-cabs-154"></a><a name="index-cabsf-155"></a><strong>Synopsis</strong>
+<p><a name="index-cabs-154"></a><a name="index-cabsf-155"></a><a name="index-cabsl-156"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;complex.h&gt;
      double cabs(double complex <var>z</var>);
      float cabsf(float complex <var>z</var>);
+     long double cabsl(long double complex <var>z</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -43,15 +44,18 @@ These functions compute compute the complex absolute value
 (also called norm, modulus, or magnitude) of <var>z</var>.
 
    <p><code>cabsf</code> is identical to <code>cabs</code>, except that it performs
-its calculations on <code>floats complex</code>.
+its calculations on <code>float complex</code>.
+
+   <p><code>cabsl</code> is identical to <code>cabs</code>, except that it performs
+its calculations on <code>long double complex</code>.
 
    <p><br>
 <strong>Returns</strong><br>
-The cabs functions return the complex absolute value.
+The cabs* functions return the complex absolute value.
 
    <p><br>
 <strong>Portability</strong><br>
-<code>cabs</code> and <code>cabsf</code> are ISO C99
+<code>cabs</code>, <code>cabsf</code> and <code>cabsl</code> are ISO C99
 
    <p><br>
 

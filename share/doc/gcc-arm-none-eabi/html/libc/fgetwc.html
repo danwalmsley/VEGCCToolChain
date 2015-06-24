@@ -32,12 +32,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.13 <code>fgetwc</code>, <code>getwc</code>&mdash;get a wide character from a file or stream</h3>
+<h3 class="section">4.13 <code>fgetwc</code>, <code>getwc</code>, <code>fgetwc_unlocked</code>, <code>getwc_unlocked</code>&mdash;get a wide character from a file or stream</h3>
 
-<p><a name="index-fgetwc-170"></a><a name="index-g_t_005ffgetwc_005fr-171"></a><a name="index-getwc-172"></a><a name="index-g_t_005fgetwc_005fr-173"></a><strong>Synopsis</strong>
+<p><a name="index-fgetwc-179"></a><a name="index-fgetwc_005funlocked-180"></a><a name="index-g_t_005ffgetwc_005fr-181"></a><a name="index-g_t_005ffgetwc_005funlocked_005fr-182"></a><a name="index-getwc-183"></a><a name="index-getwc_005funlocked-184"></a><a name="index-g_t_005fgetwc_005fr-185"></a><a name="index-g_t_005fgetwc_005funlocked_005fr-186"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
      wint_t fgetwc(FILE *<var>fp</var>);
+     
+     #define _GNU_SOURCE
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
+     wint_t fgetwc_unlocked(FILE *<var>fp</var>);
      
      #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
@@ -45,11 +50,24 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
      
      #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
+     wint_t _fgetwc_unlocked_r(struct _reent *<var>ptr</var>, FILE *<var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
      wint_t getwc(FILE *<var>fp</var>);
+     
+     #define _GNU_SOURCE
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
+     wint_t getwc_unlocked(FILE *<var>fp</var>);
      
      #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
      wint_t _getwc_r(struct _reent *<var>ptr</var>, FILE *<var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
+     wint_t _getwc_unlocked_r(struct _reent *<var>ptr</var>, FILE *<var>fp</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -57,13 +75,22 @@ Use <code>fgetwc</code> to get the next wide character from the file or stream
 identified by <var>fp</var>.  As a side effect, <code>fgetwc</code> advances the file's
 current position indicator.
 
-   <p>The  <code>getwc</code>  function  or macro functions identically to <code>fgetwc</code>.  It
-may be implemented as a macro, and may evaluate its argument more  than
-once. There is no reason ever to use it.
+   <p><code>fgetwc_unlocked</code> is a non-thread-safe version of <code>fgetwc</code>. 
+<code>fgetwc_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fgetwc_unlocked</code> is equivalent to <code>fgetwc</code>.
 
-   <p><code>_fgetwc_r</code> and <code>_getwc_r</code> are simply reentrant versions of
-<code>fgetwc</code> and <code>getwc</code> that are passed the additional reentrant
-structure pointer argument: <var>ptr</var>.
+   <p>The <code>getwc</code> and <code>getwc_unlocked</code> functions or macros functions identically
+to <code>fgetwc</code> and <code>fgetwc_unlocked</code>.  It may be implemented as a macro, and
+may evaluate its argument more than once. There is no reason ever to use it.
+
+   <p><code>_fgetwc_r</code>, <code>_getwc_r</code>, <code>_fgetwc_unlocked_r</code>, and <code>_getwc_unlocked_r</code>
+are simply reentrant versions of the above functions that are passed the
+additional reentrant structure pointer argument: <var>ptr</var>.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -76,7 +103,9 @@ using the <code>ferror</code> and <code>feof</code> functions.
 
    <p><br>
 <strong>Portability</strong><br>
-C99, POSIX.1-2001
+<code>fgetwc</code> and <code>getwc</code> are required by C99 and POSIX.1-2001.
+
+   <p><code>fgetwc_unlocked</code> and <code>getwc_unlocked</code> are GNU extensions.
 
    <p><br>
 

@@ -32,27 +32,31 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Complex.html#Complex">Complex</a>
 <hr>
 </div>
 
-<h3 class="section">2.12 <code>cimag</code>, <code>cimagf</code>&mdash;imaginary part</h3>
+<h3 class="section">2.12 <code>cimag</code>, <code>cimagf</code>, <code>cimagl</code>&mdash;imaginary part</h3>
 
-<p><a name="index-cimag-176"></a><a name="index-cimagf-177"></a><strong>Synopsis</strong>
+<p><a name="index-cimag-177"></a><a name="index-cimagf-178"></a><a name="index-cimagl-179"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;complex.h&gt;
      double cimag(double complex <var>z</var>);
      float cimagf(float complex <var>z</var>);
+     long double cimagl(long double complex <var>z</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 These functions compute the imaginary part of <var>z</var>.
 
    <p><code>cimagf</code> is identical to <code>cimag</code>, except that it performs
-its calculations on <code>floats complex</code>.
+its calculations on <code>float complex</code>.
+
+   <p><code>cimagl</code> is identical to <code>cimag</code>, except that it performs
+its calculations on <code>long double complex</code>.
 
    <p><br>
 <strong>Returns</strong><br>
-The cimag functions return the imaginary part value (as a real).
+The cimag* functions return the imaginary part value (as a real).
 
    <p><br>
 <strong>Portability</strong><br>
-<code>cimag</code> and <code>cimagf</code> are ISO C99
+<code>cimag</code>, <code>cimagf</code> and <code>cimagl</code> are ISO C99
 
    <p><br>
 

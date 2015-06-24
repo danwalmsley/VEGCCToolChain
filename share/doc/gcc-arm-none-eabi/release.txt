@@ -1,7 +1,7 @@
 Release notes for
 *************************************************
 GNU Tools for ARM Embedded Processors 4.9
-                               - Q4 2014
+                               - Q2 2015
 *************************************************
 
 This release includes the following items:
@@ -10,17 +10,17 @@ This release includes the following items:
 * Bare metal EABI pre-built binaries for running on a Mac OS X host
 * Source code package (together with build scripts and instructions to setup
   build environment), composed of:
-  * gcc : ARM/embedded-4_9-branch revision 218278
+  * gcc : ARM/embedded-4_9-branch revision 224288
     http://gcc.gnu.org/svn/gcc/branches/ARM/embedded-4_9-branch/
 
   * binutils : 2.24 with mainline backports
-    git://sourceware.org/git/binutils.git commit 136a940ac535e464d2a7a86880ce1f1a5554c484
+    git://sourceware.org/git/binutils-gdb.git commit 136a940ac535e464d2a7a86880ce1f1a5554c484
 
   * newlib and newlib-nano :
-    git://sourceware.org/git/newlib.git commit a7ec2c7cea246a2c40357816a18f70732c7aee23
+    git://sourceware.org/git/newlib-cygwin.git commit 3c932910e6a36bd70a16f70436f08945fbc833f3
 
   * gdb : 7.8 with mainline backport/without target sim support
-    git://sourceware.org/git/gdb.git commit bf9c7ab447198986c0dc96afc59dfd61d636ff15
+    git://sourceware.org/git/binutils-gdb.git commit c9792faa1e25cb54edf55ffce93582370c99e4ac
 
   * cloog 0.18.0 : 
     ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-0.18.0.tar.gz
@@ -61,27 +61,57 @@ Features:
   - Small multiply support with options:
     . -mcpu=cortex-m1.small-multiply
     . -mcpu=cortex-m0.small-multiply
-    . -mcpu=cortex-m0plus.small-multiply 
+    . -mcpu=cortex-m0plus.small-multiply
+* Dedicated multilib for Cortex-M7
+  - cortex-m7
+  - cortex-m7/fpu/fpv5-d16
+  - cortex-m7/fpu/fpv5-sp-d16
+  - cortex-m7/softfp/fpv5-d16
+  - cortex-m7/softfp/fpv5-sp-d16
 * Define aeabi_memcpy and aeabi_memcpy4 routines in newlib.
+* Define aeabi_memmove, aeabi_memset and aeabi_memclr routines in newlib.
 * Thumb-1 library optimizations.
-* Additional code size optimizations
+* Additional code size optimizations.
 * Add gdb python build (arm-none-eabi-gdb-py).
 * Object file without attribute section can be linked with any
   others.
+* The options -mapcs, -mapcs-frame, -mtpcs-frame and -mtpcs-leaf-frame
+  will be deprecated in gcc 5.0, hence recommend to avoid them.
 
 Tests:
 * Tested on a variety of Cortex-M0/M0+/M3/M4/M7/A9 boards
 * Tested on Qemu
 
+Important bugs fixed in 4.9 update 2 release:
+* Updated some inline assembly code in Newlib to work with old targets
+  https://www.sourceware.org/ml/newlib/2015/msg00386.html
+* Avoid wastage caused by section size promotion
+  https://answers.launchpad.net/gcc-arm-embedded/+question/262160
+* Local register variables don't work correctly with inline asm operands
+  https://bugs.launchpad.net/gcc-arm-embedded/+bug/1411655
+
+Important bugs fixed in 4.9 update 1 release:
+* LD backport to keep zero length section in final axf file
+  https://bugs.launchpad.net/gcc-arm-embedded/+bug/1412384
+* Fix GDB crash caused by discarding the grouped debug sections
+  https://sourceware.org/ml/binutils/2015-01/msg00007.html
+* Add a Thumb1 insn pattern to legalize the instruction that
+  moves pc to low register
+  https://gcc.gnu.org/ml/gcc-patches/2015-01/msg00458.html
+* Update GCC to generate Tag_ABI_HardFP_use per the latest EABI doc
+  https://gcc.gnu.org/ml/gcc-patches/2015-01/msg00991.html
+* Live high register not saved in function prolog with -Os
+  https://gcc.gnu.org/ml/gcc-patches/2015-01/msg00998.html
+* --var-info-path-expression fails for nested structs
+  https://sourceware.org/bugzilla/show_bug.cgi?id=16084
+
 Important bugs fixed in 4.9 major release:
 * LTO ignores -fno-short-enums
   https://bugs.launchpad.net/gcc-arm-embedded/+bug/1315810
   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=61123
-
 * Incorrect folding of bitfield in a union on big endian targets
   https://bugs.launchpad.net/gcc-arm-embedded/+bug/1330388
   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=62103
-
 * newlib-nano printf("%.*s",moo) walks off the end of string
   https://bugs.launchpad.net/gcc-arm-embedded/+bug/1385829
 

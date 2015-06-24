@@ -47,15 +47,20 @@ Up:&nbsp;<a rel="up" accesskey="u" href="SECTIONS.html#SECTIONS">SECTIONS</a>
 
 <h4 class="subsection">3.6.7 Output Section Discarding</h4>
 
-<p><a name="index-discarding-sections-446"></a><a name="index-sections_002c-discarding-447"></a><a name="index-removing-sections-448"></a>The linker will not create output sections with no contents.  This is
-for convenience when referring to input sections that may or may not
-be present in any of the input files.  For example:
+<p><a name="index-discarding-sections-446"></a><a name="index-sections_002c-discarding-447"></a><a name="index-removing-sections-448"></a>The linker will not normally create output sections with no contents. 
+This is for convenience when referring to input sections that may or
+may not be present in any of the input files.  For example:
 <pre class="smallexample">     .foo : { *(.foo) }
 </pre>
    <p class="noindent">will only create a &lsquo;<samp><span class="samp">.foo</span></samp>&rsquo; section in the output file if there is a
 &lsquo;<samp><span class="samp">.foo</span></samp>&rsquo; section in at least one input file, and if the input
 sections are not all empty.  Other link script directives that allocate
-space in an output section will also create the output section.
+space in an output section will also create the output section.  So
+too will assignments to dot even if the assignment does not create
+space, except for &lsquo;<samp><span class="samp">. = 0</span></samp>&rsquo;, &lsquo;<samp><span class="samp">. = . + 0</span></samp>&rsquo;, &lsquo;<samp><span class="samp">. = sym</span></samp>&rsquo;,
+&lsquo;<samp><span class="samp">. = . + sym</span></samp>&rsquo; and &lsquo;<samp><span class="samp">. = ALIGN (. != 0, expr, 1)</span></samp>&rsquo; when
+&lsquo;<samp><span class="samp">sym</span></samp>&rsquo; is an absolute symbol of value 0 defined in the script. 
+This allows you to force output of an empty section with &lsquo;<samp><span class="samp">. = .</span></samp>&rsquo;.
 
    <p>The linker will ignore address assignments (see <a href="Output-Section-Address.html#Output-Section-Address">Output Section Address</a>)
 on discarded output sections, except when the linker script defines

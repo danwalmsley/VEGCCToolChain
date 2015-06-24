@@ -32,15 +32,24 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.14 <code>fgetws</code>&mdash;get wide character string from a file or stream</h3>
+<h3 class="section">4.14 <code>fgetws</code>, <code>fgetws_unlocked</code>&mdash;get wide character string from a file or stream</h3>
 
-<p><a name="index-fgetws-174"></a><a name="index-g_t_005ffgetws_005fr-175"></a><strong>Synopsis</strong>
+<p><a name="index-fgetws-187"></a><a name="index-fgetws_005funlocked-188"></a><a name="index-g_t_005ffgetws_005fr-189"></a><a name="index-g_t_005ffgetws_005funlocked_005fr-190"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      wchar_t *fgetws(wchar_t *__restrict <var>ws</var>, int <var>n</var>,
          FILE *__restrict <var>fp</var>);
      
+     #define _GNU_SOURCE
+     #include &lt;wchar.h&gt;
+     wchar_t *fgetws_unlocked(wchar_t *__restrict <var>ws</var>, int <var>n</var>,
+         FILE *__restrict <var>fp</var>);
+     
      #include &lt;wchar.h&gt;
      wchar_t *_fgetws_r(struct _reent *<var>ptr</var>, wchar_t *<var>ws</var>,
+         int <var>n</var>, FILE *<var>fp</var>);
+     
+     #include &lt;wchar.h&gt;
+     wchar_t *_fgetws_unlocked_r(struct _reent *<var>ptr</var>, wchar_t *<var>ws</var>,
          int <var>n</var>, FILE *<var>fp</var>);
      
 </pre>
@@ -49,8 +58,17 @@ Reads at most <var>n-1</var> wide characters from <var>fp</var> until a newline
 is found. The wide characters including to the newline are stored
 in <var>ws</var>. The buffer is terminated with a 0.
 
-   <p>The <code>_fgetws_r</code> function is simply the reentrant version of
-<code>fgetws</code> and is passed an additional reentrancy structure
+   <p><code>fgetws_unlocked</code> is a non-thread-safe version of <code>fgetws</code>. 
+<code>fgetws_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fgetws_unlocked</code> is equivalent to <code>fgetws</code>.
+
+   <p>The <code>_fgetws_r</code> and <code>_fgetws_unlocked_r</code> functions are simply reentrant
+version of the above and are passed an additional reentrancy structure
 pointer: <var>ptr</var>.
 
    <p><br>
@@ -62,7 +80,9 @@ no data are read, NULL is returned instead.
 
    <p><br>
 <strong>Portability</strong><br>
-C99, POSIX.1-2001
+<code>fgetws</code> is required by C99 and POSIX.1-2001.
+
+   <p><code>fgetws_unlocked</code> is a GNU extension.
 
    <p><br>
 

@@ -70,9 +70,9 @@ arithmetic terms are allowed in test expressions:
 <dl><dt><code>(match_dup </code><var>n</var><code>)</code><dd>This refers to the address of operand <var>n</var> of the current insn, which
 must be a <code>label_ref</code>.
 
-     <p><a name="index-g_t_0040code_007bpc_007d-and-attributes-3731"></a><br><dt><code>(pc)</code><dd>This refers to the address of the <em>current</em> insn.  It might have
-been more consistent with other usage to make this the address of the
-<em>next</em> insn but this would be confusing because the length of the
+     <p><a name="index-g_t_0040code_007bpc_007d-and-attributes-3731"></a><br><dt><code>(pc)</code><dd>For non-branch instructions and backward branch instructions, this refers
+to the address of the current insn.  But for forward branch instructions,
+this refers to the address of the next insn, because the length of the
 current insn is to be computed. 
 </dl>
 

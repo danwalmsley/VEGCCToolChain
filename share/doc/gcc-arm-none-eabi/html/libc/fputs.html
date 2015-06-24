@@ -32,22 +32,38 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.21 <code>fputs</code>&mdash;write a character string in a file or stream</h3>
+<h3 class="section">4.21 <code>fputs</code>, <code>fputs_unlocked</code>&mdash;write a character string in a file or stream</h3>
 
-<p><a name="index-fputs-186"></a><a name="index-g_t_005ffputs_005fr-187"></a><strong>Synopsis</strong>
+<p><a name="index-fputs-204"></a><a name="index-fputs_005funlocked-205"></a><a name="index-g_t_005ffputs_005fr-206"></a><a name="index-g_t_005ffputs_005funlocked_005fr-207"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fputs(const char *restrict <var>s</var>, FILE *restrict <var>fp</var>);
      
+     #define _GNU_SOURCE
+     #include &lt;stdio.h&gt;
+     int fputs_unlocked(const char *restrict <var>s</var>, FILE *restrict <var>fp</var>);
+     
      #include &lt;stdio.h&gt;
      int _fputs_r(struct _reent *<var>ptr</var>, const char *restrict <var>s</var>, FILE *restrict <var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
+     int _fputs_unlocked_r(struct _reent *<var>ptr</var>, const char *restrict <var>s</var>, FILE *restrict <var>fp</var>);
      
 </pre>
    <p><strong>Description</strong><br>
 <code>fputs</code> writes the string at <var>s</var> (but without the trailing null)
 to the file or stream identified by <var>fp</var>.
 
-   <p><code>_fputs_r</code> is simply the reentrant version of <code>fputs</code> that takes
-an additional reentrant struct pointer argument: <var>ptr</var>.
+   <p><code>fputs_unlocked</code> is a non-thread-safe version of <code>fputs</code>. 
+<code>fputs_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fputs_unlocked</code> is equivalent to <code>fputs</code>.
+
+   <p><code>_fputs_r</code> and <code>_fputs_unlocked_r</code> are simply reentrant versions of the
+above that take an additional reentrant struct pointer argument: <var>ptr</var>.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -57,6 +73,8 @@ If successful, the result is <code>0</code>; otherwise, the result is <code>EOF<
 <strong>Portability</strong><br>
 ANSI C requires <code>fputs</code>, but does not specify that the result on
 success must be <code>0</code>; any non-negative value is permitted.
+
+   <p><code>fputs_unlocked</code> is a GNU extension.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.

@@ -30,11 +30,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.1 <code>clearerr</code>&mdash;clear file or stream error indicator</h3>
+<h3 class="section">4.1 <code>clearerr</code>, <code>clearerr_unlocked</code>&mdash;clear file or stream error indicator</h3>
 
-<p><a name="index-clearerr-145"></a><strong>Synopsis</strong>
+<p><a name="index-clearerr-145"></a><a name="index-clearerr_005funlocked-146"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      void clearerr(FILE *<var>fp</var>);
+     
+     #define _BSD_SOURCE
+     #include &lt;stdio.h&gt;
+     void clearerr_unlocked(FILE *<var>fp</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -48,6 +52,15 @@ file.
 
    <p>See <code>ferror</code> and <code>feof</code> to query the two indicators.
 
+   <p><code>clearerr_unlocked</code> is a non-thread-safe version of <code>clearerr</code>. 
+<code>clearerr_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>clearerr_unlocked</code> is equivalent to <code>clearerr</code>.
+
    <p><br>
 <strong>Returns</strong><br>
 <code>clearerr</code> does not return a result.
@@ -55,6 +68,8 @@ file.
    <p><br>
 <strong>Portability</strong><br>
 ANSI C requires <code>clearerr</code>.
+
+   <p><code>clearerr_unlocked</code> is a BSD extension also provided by GNU libc.
 
    <p>No supporting OS subroutines are required.
 

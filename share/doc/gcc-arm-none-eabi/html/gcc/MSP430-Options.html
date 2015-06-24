@@ -54,15 +54,15 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 
 <h4 class="subsection">3.17.31 MSP430 Options</h4>
 
-<p><a name="index-MSP430-Options-2042"></a>
+<p><a name="index-MSP430-Options-2045"></a>
 These options are defined for the MSP430:
 
      <dl>
-<dt><code>-masm-hex</code><dd><a name="index-masm_002dhex-2043"></a>Force assembly output to always use hex constants.  Normally such
+<dt><code>-masm-hex</code><dd><a name="index-masm_002dhex-2046"></a>Force assembly output to always use hex constants.  Normally such
 constants are signed decimals, but this option is available for
 testsuite and/or aesthetic purposes.
 
-     <br><dt><code>-mmcu=</code><dd><a name="index-mmcu_003d-2044"></a>Select the MCU to target.  This is used to create a C preprocessor
+     <br><dt><code>-mmcu=</code><dd><a name="index-mmcu_003d-2047"></a>Select the MCU to target.  This is used to create a C preprocessor
 symbol based upon the MCU name, converted to upper case and pre- and
 post- fixed with <code>__</code>.  This in turn will be used by the
 <code>msp430.h</code> header file to select an MCU specific supplimentary
@@ -82,22 +82,22 @@ cause the linker to search for a script called <samp><span class="file">xxx.ld</
 
      <p>This option is also passed on to the assembler.
 
-     <br><dt><code>-mcpu=</code><dd><a name="index-g_t_002dmcpu_003d-2045"></a>Specifies the ISA to use.  Accepted values are <code>msp430</code>,
+     <br><dt><code>-mcpu=</code><dd><a name="index-g_t_002dmcpu_003d-2048"></a>Specifies the ISA to use.  Accepted values are <code>msp430</code>,
 <code>msp430x</code> and <code>msp430xv2</code>.  This option is deprecated.  The
 <samp><span class="option">-mmcu=</span></samp> option should be used to select the ISA.
 
-     <br><dt><code>-msim</code><dd><a name="index-msim-2046"></a>Link to the simulator runtime libraries and linker script.  Overrides
+     <br><dt><code>-msim</code><dd><a name="index-msim-2049"></a>Link to the simulator runtime libraries and linker script.  Overrides
 any scripts that would be selected by the <samp><span class="option">-mmcu=</span></samp> option.
 
-     <br><dt><code>-mlarge</code><dd><a name="index-mlarge-2047"></a>Use large-model addressing (20-bit pointers, 32-bit <code>size_t</code>).
+     <br><dt><code>-mlarge</code><dd><a name="index-mlarge-2050"></a>Use large-model addressing (20-bit pointers, 32-bit <code>size_t</code>).
 
-     <br><dt><code>-msmall</code><dd><a name="index-msmall-2048"></a>Use small-model addressing (16-bit pointers, 16-bit <code>size_t</code>).
+     <br><dt><code>-msmall</code><dd><a name="index-msmall-2051"></a>Use small-model addressing (16-bit pointers, 16-bit <code>size_t</code>).
 
-     <br><dt><code>-mrelax</code><dd><a name="index-mrelax-2049"></a>This option is passed to the assembler and linker, and allows the
+     <br><dt><code>-mrelax</code><dd><a name="index-mrelax-2052"></a>This option is passed to the assembler and linker, and allows the
 linker to perform certain optimizations that cannot be done until
 the final link.
 
-     <br><dt><code>mhwmult=</code><dd><a name="index-mhwmult_003d-2050"></a>Describes the type of hardware multiply supported by the target. 
+     <br><dt><code>mhwmult=</code><dd><a name="index-mhwmult_003d-2053"></a>Describes the type of hardware multiply supported by the target. 
 Accepted values are <code>none</code> for no hardware multiply, <code>16bit</code>
 for the original 16-bit-only multiply supported by early MCUs. 
 <code>32bit</code> for the 16/32-bit multiply supported by later MCUs and
@@ -117,7 +117,7 @@ inline.  This makes for bigger, but faster code.
 restore the previous interrupt state when they finish.  This makes
 them safe to use inside interrupt handlers as well as in normal code.
 
-     <br><dt><code>-minrt</code><dd><a name="index-minrt-2051"></a>Enable the use of a minimum runtime environment - no static
+     <br><dt><code>-minrt</code><dd><a name="index-minrt-2054"></a>Enable the use of a minimum runtime environment - no static
 initializers or constructors.  This is intended for memory-constrained
 devices.  The compiler will include special symbols in some objects
 that tell the linker and runtime which code fragments are required.

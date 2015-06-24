@@ -31,7 +31,7 @@
 #define _GLIBCXX_CXX_CONFIG_H 1
 
 // The current version of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20141119
+#define __GLIBCXX__ 20150529
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -1273,7 +1273,7 @@ namespace std
 
 /* Define if C99 functions or macros in <math.h> should be imported in
    <tr1/cmath> in namespace std::tr1. */
-/* #undef _GLIBCXX_USE_C99_MATH_TR1 */
+#define _GLIBCXX_USE_C99_MATH_TR1 1
 
 /* Define if C99 types in <stdint.h> should be imported in <tr1/cstdint> in
    namespace std::tr1. */

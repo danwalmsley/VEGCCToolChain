@@ -32,15 +32,24 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.24 <code>fread</code>&mdash;read array elements from a file</h3>
+<h3 class="section">4.24 <code>fread</code>. <code>fread_unlocked</code>&mdash;read array elements from a file</h3>
 
-<p><a name="index-fread-194"></a><a name="index-g_t_005ffread_005fr-195"></a><strong>Synopsis</strong>
+<p><a name="index-fread-220"></a><a name="index-fread_005funlocked-221"></a><a name="index-g_t_005ffread_005fr-222"></a><a name="index-g_t_005ffread_005funlocked_005fr-223"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      size_t fread(void *restrict <var>buf</var>, size_t <var>size</var>, size_t <var>count</var>,
          FILE *restrict <var>fp</var>);
      
+     #define _BSD_SOURCE
+     #include &lt;stdio.h&gt;
+     size_t fread_unlocked(void *restrict <var>buf</var>, size_t <var>size</var>, size_t <var>count</var>,
+         FILE *restrict <var>fp</var>);
+     
      #include &lt;stdio.h&gt;
      size_t _fread_r(struct _reent *<var>ptr</var>, void *restrict <var>buf</var>,
+         size_t <var>size</var>, size_t <var>count</var>, FILE *restrict <var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
+     size_t _fread_unlocked_r(struct _reent *<var>ptr</var>, void *restrict <var>buf</var>,
          size_t <var>size</var>, size_t <var>count</var>, FILE *restrict <var>fp</var>);
      
 </pre>
@@ -53,8 +62,17 @@ starting at <var>buf</var>.   <code>fread</code> may copy fewer elements than
    <p><code>fread</code> also advances the file position indicator (if any) for
 <var>fp</var> by the number of <em>characters</em> actually read.
 
-   <p><code>_fread_r</code> is simply the reentrant version of <code>fread</code> that
-takes an additional reentrant structure pointer argument: <var>ptr</var>.
+   <p><code>fread_unlocked</code> is a non-thread-safe version of <code>fread</code>. 
+<code>fread_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fread_unlocked</code> is equivalent to <code>fread</code>.
+
+   <p><code>_fread_r</code> and <code>_fread_unlocked_r</code> are simply reentrant versions of the
+above that take an additional reentrant structure pointer argument: <var>ptr</var>.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -64,6 +82,8 @@ reading.
    <p><br>
 <strong>Portability</strong><br>
 ANSI C requires <code>fread</code>.
+
+   <p><code>fread_unlocked</code> is a BSD extension also provided by GNU libc.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.

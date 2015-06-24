@@ -54,7 +54,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Exten
 
 <h3 class="section">6.37 Specifying Attributes of Types</h3>
 
-<p><a name="index-attribute-of-types-3070"></a><a name="index-type-attributes-3071"></a>
+<p><a name="index-attribute-of-types-3073"></a><a name="index-type-attributes-3074"></a>
 The keyword <code>__attribute__</code> allows you to specify special
 attributes of <code>struct</code> and <code>union</code> types when you define
 such types.  This keyword is followed by an attribute specification
@@ -83,7 +83,7 @@ former syntax is preferred.
 attributes.
 
      
-<a name="index-g_t_0040code_007baligned_007d-attribute-3072"></a>
+<a name="index-g_t_0040code_007baligned_007d-attribute-3075"></a>
 <dl><dt><code>aligned (</code><var>alignment</var><code>)</code><dd>This attribute specifies a minimum alignment (in bytes) for variables
 of the specified type.  For example, the declarations:
 
@@ -162,7 +162,7 @@ of the structure or union is placed to minimize the memory required.  When
 attached to an <code>enum</code> definition, it indicates that the smallest
 integral type should be used.
 
-     <p><a name="index-fshort_002denums-3073"></a>Specifying this attribute for <code>struct</code> and <code>union</code> types is
+     <p><a name="index-fshort_002denums-3076"></a>Specifying this attribute for <code>struct</code> and <code>union</code> types is
 equivalent to specifying the <code>packed</code> attribute on each of the
 structure or union members.  Specifying the <samp><span class="option">-fshort-enums</span></samp>
 flag on the line is equivalent to specifying the <code>packed</code>
@@ -368,7 +368,7 @@ Specifically, the <code>based</code>, <code>tiny</code>, <code>near</code>, and
 <code>ms_struct</code> and <code>gcc_struct</code>.
 
      <dl>
-<dt><code>ms_struct</code><dt><code>gcc_struct</code><dd><a name="index-g_t_0040code_007bms_005fstruct_007d-3074"></a><a name="index-g_t_0040code_007bgcc_005fstruct_007d-3075"></a>
+<dt><code>ms_struct</code><dt><code>gcc_struct</code><dd><a name="index-g_t_0040code_007bms_005fstruct_007d-3077"></a><a name="index-g_t_0040code_007bgcc_005fstruct_007d-3078"></a>
 If <code>packed</code> is used on a structure, or if bit-fields are used
 it may be that the Microsoft ABI packs them differently
 than GCC normally packs them.  Particularly when moving packed

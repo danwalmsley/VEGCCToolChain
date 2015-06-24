@@ -32,12 +32,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.22 <code>fputwc</code>, <code>putwc</code>&mdash;write a wide character on a stream or file</h3>
+<h3 class="section">4.22 <code>fputwc</code>, <code>putwc</code>, <code>fputwc_unlocked</code>, <code>putwc_unlocked</code>&mdash;write a wide character on a stream or file</h3>
 
-<p><a name="index-fputwc-188"></a><a name="index-g_t_005ffputwc_005fr-189"></a><a name="index-putwc-190"></a><a name="index-g_t_005fputwc_005fr-191"></a><strong>Synopsis</strong>
+<p><a name="index-fputwc-208"></a><a name="index-fputwc_005funlocked-209"></a><a name="index-g_t_005ffputwc_005fr-210"></a><a name="index-g_t_005ffputwc_005funlocked_005fr-211"></a><a name="index-putwc-212"></a><a name="index-putwc_005funlocked-213"></a><a name="index-g_t_005fputwc_005fr-214"></a><a name="index-g_t_005fputwc_005funlocked_005fr-215"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
      wint_t fputwc(wchar_t <var>wc</var>, FILE *<var>fp</var>);
+     
+     #define _GNU_SOURCE
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
+     wint_t fputwc_unlocked(wchar_t <var>wc</var>, FILE *<var>fp</var>);
      
      #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
@@ -45,11 +50,24 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
      
      #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
+     wint_t _fputwc_unlocked_r(struct _reent *<var>ptr</var>, wchar_t <var>wc</var>, FILE *<var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
      wint_t putwc(wchar_t <var>wc</var>, FILE *<var>fp</var>);
+     
+     #define _GNU_SOURCE
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
+     wint_t putwc_unlocked(wchar_t <var>wc</var>, FILE *<var>fp</var>);
      
      #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
      wint_t _putwc_r(struct _reent *<var>ptr</var>, wchar_t <var>wc</var>, FILE *<var>fp</var>);
+     
+     #include &lt;stdio.h&gt;
+     #include &lt;wchar.h&gt;
+     wint_t _putwc_unlocked_r(struct _reent *<var>ptr</var>, wchar_t <var>wc</var>, FILE *<var>fp</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -62,13 +80,22 @@ file or stream.  Otherwise, the new wide character is written at the
 current value of the position indicator, and the position indicator
 oadvances by one.
 
-   <p>The <code>putwc</code> function or macro functions identically to <code>fputwc</code>.  It
-may be implemented as a macro, and may evaluate its argument more than
-once. There is no reason ever to use it.
+   <p><code>fputwc_unlocked</code> is a non-thread-safe version of <code>fputwc</code>. 
+<code>fputwc_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fputwc_unlocked</code> is equivalent to <code>fputwc</code>.
 
-   <p>The <code>_fputwc_r</code> and <code>_putwc_r</code> functions are simply reentrant versions
-of <code>fputwc</code> and <code>putwc</code> that take an additional reentrant structure
-argument: <var>ptr</var>.
+   <p>The <code>putwc</code> and <code>putwc_unlocked</code> functions or macros function identically
+to <code>fputwc</code> and <code>fputwc_unlocked</code>.  They may be implemented as a macro, and
+may evaluate its argument more than once. There is no reason ever to use them.
+
+   <p>The <code>_fputwc_r</code>, <code>_putwc_r</code>, <code>_fputwc_unlocked_r</code>, and
+<code>_putwc_unlocked_r</code> functions are simply reentrant versions of the above
+that take an additional reentrant structure argument: <var>ptr</var>.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -78,7 +105,9 @@ If an error intervenes, the result is <code>EOF</code>.  You can use
 
    <p><br>
 <strong>Portability</strong><br>
-C99, POSIX.1-2001
+<code>fputwc</code> and <code>putwc</code> are required by C99 and POSIX.1-2001.
+
+   <p><code>fputwc_unlocked</code> and <code>putwc_unlocked</code> are GNU extensions.
 
    <p><br>
 

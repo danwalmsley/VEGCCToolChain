@@ -32,13 +32,21 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.40 <code>getwchar</code>&mdash;read a wide character from standard input</h3>
+<h3 class="section">4.41 <code>getwchar</code>, <code>getwchar_unlocked</code>&mdash;read a wide character from standard input</h3>
 
-<p><a name="index-getwchar-228"></a><a name="index-g_t_005fgetwchar_005fr-229"></a><strong>Synopsis</strong>
+<p><a name="index-getwchar-259"></a><a name="index-getwchar_005funlocked-260"></a><a name="index-g_t_005fgetwchar_005fr-261"></a><a name="index-g_t_005fgetwchar_005funlocked_005fr-262"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      wint_t getwchar(void);
      
+     #define _GNU_SOURCE
+     #include &lt;wchar.h&gt;
+     wint_t getwchar_unlocked(void);
+     
+     #include &lt;wchar.h&gt;
      wint_t _getwchar_r(struct _reent *<var>reent</var>);
+     
+     #include &lt;wchar.h&gt;
+     wint_t _getwchar_unlocked_r(struct _reent *<var>reent</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -47,8 +55,18 @@ the <code>getchar</code> function.  You can use <code>getwchar</code> to get the
 wide character from the standard input stream.  As a side effect,
 <code>getwchar</code> advances the standard input's current position indicator.
 
-   <p>The alternate function <code>_getwchar_r</code> is a reentrant version.  The
-extra argument <var>reent</var> is a pointer to a reentrancy structure.
+   <p><code>getwchar_unlocked</code> is a non-thread-safe version of <code>getwchar</code>. 
+<code>getwchar_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>getwchar_unlocked</code> is equivalent to <code>getwchar</code>.
+
+   <p>The alternate functions <code>_getwchar_r</code> and <code>_getwchar_unlocked_r</code> are
+reentrant versions of the above.  The extra argument <var>reent</var> is a pointer to
+a reentrancy structure.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -61,7 +79,9 @@ using `<code>ferror(stdin)</code>' and `<code>feof(stdin)</code>'.
 
    <p><br>
 <strong>Portability</strong><br>
-C99
+<code>getwchar</code> is required by C99.
+
+   <p><code>getwchar_unlocked</code> is a GNU extension.
 
    <p><br>
 

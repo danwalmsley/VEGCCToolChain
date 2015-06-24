@@ -9,6 +9,7 @@ extern "C" {
 #include "_ansi.h"
 #include <sys/features.h>
 #include <sys/types.h>
+#include <sys/_timespec.h>
 
 /* #ifndef __STRICT_ANSI__*/
 
@@ -124,15 +125,6 @@ struct sigaction {
  */
 #define	SS_ONSTACK	0x1
 #define	SS_DISABLE	0x2
-
-/*
- * Structure used in sigaltstack call.
- */
-typedef struct sigaltstack {
-  void     *ss_sp;    /* Stack base or pointer.  */
-  int       ss_flags; /* Flags.  */
-  size_t    ss_size;  /* Stack size.  */
-} stack_t;
 #endif
 
 #elif defined(__CYGWIN__)
@@ -149,6 +141,15 @@ struct sigaction
 	int sa_flags;
 };
 #endif /* defined(__rtems__) */
+
+/*
+ * Structure used in sigaltstack call.
+ */
+typedef struct sigaltstack {
+  void     *ss_sp;    /* Stack base or pointer.  */
+  int       ss_flags; /* Flags.  */
+  size_t    ss_size;  /* Stack size.  */
+} stack_t;
 
 #define SIG_SETMASK 0	/* set mask with sigprocmask() */
 #define SIG_BLOCK 1	/* set of signals to block */
@@ -169,7 +170,6 @@ int _EXFUN(sigprocmask, (int how, const sigset_t *set, sigset_t *oset));
 int _EXFUN(pthread_sigmask, (int how, const sigset_t *set, sigset_t *oset));
 #endif
 
-/* protos for functions found in winsup sources for CYGWIN */
 #if defined(__CYGWIN__) || defined(__rtems__)
 #undef sigaddset
 #undef sigdelset
@@ -179,8 +179,12 @@ int _EXFUN(pthread_sigmask, (int how, const sigset_t *set, sigset_t *oset));
 
 #ifdef _COMPILING_NEWLIB
 int _EXFUN(_kill, (pid_t, int));
-#endif
+#endif /* _COMPILING_NEWLIB */
+#endif /* __CYGWIN__ || __rtems__ */
+#if defined(__CYGWIN__) || defined(__rtems__) || defined(__SPU__)
 int _EXFUN(kill, (pid_t, int));
+#endif /* __CYGWIN__ || __rtems__ || __SPU__ */
+#if defined(__CYGWIN__) || defined(__rtems__)
 int _EXFUN(killpg, (pid_t, int));
 int _EXFUN(sigaction, (int, const struct sigaction *, struct sigaction *));
 int _EXFUN(sigaddset, (sigset_t *, const int));

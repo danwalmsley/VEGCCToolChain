@@ -32,14 +32,22 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 <hr>
 </div>
 
-<h3 class="section">4.10 <code>fgetc</code>&mdash;get a character from a file or stream</h3>
+<h3 class="section">4.10 <code>fgetc</code>, <code>fgetc_unlocked</code>&mdash;get a character from a file or stream</h3>
 
-<p><a name="index-fgetc-164"></a><a name="index-g_t_005ffgetc_005fr-165"></a><strong>Synopsis</strong>
+<p><a name="index-fgetc-169"></a><a name="index-fgetc_005funlocked-170"></a><a name="index-g_t_005ffgetc_005fr-171"></a><a name="index-g_t_005ffgetc_005funlocked_005fr-172"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fgetc(FILE *<var>fp</var>);
      
+     #define _BSD_SOURCE
+     #include &lt;stdio.h&gt;
+     int fgetc_unlocked(FILE *<var>fp</var>);
+     
      #include &lt;stdio.h&gt;
      int _fgetc_r(struct _reent *<var>ptr</var>, FILE *<var>fp</var>);
+     
+     #define _BSD_SOURCE
+     #include &lt;stdio.h&gt;
+     int _fgetc_unlocked_r(struct _reent *<var>ptr</var>, FILE *<var>fp</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -49,9 +57,18 @@ current position indicator.
 
    <p>For a macro version of this function, see <code>getc</code>.
 
-   <p>The function <code>_fgetc_r</code> is simply a reentrant version of
-<code>fgetc</code> that is passed the additional reentrant structure
-pointer argument: <var>ptr</var>.
+   <p><code>fgetc_unlocked</code> is a non-thread-safe version of <code>fgetc</code>. 
+<code>fgetc_unlocked</code> may only safely be used within a scope
+protected by flockfile() (or ftrylockfile()) and funlockfile().  This
+function may safely be used in a multi-threaded program if and only
+if they are called while the invoking thread owns the (FILE *)
+object, as is the case after a successful call to the flockfile() or
+ftrylockfile() functions.  If threads are disabled, then
+<code>fgetc_unlocked</code> is equivalent to <code>fgetc</code>.
+
+   <p>The functions <code>_fgetc_r</code> and <code>_fgetc_unlocked_r</code> are simply reentrant
+versions that are passed the additional reentrant structure pointer
+argument: <var>ptr</var>.
 
    <p><br>
 <strong>Returns</strong><br>
@@ -65,6 +82,8 @@ using the <code>ferror</code> and <code>feof</code> functions.
    <p><br>
 <strong>Portability</strong><br>
 ANSI C requires <code>fgetc</code>.
+
+   <p><code>fgetc_unlocked</code> is a BSD extension also provided by GNU libc.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
