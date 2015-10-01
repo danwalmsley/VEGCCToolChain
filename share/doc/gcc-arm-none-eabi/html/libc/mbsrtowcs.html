@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.27 <code>mbsrtowcs</code>, <code>mbsnrtowcs</code>&mdash;convert a character string to a wide-character string</h3>
+<h3 class="section">2.28 <code>mbsrtowcs</code>, <code>mbsnrtowcs</code>&mdash;convert a character string to a wide-character string</h3>
 
-<p><a name="index-mbsrtowcs-58"></a><a name="index-g_t_005fmbsrtowcs_005fr-59"></a><a name="index-mbsnrtowcs-60"></a><a name="index-g_t_005fmbsnrtowcs_005fr-61"></a><strong>Synopsis</strong>
+<p><a name="index-mbsrtowcs-59"></a><a name="index-g_t_005fmbsrtowcs_005fr-60"></a><a name="index-mbsnrtowcs-61"></a><a name="index-g_t_005fmbsnrtowcs_005fr-62"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      size_t mbsrtowcs(wchar_t *__restrict <var>dst</var>,
          const char **__restrict <var>src</var>,
@@ -77,18 +77,24 @@ is initialized to the initial conversion state at program startup.
 conversion stops after reading at most <var>nms</var> bytes from the buffer pointed
 to by <var>src</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The <code>mbsrtowcs</code> and <code>mbsnrtowcs</code> functions return the number of wide
 characters stored in the array pointed to by <var>dst</var> if successful, otherwise
 it returns (size_t)-1.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>mbsrtowcs</code> is defined by the C99 standard. 
 <code>mbsnrtowcs</code> is defined by the POSIX.1-2008 standard.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -1,7 +1,7 @@
 Release notes for
 *************************************************
 GNU Tools for ARM Embedded Processors 4.9
-                               - Q2 2015
+                               - Q3 2015
 *************************************************
 
 This release includes the following items:
@@ -10,14 +10,14 @@ This release includes the following items:
 * Bare metal EABI pre-built binaries for running on a Mac OS X host
 * Source code package (together with build scripts and instructions to setup
   build environment), composed of:
-  * gcc : ARM/embedded-4_9-branch revision 224288
+  * gcc : ARM/embedded-4_9-branch revision 227977
     http://gcc.gnu.org/svn/gcc/branches/ARM/embedded-4_9-branch/
 
   * binutils : 2.24 with mainline backports
     git://sourceware.org/git/binutils-gdb.git commit 136a940ac535e464d2a7a86880ce1f1a5554c484
 
   * newlib and newlib-nano :
-    git://sourceware.org/git/newlib-cygwin.git commit 3c932910e6a36bd70a16f70436f08945fbc833f3
+    git://sourceware.org/git/newlib-cygwin.git commit 36da3f961ce7f1b209842b8d883bf1c018466fe8
 
   * gdb : 7.8 with mainline backport/without target sim support
     git://sourceware.org/git/binutils-gdb.git commit c9792faa1e25cb54edf55ffce93582370c99e4ac
@@ -81,6 +81,14 @@ Features:
 Tests:
 * Tested on a variety of Cortex-M0/M0+/M3/M4/M7/A9 boards
 * Tested on Qemu
+
+Important bugs fixed in 4.9 update 3 release:
+* Newlib format specifier mismatch fix.
+  https://answers.launchpad.net/gcc-arm-embedded/+question/269083
+* Newlib macro mismatch fix.
+  https://answers.launchpad.net/gcc-arm-embedded/+question/269177
+* Assembler encoding bug fix.
+  https://sourceware.org/ml/binutils/2015-08/msg00028.html
 
 Important bugs fixed in 4.9 update 2 release:
 * Updated some inline assembly code in Newlib to work with old targets

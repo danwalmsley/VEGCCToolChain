@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.15 <code>fileno</code>, <code>fileno_unlocked</code>&mdash;return file descriptor associated with stream</h3>
 
-<p><a name="index-fileno-191"></a><a name="index-fileno_005funlocked-192"></a><strong>Synopsis</strong>
+<p><a name="index-fileno-194"></a><a name="index-fileno_005funlocked-195"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fileno(FILE *<var>fp</var>);
      
@@ -55,12 +55,16 @@ object, as is the case after a successful call to the flockfile() or
 ftrylockfile() functions.  If threads are disabled, then
 <code>fileno_unlocked</code> is equivalent to <code>fileno</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fileno</code> returns a non-negative integer when successful. 
 If <var>fp</var> is not an open stream, <code>fileno</code> returns -1.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fileno</code> is not part of ANSI C. 
 POSIX requires <code>fileno</code>.
@@ -69,7 +73,9 @@ POSIX requires <code>fileno</code>.
 
    <p>Supporting OS subroutines required: none.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

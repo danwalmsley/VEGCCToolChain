@@ -35,9 +35,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.36 <code>getchar_unlocked</code>&mdash;non-thread-safe version of getchar (macro)</h3>
 
-<p><a name="index-getchar_005funlocked-252"></a><a name="index-g_t_005fgetchar_005funlocked_005fr-253"></a><strong>Synopsis</strong>
+<p><a name="index-getchar_005funlocked-255"></a><a name="index-g_t_005fgetchar_005funlocked_005fr-256"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
-     int getchar_unlocked();
+     int getchar_unlocked(void);
      
      #include &lt;stdio.h&gt;
      int _getchar_unlocked_r(struct _reent *<var>ptr</var>);
@@ -57,18 +57,24 @@ then <code>getchar_unlocked</code> is equivalent to <code>getchar</code>.
 <code>getchar_unlocked</code> which passes an addtional reentrancy structure pointer
 argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 See <code>getchar</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 POSIX 1003.1 requires <code>getchar_unlocked</code>.  <code>getchar_unlocked</code> may
 be implemented as a macro.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
-<code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>. 
-<br>
+<code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

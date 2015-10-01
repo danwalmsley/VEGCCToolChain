@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.13 <code>fgetwc</code>, <code>getwc</code>, <code>fgetwc_unlocked</code>, <code>getwc_unlocked</code>&mdash;get a wide character from a file or stream</h3>
 
-<p><a name="index-fgetwc-179"></a><a name="index-fgetwc_005funlocked-180"></a><a name="index-g_t_005ffgetwc_005fr-181"></a><a name="index-g_t_005ffgetwc_005funlocked_005fr-182"></a><a name="index-getwc-183"></a><a name="index-getwc_005funlocked-184"></a><a name="index-g_t_005fgetwc_005fr-185"></a><a name="index-g_t_005fgetwc_005funlocked_005fr-186"></a><strong>Synopsis</strong>
+<p><a name="index-fgetwc-182"></a><a name="index-fgetwc_005funlocked-183"></a><a name="index-g_t_005ffgetwc_005fr-184"></a><a name="index-g_t_005ffgetwc_005funlocked_005fr-185"></a><a name="index-getwc-186"></a><a name="index-getwc_005funlocked-187"></a><a name="index-g_t_005fgetwc_005fr-188"></a><a name="index-g_t_005fgetwc_005funlocked_005fr-189"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      #include &lt;wchar.h&gt;
      wint_t fgetwc(FILE *<var>fp</var>);
@@ -92,22 +92,28 @@ may evaluate its argument more than once. There is no reason ever to use it.
 are simply reentrant versions of the above functions that are passed the
 additional reentrant structure pointer argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
-The next wide character cast to <code>wint_t</code>), unless there is no more data,
+The next wide character cast to <code>wint_t</code>, unless there is no more data,
 or the host system reports a read error; in either of these situations,
 <code>fgetwc</code> and <code>getwc</code> return <code>WEOF</code>.
 
    <p>You can distinguish the two situations that cause an <code>EOF</code> result by
 using the <code>ferror</code> and <code>feof</code> functions.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fgetwc</code> and <code>getwc</code> are required by C99 and POSIX.1-2001.
 
    <p><code>fgetwc_unlocked</code> and <code>getwc_unlocked</code> are GNU extensions.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

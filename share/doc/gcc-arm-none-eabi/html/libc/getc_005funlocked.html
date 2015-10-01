@@ -35,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.34 <code>getc_unlocked</code>&mdash;non-thread-safe version of getc (macro)</h3>
 
-<p><a name="index-getc_005funlocked-248"></a><a name="index-g_t_005fgetc_005funlocked_005fr-249"></a><strong>Synopsis</strong>
+<p><a name="index-getc_005funlocked-251"></a><a name="index-g_t_005fgetc_005funlocked_005fr-252"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int getc_unlocked(FILE *<var>fp</var>);
      
@@ -57,18 +57,24 @@ ftrylockfile() functions.  If threads are disabled, then
 <code>get_unlocked</code> which passes an additional reentrancy structure pointer
 argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 See <code>getc</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 POSIX 1003.1 requires <code>getc_unlocked</code>.  <code>getc_unlocked</code> may be
 implemented as a macro, so arguments should not have side-effects.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
-<code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>. 
-<br>
+<code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

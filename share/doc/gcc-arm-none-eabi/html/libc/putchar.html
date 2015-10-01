@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.47 <code>putchar</code>&mdash;write a character (macro)</h3>
 
-<p><a name="index-putchar-283"></a><a name="index-g_t_005fputchar_005fr-284"></a><strong>Synopsis</strong>
+<p><a name="index-putchar-286"></a><a name="index-g_t_005fputchar_005fr-287"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int putchar(int <var>ch</var>);
      
@@ -49,13 +49,17 @@ after converting it from an <code>int</code> to an <code>unsigned char</code>.
    <p>The alternate function <code>_putchar_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If successful, <code>putchar</code> returns its argument <var>ch</var>.  If an error
 intervenes, the result is <code>EOF</code>.  You can use `<code>ferror(stdin)</code>' to
 query for errors.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>putchar</code>; it suggests, but does not require, that
 <code>putchar</code> be implemented as a macro.
@@ -63,7 +67,9 @@ ANSI C requires <code>putchar</code>; it suggests, but does not require, that
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

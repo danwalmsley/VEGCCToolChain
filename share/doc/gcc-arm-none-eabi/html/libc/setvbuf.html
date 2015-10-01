@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.58 <code>setvbuf</code>&mdash;specify file or stream buffering</h3>
 
-<p><a name="index-setvbuf-301"></a><strong>Synopsis</strong>
+<p><a name="index-setvbuf-304"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int setvbuf(FILE *<var>fp</var>, char *<var>buf</var>,
          int <var>mode</var>, size_t <var>size</var>);
@@ -62,7 +62,9 @@ can supply the buffer itself, if you wish, by passing a pointer to a
 suitable area of memory as <var>buf</var>.  Otherwise, you may pass <code>NULL</code>
 as the <var>buf</var> argument, and <code>setvbuf</code> will allocate the buffer.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Warnings</strong><br>
 You may only use <code>setvbuf</code> before performing any file operation other
 than opening the file.
@@ -71,12 +73,16 @@ than opening the file.
 storage continues to be available until you close the stream
 identified by <var>fp</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 A <code>0</code> result indicates success, <code>EOF</code> failure (invalid <var>mode</var> or
 <var>size</var> can cause failure).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 Both ANSI C and the System V Interface Definition (Issue 2) require
 <code>setvbuf</code>. However, they differ on the meaning of a <code>NULL</code> buffer
@@ -90,7 +96,9 @@ nonzero value.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

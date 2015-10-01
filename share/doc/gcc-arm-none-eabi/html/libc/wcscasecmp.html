@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.42 <code>wcscasecmp</code>&mdash;case-insensitive wide character string compare</h3>
+<h3 class="section">5.45 <code>wcscasecmp</code>&mdash;case-insensitive wide character string compare</h3>
 
-<p><a name="index-wcscasecmp-453"></a><strong>Synopsis</strong>
+<p><a name="index-wcscasecmp-459"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      int wcscasecmp(const wchar_t *<var>a</var>, const wchar_t *<var>b</var>);
      
@@ -43,7 +43,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <code>wcscasecmp</code> compares the wide character string at <var>a</var> to
 the wide character string at <var>b</var> in a case-insensitive manner.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 
    <p>If <code>*</code><var>a</var> sorts lexicographically after <code>*</code><var>b</var> (after
@@ -53,14 +55,18 @@ number greater than zero.  If the two strings match,
 lexicographically before <code>*</code><var>b</var>, <code>wcscasecmp</code> returns a
 number less than zero.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 POSIX-1.2008
 
    <p><code>wcscasecmp</code> requires no supporting OS subroutines. It uses
 tolower() from elsewhere in this library.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

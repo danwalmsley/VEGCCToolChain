@@ -30,9 +30,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.47 <code>wctomb</code>&mdash;minimal wide char to multibyte converter</h3>
+<h3 class="section">2.49 <code>wctomb</code>&mdash;minimal wide char to multibyte converter</h3>
 
-<p><a name="index-wctomb-109"></a><strong>Synopsis</strong>
+<p><a name="index-wctomb-111"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
      int wctomb(char *<var>s</var>, wchar_t <var>wchar</var>);
      
@@ -51,7 +51,9 @@ be restricted to a defined set of locales.
    <p>Each call to <code>wctomb</code> modifies <code>*</code><var>s</var> unless <var>s</var> is a null
 pointer or _MB_CAPABLE is defined and <var>wchar</var> is invalid.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 This implementation of <code>wctomb</code> returns <code>0</code> if
 <var>s</var> is <code>NULL</code>; it returns <code>-1</code> if _MB_CAPABLE is enabled
@@ -60,14 +62,18 @@ if _MB_CAPABLE is not defined or the wchar is in reality a single
 byte character, otherwise it returns the number of bytes in the
 multi-byte character.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wctomb</code> is required in the ANSI C standard.  However, the precise
 effects vary with the locale.
 
    <p><code>wctomb</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

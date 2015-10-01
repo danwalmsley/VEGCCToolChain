@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.8 <code>ispunct</code>&mdash;punctuation character predicate</h3>
+<h3 class="section">3.9 <code>ispunct</code>&mdash;punctuation character predicate</h3>
 
-<p><a name="index-ispunct-118"></a><strong>Synopsis</strong>
+<p><a name="index-ispunct-121"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;ctype.h&gt;
      int ispunct(int <var>c</var>);
      
@@ -48,18 +48,24 @@ if <var>c</var> is representable as an unsigned char or if <var>c</var> is EOF.
    <p>You can use a compiled subroutine instead of the macro definition by
 undefining the macro using `<code>#undef ispunct</code>'.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>ispunct</code> returns non-zero if <var>c</var> is a printable punctuation character
 (<code>isgraph(</code><var>c</var><code>) &amp;&amp; !isalnum(</code><var>c</var><code>)</code>).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>ispunct</code> is ANSI C.
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

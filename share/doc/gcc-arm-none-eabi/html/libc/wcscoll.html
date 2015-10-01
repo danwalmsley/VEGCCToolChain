@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Wchar-strings.html#Wchar-strings">Wchar
 
 <h3 class="section">6.9 <code>wcscoll</code>&mdash;locale-specific wide-character string compare</h3>
 
-<p><a name="index-wcscoll-458"></a><strong>Synopsis</strong>
+<p><a name="index-wcscoll-464"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      int wcscoll(const wchar_t *<var>stra</var>, const wchar_t * <var>strb</var>);
      
@@ -48,7 +48,9 @@ state.
    <p>The current implementation of <code>wcscoll</code> simply uses <code>wcscmp</code>
 and does not support any language-specific sorting.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If the first string is greater than the second string,
 <code>wcscoll</code> returns a number greater than zero.  If the two
@@ -56,11 +58,15 @@ strings are equivalent, <code>wcscoll</code> returns zero.  If the first
 string is less than the second string, <code>wcscoll</code> returns a
 number less than zero.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wcscoll</code> is ISO/IEC 9899/AMD1:1995 (ISO C).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

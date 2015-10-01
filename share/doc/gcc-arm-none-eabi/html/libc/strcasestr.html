@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.17 <code>strcasestr</code>&mdash;case-insensitive character string search</h3>
+<h3 class="section">5.19 <code>strcasestr</code>&mdash;case-insensitive character string search</h3>
 
-<p><a name="index-strcasestr-427"></a><strong>Synopsis</strong>
+<p><a name="index-strcasestr-432"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;string.h&gt;
      char *strcasestr(const char *<var>s</var>, const char *<var>find</var>);
      
@@ -45,20 +45,26 @@ the first occurrence of the sequence <var>find</var>.  <code>strcasestr</code>
 is identical to <code>strstr</code> except the search is
 case-insensitive.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 
    <p>A pointer to the first case-insensitive occurrence of the sequence
 <var>find</var> or <code>NULL</code> if no match was found.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>strcasestr</code> is in the Berkeley Software Distribution.
 
    <p><code>strcasestr</code> requires no supporting OS subroutines. It uses
 tolower() from elsewhere in this library.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

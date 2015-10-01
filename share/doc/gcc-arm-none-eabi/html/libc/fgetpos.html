@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.11 <code>fgetpos</code>&mdash;record position in a stream or file</h3>
 
-<p><a name="index-fgetpos-173"></a><a name="index-g_t_005ffgetpos_005fr-174"></a><strong>Synopsis</strong>
+<p><a name="index-fgetpos-176"></a><a name="index-g_t_005ffgetpos_005fr-177"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fgetpos(FILE *restrict <var>fp</var>, fpos_t *restrict <var>pos</var>);
      int _fgetpos_r(struct _reent *<var>ptr</var>, FILE *restrict <var>fp</var>, fpos_t *restrict <var>pos</var>);
@@ -55,14 +55,18 @@ position.
 count to represent the file position; this is the same number that
 would be returned by <code>ftell</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fgetpos</code> returns <code>0</code> when successful.  If <code>fgetpos</code> fails, the
 result is <code>1</code>.  Failure occurs on streams that do not support
 positioning; the global <code>errno</code> indicates this condition with the
 value <code>ESPIPE</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fgetpos</code> is required by the ANSI C standard, but the meaning of the
 value it records is not specified beyond requiring that it be
@@ -72,7 +76,9 @@ conforming C implementations may return a different result from
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.24 <code>strerror</code>&mdash;convert error number to string</h3>
+<h3 class="section">5.27 <code>strerror</code>&mdash;convert error number to string</h3>
 
-<p><a name="index-strerror-434"></a><strong>Synopsis</strong>
+<p><a name="index-strerror-440"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;string.h&gt;
      char *strerror(int <var>errnum</var>);
      char *_strerror_r(struct _reent <var>ptr</var>, int <var>errnum</var>,
@@ -245,12 +245,16 @@ for each of the values defined in `<code>errno.h</code>':
 
    <p><code>_strerror_r</code> is a reentrant version of the above.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 This function returns a pointer to a string.  Your application must
 not modify that string.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>strerror</code>, but does not specify the strings used
 for each error number.
@@ -297,7 +301,9 @@ third argument rather than modifying <code>errno</code>, if <code>strerror</code
 
    <p><code>strerror</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.32 <code>rand</code>, <code>srand</code>&mdash;pseudo-random numbers</h3>
+<h3 class="section">2.33 <code>rand</code>, <code>srand</code>&mdash;pseudo-random numbers</h3>
 
-<p><a name="index-rand-66"></a><a name="index-srand-67"></a><a name="index-rand_005fr-68"></a><strong>Synopsis</strong>
+<p><a name="index-rand-67"></a><a name="index-srand-68"></a><a name="index-rand_005fr-69"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
      int rand(void);
      void srand(unsigned int <var>seed</var>);
@@ -59,14 +59,18 @@ beginning a sequence of calls to <code>rand</code>; or, if you wish to ensure
 use the same &ldquo;random&rdquo; numbers, you can use <code>srand</code> to set the same
 random seed at the outset.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>rand</code> returns the next pseudo-random integer in sequence; it is a
 number between <code>0</code> and <code>RAND_MAX</code> (inclusive).
 
    <p><code>srand</code> does not return a result.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>rand</code> is required by ANSI, but the algorithm for pseudo-random
 number generation is not specified; therefore, even if you use
@@ -75,7 +79,9 @@ on two different systems.
 
    <p><code>rand</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

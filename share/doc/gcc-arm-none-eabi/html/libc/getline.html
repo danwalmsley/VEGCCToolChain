@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.38 <code>getline</code>&mdash;read a line from a file</h3>
 
-<p><a name="index-getline-255"></a><strong>Synopsis</strong>
+<p><a name="index-getline-258"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      ssize_t getline(char **<var>bufptr</var>, size_t *<var>n</var>, FILE *<var>fp</var>);
      
@@ -49,19 +49,25 @@ updated.
 
    <p><code>getline</code> is equivalent to getdelim(bufptr, n, '\n', fp);
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>getline</code> returns <code>-1</code> if no characters were successfully read,
 otherwise, it returns the number of bytes successfully read. 
 at end of file, the result is nonzero.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>getline</code> is a glibc extension.
 
    <p>No supporting OS subroutines are directly required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

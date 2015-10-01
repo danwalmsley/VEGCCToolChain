@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.8 <code>ferror</code>, <code>ferror_unlocked</code>&mdash;test whether read/write error has occurred</h3>
 
-<p><a name="index-ferror-163"></a><a name="index-ferror_005funlocked-164"></a><strong>Synopsis</strong>
+<p><a name="index-ferror-166"></a><a name="index-ferror_005funlocked-167"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int ferror(FILE *<var>fp</var>);
      
@@ -60,12 +60,16 @@ object, as is the case after a successful call to the flockfile() or
 ftrylockfile() functions.  If threads are disabled, then
 <code>ferror_unlocked</code> is equivalent to <code>ferror</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>ferror</code> returns <code>0</code> if no errors have occurred; it returns a
 nonzero value otherwise.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>ferror</code>.
 
@@ -73,7 +77,9 @@ ANSI C requires <code>ferror</code>.
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

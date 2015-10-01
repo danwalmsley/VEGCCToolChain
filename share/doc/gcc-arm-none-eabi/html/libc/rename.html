@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.53 <code>rename</code>&mdash;rename a file</h3>
 
-<p><a name="index-rename-295"></a><strong>Synopsis</strong>
+<p><a name="index-rename-298"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int rename(const char *<var>old</var>, const char *<var>new</var>);
      
@@ -47,12 +47,16 @@ file now known by the string at <var>old</var>.  After a successful
    <p>If <code>rename</code> fails, the file named <code>*</code><var>old</var> is unaffected.  The
 conditions for failure depend on the host operating system.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The result is either <code>0</code> (when successful) or <code>-1</code> (when the file
 could not be renamed).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>rename</code>, but only specifies that the result on
 failure be nonzero.  The effects of using the name of an existing file
@@ -60,7 +64,9 @@ as <code>*</code><var>new</var> may vary from one implementation to another.
 
    <p>Supporting OS subroutines required: <code>link</code>, <code>unlink</code>, or <code>rename</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

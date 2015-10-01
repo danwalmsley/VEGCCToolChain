@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Timefns.html#Timefns">Timefns</a>
 
 <h3 class="section">8.8 <code>strftime</code>&mdash;convert date and time to a formatted string</h3>
 
-<p><a name="index-strftime-481"></a><strong>Synopsis</strong>
+<p><a name="index-strftime-487"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;time.h&gt;
      size_t strftime(char *restrict <var>s</var>, size_t <var>maxsize</var>,
          const char *restrict <var>format</var>,
@@ -198,7 +198,9 @@ as if by calling tzset(). [tm_isdst]
      <br><dt><code>%%</code><dd>A single character, `<code>%</code>'. 
 </dl>
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 When the formatted time takes up no more than <var>maxsize</var> characters,
 the result is the length of the formatted string.  Otherwise, if the
@@ -207,7 +209,9 @@ formatting operation was abandoned due to lack of room, the result is
 parts of <code>*</code><var>format</var> that could be completely filled in within the
 <var>maxsize</var> limit.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>strftime</code>, but does not specify the contents of
 <code>*</code><var>s</var> when the formatted string would require more than
@@ -220,12 +224,16 @@ This implementation does not support <code>s</code> being NULL, nor overlapping
 
    <p><code>strftime</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Bugs</strong><br>
 <code>strftime</code> ignores the LC_TIME category of the current locale, hard-coding
 the "C" locale settings.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

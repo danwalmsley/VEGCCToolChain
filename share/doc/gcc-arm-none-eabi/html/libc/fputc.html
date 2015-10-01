@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.20 <code>fputc</code>, <code>fputc_unlocked</code>&mdash;write a character on a stream or file</h3>
 
-<p><a name="index-fputc-200"></a><a name="index-fputc_005funlocked-201"></a><a name="index-g_t_005ffputc_005fr-202"></a><a name="index-g_t_005ffputc_005funlocked_005fr-203"></a><strong>Synopsis</strong>
+<p><a name="index-fputc-203"></a><a name="index-fputc_005funlocked-204"></a><a name="index-g_t_005ffputc_005fr-205"></a><a name="index-g_t_005ffputc_005funlocked_005fr-206"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fputc(int <var>ch</var>, FILE *<var>fp</var>);
      
@@ -75,13 +75,17 @@ ftrylockfile() functions.  If threads are disabled, then
 versions of the above that take an additional reentrant structure
 argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If successful, <code>fputc</code> returns its argument <var>ch</var>.  If an error
 intervenes, the result is <code>EOF</code>.  You can use `<code>ferror(</code><var>fp</var><code>)</code>' to
 query for errors.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fputc</code> is required by ANSI C.
 
@@ -90,7 +94,9 @@ query for errors.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

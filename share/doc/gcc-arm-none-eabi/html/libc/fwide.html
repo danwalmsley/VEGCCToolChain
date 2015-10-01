@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.31 <code>fwide</code>&mdash;set and determine the orientation of a FILE stream</h3>
 
-<p><a name="index-fwide-240"></a><a name="index-g_t_005ffwide_005fr-241"></a><strong>Synopsis</strong>
+<p><a name="index-fwide-243"></a><a name="index-g_t_005ffwide_005fr-244"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      int fwide(FILE *<var>fp</var>, int <var>mode</var>)
      
@@ -61,17 +61,23 @@ which removes the orientation of the stream.
 byte oriented if <var>mode</var> &lt; 0). It then returns a value denoting the
 current orientation, as above.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The <code>fwide</code> function returns <var>fp</var>'s orientation, after possibly
 changing it. A return value &gt; 0 means wide-character oriented. A return
 value &lt; 0 means byte oriented. A return value of zero means undecided.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 C99, POSIX.1-2001.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

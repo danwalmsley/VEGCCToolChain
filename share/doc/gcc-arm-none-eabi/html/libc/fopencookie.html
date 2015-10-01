@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.18 <code>fopencookie</code>&mdash;open a stream with custom callbacks</h3>
 
-<p><a name="index-fopencookie-196"></a><strong>Synopsis</strong>
+<p><a name="index-fopencookie-199"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      FILE *fopencookie(const void *<var>cookie</var>, const char *<var>mode</var>,
          cookie_io_functions_t <var>functions</var>);
@@ -93,7 +93,9 @@ unbuffered to buffered or to change the state of the line buffering
 flag.  They must also be prepared to have read or write calls occur on
 buffers other than the one most recently specified.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The return value is an open FILE pointer on success.  On error,
 <code>NULL</code> is returned, and <code>errno</code> will be set to EINVAL if a
@@ -101,14 +103,18 @@ function pointer is missing or <var>mode</var> is invalid, ENOMEM if the
 stream cannot be created, or EMFILE if too many streams are already
 open.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 This function is a newlib extension, copying the prototype from Linux. 
 It is not portable.  See also the <code>funopen</code> interface from BSD.
 
    <p>Supporting OS subroutines required: <code>sbrk</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

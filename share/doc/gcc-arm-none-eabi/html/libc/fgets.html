@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.12 <code>fgets</code>, <code>fgets_unlocked</code>&mdash;get character string from a file or stream</h3>
 
-<p><a name="index-fgets-175"></a><a name="index-fgets_005funlocked-176"></a><a name="index-g_t_005ffgets_005fr-177"></a><a name="index-g_t_005ffgets_005funlocked_005fr-178"></a><strong>Synopsis</strong>
+<p><a name="index-fgets-178"></a><a name="index-fgets_005funlocked-179"></a><a name="index-g_t_005ffgets_005fr-180"></a><a name="index-g_t_005ffgets_005funlocked_005fr-181"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      char *fgets(char *restrict <var>buf</var>, int <var>n</var>, FILE *restrict <var>fp</var>);
      
@@ -67,14 +67,18 @@ ftrylockfile() functions.  If threads are disabled, then
 reentrant versions that are passed the additional reentrant structure
 pointer argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fgets</code> returns the buffer passed to it, with the data
 filled in. If end of file occurs with some data already
 accumulated, the data is returned with no other indication. If
 no data are read, NULL is returned instead.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fgets</code> should replace all uses of <code>gets</code>. Note however
 that <code>fgets</code> returns all of the data, while <code>gets</code> removes
@@ -85,7 +89,9 @@ the trailing newline (with no indication that it has done so.)
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

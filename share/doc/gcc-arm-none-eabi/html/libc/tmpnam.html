@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.67 <code>tmpnam</code>, <code>tempnam</code>&mdash;name for a temporary file</h3>
 
-<p><a name="index-tmpnam-359"></a><a name="index-tempnam-360"></a><a name="index-g_t_005ftmpnam_005fr-361"></a><a name="index-g_t_005ftempnam_005fr-362"></a><strong>Synopsis</strong>
+<p><a name="index-tmpnam-362"></a><a name="index-tempnam-363"></a><a name="index-g_t_005ftmpnam_005fr-364"></a><a name="index-g_t_005ftempnam_005fr-365"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      char *tmpnam(char *<var>s</var>);
      char *tempnam(char *<var>dir</var>, char *<var>pfx</var>);
@@ -70,7 +70,9 @@ files, you can pass <code>NULL</code> as the <var>pfx</var> argument to <code>te
 and <code>tempnam</code> respectively.  The extra argument <var>reent</var> is a
 pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Warnings</strong><br>
 The generated filenames are suitable for temporary files, but do not
 in themselves make files temporary.  Files with these names must still
@@ -79,12 +81,16 @@ be explicitly removed when you no longer want them.
    <p>If you supply your own data area <var>s</var> for <code>tmpnam</code>, you must ensure
 that it has room for at least <code>L_tmpnam</code> elements of type <code>char</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 Both <code>tmpnam</code> and <code>tempnam</code> return a pointer to the newly
 generated filename.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>tmpnam</code>, but does not specify the use of
 <code>P_tmpdir</code>.  The System V Interface Definition (Issue 2) requires
@@ -95,7 +101,9 @@ both <code>tmpnam</code> and <code>tempnam</code>.
 
    <p>The global pointer <code>environ</code> is also required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

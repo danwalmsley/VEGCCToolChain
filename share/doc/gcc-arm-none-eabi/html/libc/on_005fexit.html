@@ -33,9 +33,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.30 <code>on_exit</code>&mdash;request execution of function with argument at program exit</h3>
+<h3 class="section">2.31 <code>on_exit</code>&mdash;request execution of function with argument at program exit</h3>
 
-<p><a name="index-on_005fexit-64"></a><strong>Synopsis</strong>
+<p><a name="index-on_005fexit-65"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
      int on_exit (void (*<var>function</var>)(int, void *), void *<var>arg</var>);
      
@@ -59,19 +59,25 @@ in this list; however, after every group of 32 functions is enrolled,
 of the list.   The initial list of 32 functions is statically allocated, so
 you can always count on at least that many slots available.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>on_exit</code> returns <code>0</code> if it succeeds in enrolling your function,
 <code>-1</code> if it fails (possible only if no space was available for
 <code>malloc</code> to extend the list of functions).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>on_exit</code> is a non-standard glibc extension
 
    <p>Supporting OS subroutines required: None
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

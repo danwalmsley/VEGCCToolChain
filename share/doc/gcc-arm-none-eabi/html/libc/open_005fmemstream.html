@@ -35,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.43 <code>open_memstream</code>, <code>open_wmemstream</code>&mdash;open a write stream around an arbitrary-length string</h3>
 
-<p><a name="index-open_005fmemstream-275"></a><a name="index-open_005fwmemstream-276"></a><strong>Synopsis</strong>
+<p><a name="index-open_005fmemstream-278"></a><a name="index-open_005fwmemstream-279"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      FILE *open_memstream(char **restrict <var>buf</var>,
          size_t *restrict <var>size</var>);
@@ -73,20 +73,26 @@ in case of <code>open_wmemstream</code>).  However, data previously written beyo
 the current stream offset is not lost, and the NUL value written during a
 flush is restored to its previous value when seeking elsewhere in the string.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The return value is an open FILE pointer on success.  On error,
 <code>NULL</code> is returned, and <code>errno</code> will be set to EINVAL if <var>buf</var>
 or <var>size</var> is NULL, ENOMEM if memory could not be allocated, or
 EMFILE if too many streams are already open.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 POSIX.1-2008
 
    <p>Supporting OS subroutines required: <code>sbrk</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

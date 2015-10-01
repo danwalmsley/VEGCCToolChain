@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.7 <code>isprint</code>, <code>isgraph</code>&mdash;printable character predicates</h3>
+<h3 class="section">3.8 <code>isprint</code>, <code>isgraph</code>&mdash;printable character predicates</h3>
 
-<p><a name="index-isprint-116"></a><a name="index-isgraph-117"></a><strong>Synopsis</strong>
+<p><a name="index-isprint-119"></a><a name="index-isgraph-120"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;ctype.h&gt;
      int isprint(int <var>c</var>);
      int isgraph(int <var>c</var>);
@@ -50,20 +50,26 @@ It is defined only if <var>c</var> is representable as an unsigned char or if
    <p>You can use a compiled subroutine instead of the macro definition by
 undefining either macro using `<code>#undef isprint</code>' or `<code>#undef isgraph</code>'.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>isprint</code> returns non-zero if <var>c</var> is a printing character,
 (<code>0x20</code>&ndash;<code>0x7E</code>). 
 <code>isgraph</code> behaves identically to <code>isprint</code>, except that the space
 character (<code>0x20</code>) is excluded.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>isprint</code> and <code>isgraph</code> are ANSI C.
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Math.html#Math">Math</a>
 <hr>
 </div>
 
-<h3 class="section">1.26 <code>gamma</code>, <code>gammaf</code>, <code>lgamma</code>, <code>lgammaf</code>, <code>gamma_r</code>, <code>gammaf_r</code>, <code>lgamma_r</code>, <code>lgammaf_r</code>, <code>tgamma</code>, and <code>tgammaf</code>&ndash;logarithmic and plain gamma functions</h3>
+<h3 class="section">1.27 <code>gamma</code>, <code>gammaf</code>, <code>lgamma</code>, <code>lgammaf</code>, <code>gamma_r</code>, <code>gammaf_r</code>, <code>lgamma_r</code>, <code>lgammaf_r</code>, <code>tgamma</code>, and <code>tgammaf</code>&ndash;logarithmic and plain gamma functions</h3>
 
-<p><a name="index-gamma-63"></a><a name="index-gammaf-64"></a><a name="index-lgamma-65"></a><a name="index-lgammaf-66"></a><a name="index-gamma_005fr-67"></a><a name="index-gammaf_005fr-68"></a><a name="index-lgamma_005fr-69"></a><a name="index-lgammaf_005fr-70"></a><a name="index-tgamma-71"></a><a name="index-tgammaf-72"></a><strong>Synopsis</strong>
+<p><a name="index-gamma-65"></a><a name="index-gammaf-66"></a><a name="index-lgamma-67"></a><a name="index-lgammaf-68"></a><a name="index-gamma_005fr-69"></a><a name="index-gammaf_005fr-70"></a><a name="index-lgamma_005fr-71"></a><a name="index-lgammaf_005fr-72"></a><a name="index-tgamma-73"></a><a name="index-tgammaf-74"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;math.h&gt;
      double gamma(double <var>x</var>);
      float gammaf(float <var>x</var>);
@@ -86,7 +86,9 @@ the gamma function of <var>x</var>&ndash;without a logarithm.
 poorly-named <code>gamma</code> functions which returned the log of gamma up
 through BSD 4.2.)
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 Normally, the computed result is returned.
 
@@ -96,7 +98,9 @@ returns <code>HUGE_VAL</code> and <code>errno</code> is set to <code>ERANGE</cod
 
    <p>You can modify this error treatment using <code>matherr</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 Neither <code>gamma</code> nor <code>gammaf</code> is ANSI C.  It is better not to use either
 of these; use <code>lgamma</code> or <code>tgamma</code> instead.<br>
@@ -104,7 +108,9 @@ of these; use <code>lgamma</code> or <code>tgamma</code> instead.<br>
 in terms of the base return values, although the <code>matherr</code> error-handling
 is not standard, nor is the <var>signgam</var> global for <code>lgamma</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

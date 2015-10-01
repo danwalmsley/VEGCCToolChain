@@ -32,7 +32,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.75 <code>viscanf</code>, <code>vfiscanf</code>, <code>vsiscanf</code>&mdash;format argument list</h3>
 
-<p><a name="index-viscanf-409"></a><a name="index-g_t_005fviscanf_005fr-410"></a><a name="index-vfiscanf-411"></a><a name="index-g_t_005fvfiscanf_005fr-412"></a><a name="index-vsiscanf-413"></a><a name="index-g_t_005fvsiscanf_005fr-414"></a><strong>Synopsis</strong>
+<p><a name="index-viscanf-412"></a><a name="index-g_t_005fviscanf_005fr-413"></a><a name="index-vfiscanf-414"></a><a name="index-g_t_005fvfiscanf_005fr-415"></a><a name="index-vsiscanf-416"></a><a name="index-g_t_005fvsiscanf_005fr-417"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      #include &lt;stdarg.h&gt;
      int viscanf(const char *<var>fmt</var>, va_list <var>list</var>);
@@ -54,7 +54,9 @@ allowing their caller to pass the variable argument list as a
 <code>va_list</code> object (initialized by <code>va_start</code>) rather than
 directly accepting a variable number of arguments.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The return values are consistent with the corresponding functions:
 <code>viscanf</code> returns the number of input fields successfully scanned,
@@ -70,13 +72,17 @@ is <code>EOF</code>.
 reentrant versions which take an additional first parameter which points to the
 reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 These are newlib extensions.
 
    <p>Supporting OS subroutines required:
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

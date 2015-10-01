@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Wchar-strings.html#Wchar-strings">Wchar
 
 <h3 class="section">6.21 <code>wcsnlen</code>&mdash;get fixed-size wide-character string length</h3>
 
-<p><a name="index-wcsnlen-460"></a><strong>Synopsis</strong>
+<p><a name="index-wcsnlen-466"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      size_t wcsnlen(const wchar_t *<var>s</var>, size_t <var>maxlen</var>);
      
@@ -45,19 +45,25 @@ in the wide-character string pointed to by <var>s</var> not including the
 terminating L'\0' wide character but at most <var>maxlen</var> wide
 characters.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>wcsnlen</code> returns the length of <var>s</var> if it is less then <var>maxlen</var>,
 or <var>maxlen</var> if there is no L'\0' wide character in first <var>maxlen</var>
 characters.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wcsnlen</code> is a GNU extension.
 
    <p><code>wcsnlen</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

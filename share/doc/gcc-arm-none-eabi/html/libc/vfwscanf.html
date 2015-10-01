@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.73 <code>vfwscanf</code>, <code>vwscanf</code>, <code>vswscanf</code>&mdash;scan and format argument list from wide character input</h3>
 
-<p><a name="index-vfwscanf-391"></a><a name="index-g_t_005fvfwscanf-392"></a><a name="index-vwscanf-393"></a><a name="index-g_t_005fvwscanf-394"></a><a name="index-vswscanf-395"></a><a name="index-g_t_005fvswscanf-396"></a><strong>Synopsis</strong>
+<p><a name="index-vfwscanf-394"></a><a name="index-g_t_005fvfwscanf-395"></a><a name="index-vwscanf-396"></a><a name="index-g_t_005fvwscanf-397"></a><a name="index-vswscanf-398"></a><a name="index-g_t_005fvswscanf-399"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      #include &lt;stdarg.h&gt;
      int vwscanf(const wchar_t *__restrict <var>fmt</var>, va_list <var>list</var>);
@@ -58,7 +58,9 @@ allowing their caller to pass the variable argument list as a
 <code>va_list</code> object (initialized by <code>va_start</code>) rather than
 directly accepting a variable number of arguments.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The return values are consistent with the corresponding functions:
 <code>vwscanf</code> returns the number of input fields successfully scanned,
@@ -74,11 +76,15 @@ is <code>EOF</code>.
 reentrant versions which take an additional first parameter which points
 to the reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 C99, POSIX-1.2008
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

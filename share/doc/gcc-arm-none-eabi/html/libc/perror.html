@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.44 <code>perror</code>&mdash;print an error message on standard error</h3>
 
-<p><a name="index-perror-277"></a><a name="index-g_t_005fperror_005fr-278"></a><strong>Synopsis</strong>
+<p><a name="index-perror-280"></a><a name="index-g_t_005fperror_005fr-281"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      void perror(char *<var>prefix</var>);
      
@@ -52,11 +52,15 @@ of the strings described for <code>strerror</code>.
    <p>The alternate function <code>_perror_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>perror</code> returns no result.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>perror</code>, but the strings issued vary from one
 implementation to another.
@@ -64,7 +68,9 @@ implementation to another.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

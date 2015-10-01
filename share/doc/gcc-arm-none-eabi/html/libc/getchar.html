@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.35 <code>getchar</code>&mdash;read a character (macro)</h3>
 
-<p><a name="index-getchar-250"></a><a name="index-g_t_005fgetchar_005fr-251"></a><strong>Synopsis</strong>
+<p><a name="index-getchar-253"></a><a name="index-g_t_005fgetchar_005fr-254"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int getchar(void);
      
@@ -50,7 +50,9 @@ current position indicator.
    <p>The alternate function <code>_getchar_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The next character (read as an <code>unsigned char</code>, and cast to
 <code>int</code>), unless there is no more data, or the host system reports a
@@ -59,7 +61,9 @@ read error; in either of these situations, <code>getchar</code> returns <code>EO
    <p>You can distinguish the two situations that cause an <code>EOF</code> result by
 using `<code>ferror(stdin)</code>' and `<code>feof(stdin)</code>'.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>getchar</code>; it suggests, but does not require, that
 <code>getchar</code> be implemented as a macro.
@@ -67,7 +71,9 @@ ANSI C requires <code>getchar</code>; it suggests, but does not require, that
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

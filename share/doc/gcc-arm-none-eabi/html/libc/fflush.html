@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.9 <code>fflush</code>, <code>fflush_unlocked</code>&mdash;flush buffered file output</h3>
 
-<p><a name="index-fflush-165"></a><a name="index-fflush_005funlocked-166"></a><a name="index-g_t_005ffflush_005fr-167"></a><a name="index-g_t_005ffflush_005funlocked_005fr-168"></a><strong>Synopsis</strong>
+<p><a name="index-fflush-168"></a><a name="index-fflush_005funlocked-169"></a><a name="index-g_t_005ffflush_005fr-170"></a><a name="index-g_t_005ffflush_005funlocked_005fr-171"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fflush(FILE *<var>fp</var>);
      
@@ -78,12 +78,16 @@ ftrylockfile() functions.  If threads are disabled, then
 reentrant versions, where the extra argument <var>reent</var> is a pointer to
 a reentrancy structure, and <var>fp</var> must not be NULL.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fflush</code> returns <code>0</code> unless it encounters a write error; in that
 situation, it returns <code>EOF</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>fflush</code>.  The behavior on input streams is only
 specified by POSIX, and not all implementations follow POSIX rules.
@@ -92,7 +96,9 @@ specified by POSIX, and not all implementations follow POSIX rules.
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

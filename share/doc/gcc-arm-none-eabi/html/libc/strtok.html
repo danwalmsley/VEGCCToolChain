@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.38 <code>strtok</code>, <code>strtok_r</code>, <code>strsep</code>&mdash;get next token from a string</h3>
+<h3 class="section">5.41 <code>strtok</code>, <code>strtok_r</code>, <code>strsep</code>&mdash;get next token from a string</h3>
 
-<p><a name="index-strtok-448"></a><a name="index-strtok_005fr-449"></a><a name="index-strsep-450"></a><strong>Synopsis</strong>
+<p><a name="index-strtok-454"></a><a name="index-strtok_005fr-455"></a><a name="index-strsep-456"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;string.h&gt;
      char *strtok(char *restrict <var>source</var>,
          const char *restrict <var>delimiters</var>)
@@ -71,13 +71,17 @@ the empty string is returned.  Like <code>strtok_r</code> and <code>strtok</code
 last delimiter found or NULL if the end of string is reached with
 no more delimiters.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>strtok</code>, <code>strtok_r</code>, and <code>strsep</code> all return a pointer to the
 next token, or <code>NULL</code> if no more tokens can be found.  For
 <code>strsep</code>, a token may be the empty string.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>strtok</code> is ANSI C. 
 <code>strtok_r</code> is POSIX. 
@@ -85,7 +89,9 @@ next token, or <code>NULL</code> if no more tokens can be found.  For
 
    <p><code>strtok</code>, <code>strtok_r</code>, and <code>strsep</code> require no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

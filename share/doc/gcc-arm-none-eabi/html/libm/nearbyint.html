@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Math.html#Math">Math</a>
 <hr>
 </div>
 
-<h3 class="section">1.43 <code>nearbyint</code>, <code>nearbyintf</code>&ndash;round to integer</h3>
+<h3 class="section">1.44 <code>nearbyint</code>, <code>nearbyintf</code>&ndash;round to integer</h3>
 
-<p><a name="index-nearbyint-121"></a><a name="index-nearbyintf-122"></a><strong>Synopsis</strong>
+<p><a name="index-nearbyint-123"></a><a name="index-nearbyintf-124"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;math.h&gt;
      double nearbyint(double <var>x</var>);
      float nearbyintf(float <var>x</var>);
@@ -47,7 +47,9 @@ floating-point format, using the current rounding direction and
 See the <code>rint</code> functions for the same function with the "inexact"
 floating-point exception being raised when appropriate.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Bugs</strong><br>
 Newlib does not support the floating-point exception model, so that
 the floating-point exception control is not present and thereby what may
@@ -56,19 +58,27 @@ The Newlib <code>nearbyint</code> functions are identical to the <code>rint</cod
 functions with respect to the floating-point exception behavior, and
 will cause the "inexact" exception to be raised for most targets.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <var>x</var> rounded to an integral value, using the current rounding direction.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C, POSIX
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>See Also</strong><br>
 <code>rint</code>, <code>round</code>
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

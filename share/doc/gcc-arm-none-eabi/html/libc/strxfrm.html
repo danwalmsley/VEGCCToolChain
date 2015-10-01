@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.40 <code>strxfrm</code>&mdash;transform string</h3>
+<h3 class="section">5.43 <code>strxfrm</code>&mdash;transform string</h3>
 
-<p><a name="index-strxfrm-452"></a><strong>Synopsis</strong>
+<p><a name="index-strxfrm-458"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;string.h&gt;
      size_t strxfrm(char *restrict <var>s1</var>, const char *restrict <var>s2</var>,
          size_t <var>n</var>);
@@ -57,20 +57,26 @@ is undefined.
 
    <p>With a C locale, this function just copies.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The <code>strxfrm</code> function returns the length of the transformed string
 (not including the terminating null character). If the value returned
 is <var>n</var> or more, the contents of the array pointed to by
 <var>s1</var> are indeterminate.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>strxfrm</code> is ANSI C.
 
    <p><code>strxfrm</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -32,7 +32,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Wchar-strings.html#Wchar-strings">Wchar
 
 <h3 class="section">6.29 <code>wcwidth</code>&mdash;number of column positions of a wide-character code</h3>
 
-<p><a name="index-wcwidth-464"></a><strong>Synopsis</strong>
+<p><a name="index-wcwidth-470"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      int wcwidth(const wchar_t <var>wc</var>);
      
@@ -44,19 +44,25 @@ shall ensure that the value of <var>wc</var> is a character representable
 as a wchar_t, and is a wide-character code corresponding to a
 valid character in the current locale.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The <code>wcwidth</code> function shall either return 0 (if <var>wc</var> is a null
 wide-character code), or return the number of column positions to
 be occupied by the wide-character code <var>wc</var>, or return -1 (if <var>wc</var>
 does not correspond to a printable wide-character code).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wcwidth</code> has been introduced in the Single UNIX Specification Volume 2. 
 <code>wcwidth</code> has been marked as an extension in the Single UNIX Specification Volume 3.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

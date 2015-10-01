@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Timefns.html#Timefns">Timefns</a>
 
 <h3 class="section">8.2 <code>clock</code>&mdash;cumulative processor time</h3>
 
-<p><a name="index-clock-472"></a><strong>Synopsis</strong>
+<p><a name="index-clock-478"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;time.h&gt;
      clock_t clock(void);
      
@@ -44,19 +44,25 @@ Calculates the best available approximation of the cumulative amount
 of time used by your program since it started.  To convert the result
 into seconds, divide by the macro <code>CLOCKS_PER_SEC</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The amount of processor time used so far by your program, in units
 defined by the machine-dependent macro <code>CLOCKS_PER_SEC</code>.  If no
 measurement is available, the result is (clock_t)<code>-1</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>clock</code> and <code>CLOCKS_PER_SEC</code>.
 
    <p>Supporting OS subroutine required: <code>times</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

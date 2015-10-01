@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Math.html#Math">Math</a>
 <hr>
 </div>
 
-<h3 class="section">1.31 <code>fpclassify</code>, <code>isfinite</code>, <code>isinf</code>, <code>isnan</code>, and <code>isnormal</code>&ndash;floating-point classification macros; <code>finite</code>, <code>finitef</code>, <code>isinf</code>, <code>isinff</code>, <code>isnan</code>, <code>isnanf</code>&ndash;test for exceptional numbers</h3>
+<h3 class="section">1.32 <code>fpclassify</code>, <code>isfinite</code>, <code>isinf</code>, <code>isnan</code>, and <code>isnormal</code>&ndash;floating-point classification macros; <code>finite</code>, <code>finitef</code>, <code>isinf</code>, <code>isinff</code>, <code>isnan</code>, <code>isnanf</code>&ndash;test for exceptional numbers</h3>
 
-<p><a name="index-fpclassify-85"></a><a name="index-isfinite-86"></a><a name="index-isinf-87"></a><a name="index-isnan-88"></a><a name="index-isnormal-89"></a><a name="index-isnan-90"></a><a name="index-isinf-91"></a><a name="index-finite-92"></a><a name="index-isnanf-93"></a><a name="index-isinff-94"></a><a name="index-finitef-95"></a><strong>Synopsis</strong>
+<p><a name="index-fpclassify-87"></a><a name="index-isfinite-88"></a><a name="index-isinf-89"></a><a name="index-isnan-90"></a><a name="index-isnormal-91"></a><a name="index-isnan-92"></a><a name="index-isinf-93"></a><a name="index-finite-94"></a><a name="index-isnanf-95"></a><a name="index-isinff-96"></a><a name="index-finitef-97"></a><strong>Synopsis</strong>
 <pre class="example">     [C99 standard macros:]
      #include &lt;math.h&gt;
      int fpclassify(real-floating <var>x</var>);
@@ -122,7 +122,9 @@ a function taking double.  Newlib has decided to declare
 them both as macros in math.h and as functions in ieeefp.h to
 maintain backward compatibility.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <!-- Formatting note:  "$@" forces a new line -->
 The fpclassify macro returns the value corresponding to the appropriate FP_ macro.<br>
@@ -131,13 +133,17 @@ The isinf macro returns nonzero if <var>x</var> is infinite, else 0.<br>
 The isnan macro returns nonzero if <var>x</var> is an NaN, else 0.<br>
 The isnormal macro returns nonzero if <var>x</var> has a normal value, else 0.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 math.h macros are C99, POSIX.
 
    <p>ieeefp.h funtions are outdated and should be avoided.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.28 <code>mbstowcs</code>&mdash;minimal multibyte string to wide char converter</h3>
+<h3 class="section">2.29 <code>mbstowcs</code>&mdash;minimal multibyte string to wide char converter</h3>
 
-<p><a name="index-mbstowcs-62"></a><strong>Synopsis</strong>
+<p><a name="index-mbstowcs-63"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
      int mbstowcs(wchar_t *restrict <var>pwc</var>, const char *restrict <var>s</var>, size_t <var>n</var>);
      
@@ -51,7 +51,9 @@ the conversion, passing a state variable to allow state dependent
 decoding.  The result is based on the locale setting which may
 be restricted to a defined set of locales.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 This implementation of <code>mbstowcs</code> returns <code>0</code> if
 <var>s</var> is <code>NULL</code> or is the empty string;
@@ -64,14 +66,18 @@ If the return value is -1, the state of the <code>pwc</code> string is
 indeterminate.  If the input has a length of 0, the output
 string will be modified to contain a wchar_t nul terminator.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>mbstowcs</code> is required in the ANSI C standard.  However, the precise
 effects vary with the locale.
 
    <p><code>mbstowcs</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

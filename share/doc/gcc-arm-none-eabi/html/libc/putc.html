@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.45 <code>putc</code>&mdash;write a character (macro)</h3>
 
-<p><a name="index-putc-279"></a><a name="index-g_t_005fputc_005fr-280"></a><strong>Synopsis</strong>
+<p><a name="index-putc-282"></a><a name="index-g_t_005fputc_005fr-283"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int putc(int <var>ch</var>, FILE *<var>fp</var>);
      
@@ -58,13 +58,17 @@ advances by one.
    <p>The <code>_putc_r</code> function is simply the reentrant version of
 <code>putc</code> that takes an additional reentrant structure argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If successful, <code>putc</code> returns its argument <var>ch</var>.  If an error
 intervenes, the result is <code>EOF</code>.  You can use `<code>ferror(</code><var>fp</var><code>)</code>' to
 query for errors.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>putc</code>; it suggests, but does not require, that
 <code>putc</code> be implemented as a macro.  The standard explicitly permits
@@ -75,7 +79,9 @@ with side effects as this argument.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

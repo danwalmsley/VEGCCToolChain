@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.52 <code>remove</code>&mdash;delete a file's name</h3>
 
-<p><a name="index-remove-293"></a><a name="index-g_t_005fremove_005fr-294"></a><strong>Synopsis</strong>
+<p><a name="index-remove-296"></a><a name="index-g_t_005fremove_005fr-297"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int remove(char *<var>filename</var>);
      
@@ -54,11 +54,15 @@ the file's data until the program using them closes the file.
    <p>The alternate function <code>_remove_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>remove</code> returns <code>0</code> if it succeeds, <code>-1</code> if it fails.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>remove</code>, but only specifies that the result on
 failure be nonzero.  The behavior of <code>remove</code> when you call it on an
@@ -66,7 +70,9 @@ open file may vary among implementations.
 
    <p>Supporting OS subroutine required: <code>unlink</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

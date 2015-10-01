@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Timefns.html#Timefns">Timefns</a>
 
 <h3 class="section">8.7 <code>mktime</code>&mdash;convert time to arithmetic representation</h3>
 
-<p><a name="index-mktime-480"></a><strong>Synopsis</strong>
+<p><a name="index-mktime-486"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;time.h&gt;
      time_t mktime(struct tm *<var>timp</var>);
      
@@ -46,19 +46,25 @@ its representation from the traditional representation defined by
 
    <p><code>localtime</code> is the inverse of <code>mktime</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If the contents of the structure at <var>timp</var> do not form a valid
 calendar time representation, the result is <code>-1</code>.  Otherwise, the
 result is the time, converted to a <code>time_t</code> value.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>mktime</code>.
 
    <p><code>mktime</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

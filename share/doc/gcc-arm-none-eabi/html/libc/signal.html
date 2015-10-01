@@ -32,7 +32,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Signals.html#Signals">Signals</a>
 
 <h3 class="section">7.3 <code>signal</code>&mdash;specify handler subroutine for a signal</h3>
 
-<p><a name="index-signal-468"></a><a name="index-g_t_005fsignal_005fr-469"></a><strong>Synopsis</strong>
+<p><a name="index-signal-474"></a><a name="index-g_t_005fsignal_005fr-475"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;signal.h&gt;
      void (*signal(int <var>sig</var>, void(*<var>func</var>)(int))) (int);
      
@@ -69,7 +69,9 @@ use functions such as <code>exit</code> and <code>abort</code> to avoid returnin
 The extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
 <!-- FIXME: do we have setjmp.h and assoc fns? -->
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If your request for a signal handler cannot be honored, the result is
 <code>SIG_ERR</code>; a specific error number is also recorded in <code>errno</code>.
@@ -77,7 +79,9 @@ If your request for a signal handler cannot be honored, the result is
    <p>Otherwise, the result is the previous handler (a function pointer or
 one of the predefined macros).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>signal</code>.
 
@@ -85,7 +89,9 @@ ANSI C requires <code>signal</code>.
 it will not have any useful effects, except for software generated signals,
 without an operating system that can actually raise exceptions.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

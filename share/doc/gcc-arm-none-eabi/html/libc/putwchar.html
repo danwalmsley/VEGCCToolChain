@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.51 <code>putwchar</code>, <code>putwchar_unlocked</code>&mdash;write a wide character to standard output</h3>
 
-<p><a name="index-putwchar-289"></a><a name="index-putwchar_005funlocked-290"></a><a name="index-g_t_005fputwchar_005fr-291"></a><a name="index-g_t_005fputwchar_005funlocked_005fr-292"></a><strong>Synopsis</strong>
+<p><a name="index-putwchar-292"></a><a name="index-putwchar_005funlocked-293"></a><a name="index-g_t_005fputwchar_005fr-294"></a><a name="index-g_t_005fputwchar_005funlocked_005fr-295"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      wint_t putwchar(wchar_t <var>wc</var>);
      
@@ -65,19 +65,25 @@ ftrylockfile() functions.  If threads are disabled, then
 reentrant versions of the above.  The extra argument <var>reent</var> is a pointer
 to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If successful, <code>putwchar</code> returns its argument <var>wc</var>.  If an error
 intervenes, the result is <code>EOF</code>.  You can use `<code>ferror(stdin)</code>' to
 query for errors.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>putwchar</code> is required by C99.
 
    <p><code>putwchar_unlocked</code> is a GNU extension.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

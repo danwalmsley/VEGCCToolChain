@@ -30,7 +30,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Locale.html#Locale">Locale</a>
 
 <h3 class="section">9.1 <code>setlocale</code>, <code>localeconv</code>&mdash;select or query locale</h3>
 
-<p><a name="index-setlocale-487"></a><a name="index-localeconv-488"></a><a name="index-g_t_005fsetlocale_005fr-489"></a><a name="index-g_t_005flocaleconv_005fr-490"></a><strong>Synopsis</strong>
+<p><a name="index-setlocale-493"></a><a name="index-localeconv-494"></a><a name="index-g_t_005fsetlocale_005fr-495"></a><a name="index-g_t_005flocaleconv_005fr-496"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;locale.h&gt;
      char *setlocale(int <var>category</var>, const char *<var>locale</var>);
      lconv *localeconv(void);
@@ -92,7 +92,7 @@ does not support <code>"JIS"</code>.
 /usr/share/locale/locale.alias.
 
    <p>(<code>""</code> is also accepted; if given, the settings are read from the
-corresponding LC_* environment variables and $LANG according to POSIX rules.
+corresponding LC_* environment variables and $LANG according to POSIX rules.)
 
    <p>This implementation also supports the modifier <code>"cjknarrow"</code>, which
 affects how the functions <code>wcwidth</code> and <code>wcswidth</code> handle characters
@@ -117,7 +117,9 @@ in effect.
 <code>localeconv</code> and <code>setlocale</code> respectively.  The extra argument
 <var>reent</var> is a pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 A successful call to <code>setlocale</code> returns a pointer to a string
 associated with the specified category for the new locale.  The string
@@ -131,12 +133,16 @@ On error, <code>setlocale</code> returns <code>NULL</code>.
 which describes the formatting and collating conventions in effect (in
 this implementation, always those of the C locale).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>setlocale</code>, but the only locale required across all
 implementations is the C locale.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

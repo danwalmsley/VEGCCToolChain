@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.26 <code>fseek</code>, <code>fseeko</code>&mdash;set file position</h3>
 
-<p><a name="index-fseek-226"></a><a name="index-fseeko-227"></a><a name="index-g_t_005ffseek_005fr-228"></a><a name="index-g_t_005ffseeko_005fr-229"></a><strong>Synopsis</strong>
+<p><a name="index-fseek-229"></a><a name="index-fseeko-230"></a><a name="index-g_t_005ffseek_005fr-231"></a><a name="index-g_t_005ffseeko_005fr-232"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fseek(FILE *<var>fp</var>, long <var>offset</var>, int <var>whence</var>)
      int fseeko(FILE *<var>fp</var>, off_t <var>offset</var>, int <var>whence</var>)
@@ -66,14 +66,18 @@ of the file) or negative.
 
    <p>See <code>ftell</code>/<code>ftello</code> to determine the current file position.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fseek</code>/<code>fseeko</code> return <code>0</code> when successful.  On failure, the
 result is <code>EOF</code>.  The reason for failure is indicated in <code>errno</code>:
 either <code>ESPIPE</code> (the stream identified by <var>fp</var> doesn't support
 repositioning) or <code>EINVAL</code> (invalid file position).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>fseek</code>.
 
@@ -82,7 +86,9 @@ ANSI C requires <code>fseek</code>.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

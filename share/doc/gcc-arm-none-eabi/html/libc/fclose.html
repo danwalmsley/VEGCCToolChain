@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.4 <code>fclose</code>&mdash;close a file</h3>
 
-<p><a name="index-fclose-155"></a><a name="index-g_t_005ffclose_005fr-156"></a><strong>Synopsis</strong>
+<p><a name="index-fclose-158"></a><a name="index-g_t_005ffclose_005fr-159"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fclose(FILE *<var>fp</var>);
      int _fclose_r(struct _reent *<var>reent</var>, FILE *<var>fp</var>);
@@ -48,19 +48,25 @@ it, after first ensuring that any pending data is written (by calling
    <p>The alternate function <code>_fclose_r</code> is a reentrant version. 
 The extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fclose</code> returns <code>0</code> if successful (including when <var>fp</var> is
 <code>NULL</code> or not an open file); otherwise, it returns <code>EOF</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fclose</code> is required by ANSI C.
 
    <p>Required OS subroutines: <code>close</code>, <code>fstat</code>, <code>isatty</code>, <code>lseek</code>,
 <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

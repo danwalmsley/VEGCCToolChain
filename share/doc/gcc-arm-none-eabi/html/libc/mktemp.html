@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.42 <code>mktemp</code>, <code>mkstemp</code>, <code>mkostemp</code>, <code>mkstemps</code>,</h3>
 
-<p><a name="index-mktemp-263"></a><a name="index-mkdtemp-264"></a><a name="index-mkstemp-265"></a><a name="index-mkstemps-266"></a><a name="index-mkostemp-267"></a><a name="index-mkostemps-268"></a><a name="index-g_t_005fmktemp_005fr-269"></a><a name="index-g_t_005fmkdtemp_005fr-270"></a><a name="index-g_t_005fmkstemp_005fr-271"></a><a name="index-g_t_005fmkstemps_005fr-272"></a><a name="index-g_t_005fmkostemp_005fr-273"></a><a name="index-g_t_005fmkostemps_005fr-274"></a><strong>Synopsis</strong>
+<p><a name="index-mktemp-266"></a><a name="index-mkdtemp-267"></a><a name="index-mkstemp-268"></a><a name="index-mkstemps-269"></a><a name="index-mkostemp-270"></a><a name="index-mkostemps-271"></a><a name="index-g_t_005fmktemp_005fr-272"></a><a name="index-g_t_005fmkdtemp_005fr-273"></a><a name="index-g_t_005fmkstemp_005fr-274"></a><a name="index-g_t_005fmkstemps_005fr-275"></a><a name="index-g_t_005fmkostemp_005fr-276"></a><a name="index-g_t_005fmkostemps_005fr-277"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
      char *mktemp(char *<var>path</var>);
      char *mkdtemp(char *<var>path</var>);
@@ -78,7 +78,9 @@ characters end <var>suffixlen</var> bytes before the end of the string.
 versions.  The extra argument <var>reent</var> is a pointer to a reentrancy
 structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>mktemp</code> returns the pointer <var>path</var> to the modified string
 representing an unused filename, unless it could not generate one, or
@@ -95,7 +97,9 @@ descriptor to the newly created file, unless it could not generate an
 unused filename, or the pattern you provided is not suitable for a
 filename; in that case, it returns <code>-1</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C does not require either <code>mktemp</code> or <code>mkstemp</code>; the System
 V Interface Definition requires <code>mktemp</code> as of Issue 2.  POSIX 2001
@@ -105,7 +109,9 @@ are not standardized.
 
    <p>Supporting OS subroutines required: <code>getpid</code>, <code>mkdir</code>, <code>open</code>, <code>stat</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

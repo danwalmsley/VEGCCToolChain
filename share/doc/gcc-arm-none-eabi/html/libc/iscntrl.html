@@ -6,7 +6,7 @@
 <meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Ctype.html#Ctype" title="Ctype">
-<link rel="prev" href="isascii.html#isascii" title="isascii">
+<link rel="prev" href="isblank.html#isblank" title="isblank">
 <link rel="next" href="isdigit.html#isdigit" title="isdigit">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -27,14 +27,14 @@
 <p>
 <a name="iscntrl"></a>
 Next:&nbsp;<a rel="next" accesskey="n" href="isdigit.html#isdigit">isdigit</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="isascii.html#isascii">isascii</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="isblank.html#isblank">isblank</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.4 <code>iscntrl</code>&mdash;control character predicate</h3>
+<h3 class="section">3.5 <code>iscntrl</code>&mdash;control character predicate</h3>
 
-<p><a name="index-iscntrl-113"></a><strong>Synopsis</strong>
+<p><a name="index-iscntrl-116"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;ctype.h&gt;
      int iscntrl(int <var>c</var>);
      
@@ -48,18 +48,24 @@ unsigned char or if <var>c</var> is EOF.
    <p>You can use a compiled subroutine instead of the macro definition by
 undefining the macro using `<code>#undef iscntrl</code>'.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>iscntrl</code> returns non-zero if <var>c</var> is a delete character or ordinary
 control character (<code>0x7F</code> or <code>0x00</code>&ndash;<code>0x1F</code>).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>iscntrl</code> is ANSI C.
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

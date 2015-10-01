@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.10 <code>fgetc</code>, <code>fgetc_unlocked</code>&mdash;get a character from a file or stream</h3>
 
-<p><a name="index-fgetc-169"></a><a name="index-fgetc_005funlocked-170"></a><a name="index-g_t_005ffgetc_005fr-171"></a><a name="index-g_t_005ffgetc_005funlocked_005fr-172"></a><strong>Synopsis</strong>
+<p><a name="index-fgetc-172"></a><a name="index-fgetc_005funlocked-173"></a><a name="index-g_t_005ffgetc_005fr-174"></a><a name="index-g_t_005ffgetc_005funlocked_005fr-175"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fgetc(FILE *<var>fp</var>);
      
@@ -70,7 +70,9 @@ ftrylockfile() functions.  If threads are disabled, then
 versions that are passed the additional reentrant structure pointer
 argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The next character (read as an <code>unsigned char</code>, and cast to
 <code>int</code>), unless there is no more data, or the host system reports a
@@ -79,7 +81,9 @@ read error; in either of these situations, <code>fgetc</code> returns <code>EOF<
    <p>You can distinguish the two situations that cause an <code>EOF</code> result by
 using the <code>ferror</code> and <code>feof</code> functions.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>fgetc</code>.
 
@@ -88,7 +92,9 @@ ANSI C requires <code>fgetc</code>.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

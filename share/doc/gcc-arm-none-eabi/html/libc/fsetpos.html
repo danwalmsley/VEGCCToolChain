@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.28 <code>fsetpos</code>&mdash;restore position of a stream or file</h3>
 
-<p><a name="index-fsetpos-231"></a><a name="index-g_t_005ffsetpos_005fr-232"></a><strong>Synopsis</strong>
+<p><a name="index-fsetpos-234"></a><a name="index-g_t_005ffsetpos_005fr-235"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fsetpos(FILE *<var>fp</var>, const fpos_t *<var>pos</var>);
      int _fsetpos_r(struct _reent *<var>ptr</var>, FILE *<var>fp</var>,
@@ -51,14 +51,18 @@ position <code>*</code><var>pos</var> (after first recording it with <code>fgetp
 
    <p>See <code>fseek</code> for a similar facility.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fgetpos</code> returns <code>0</code> when successful.  If <code>fgetpos</code> fails, the
 result is <code>1</code>.  The reason for failure is indicated in <code>errno</code>:
 either <code>ESPIPE</code> (the stream identified by <var>fp</var> doesn't support
 repositioning) or <code>EINVAL</code> (invalid file position).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>fsetpos</code>, but does not specify the nature of
 <code>*</code><var>pos</var> beyond identifying it as written by <code>fgetpos</code>.
@@ -66,7 +70,9 @@ ANSI C requires <code>fsetpos</code>, but does not specify the nature of
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

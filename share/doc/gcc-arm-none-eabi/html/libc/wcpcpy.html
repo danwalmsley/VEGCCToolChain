@@ -36,7 +36,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Wchar-strings.html#Wchar-strings">Wchar
 
 <p><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
-     wchar_t *wcpcpy(wchar_t *<var>s1</var>, const wchar_t *,<var>s2</var>);
+     wchar_t *wcpcpy(wchar_t *<var>s1</var>, const wchar_t *<var>s2</var>);
      
 </pre>
    <p><strong>Description</strong><br>
@@ -45,18 +45,24 @@ The <code>wcpcpy</code> function copies the wide-character string pointed to by
 array pointed to by <var>s1</var>. If copying takes place between objects that
 overlap, the behaviour is undefined.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 This function returns a pointer to the end of the destination string,
 thus pointing to the trailing '\0'.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wcpcpy</code> is a GNU extension.
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

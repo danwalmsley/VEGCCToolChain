@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.16 <code>strcasecmp</code>&mdash;case-insensitive character string compare</h3>
+<h3 class="section">5.18 <code>strcasecmp</code>&mdash;case-insensitive character string compare</h3>
 
-<p><a name="index-strcasecmp-426"></a><strong>Synopsis</strong>
+<p><a name="index-strcasecmp-431"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;strings.h&gt;
      int strcasecmp(const char *<var>a</var>, const char *<var>b</var>);
      
@@ -43,7 +43,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <code>strcasecmp</code> compares the string at <var>a</var> to
 the string at <var>b</var> in a case-insensitive manner.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 
    <p>If <code>*</code><var>a</var> sorts lexicographically after <code>*</code><var>b</var> (after
@@ -53,14 +55,18 @@ number greater than zero.  If the two strings match,
 lexicographically before <code>*</code><var>b</var>, <code>strcasecmp</code> returns a
 number less than zero.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>strcasecmp</code> is in the Berkeley Software Distribution.
 
    <p><code>strcasecmp</code> requires no supporting OS subroutines. It uses
 tolower() from elsewhere in this library.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

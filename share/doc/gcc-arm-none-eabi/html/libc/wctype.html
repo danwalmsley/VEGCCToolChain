@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Ctype.html#Ctype">Ctype</a>
 <hr>
 </div>
 
-<h3 class="section">3.28 <code>wctype</code>&mdash;get wide-character classification type</h3>
+<h3 class="section">3.29 <code>wctype</code>&mdash;get wide-character classification type</h3>
 
-<p><a name="index-wctype-140"></a><strong>Synopsis</strong>
+<p><a name="index-wctype-143"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wctype.h&gt;
      wctype_t wctype(const char *<var>c</var>);
      
@@ -46,19 +46,25 @@ if one exists.  The following values are guaranteed to be recognized:
 "alnum", "alpha", "blank", "cntrl", "digit", "graph", "lower", "print",
 "punct", "space", "upper", and "xdigit".
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>wctype</code> returns 0 and sets <code>errno</code> to <code>EINVAL</code> if the
 given name is invalid.  Otherwise, it returns a valid non-zero wctype_t
 value.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wctype</code> is C99.
 
    <p>No supporting OS subroutines are required.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.44 <code>wcstoull</code>&mdash;wide string to unsigned long long</h3>
+<h3 class="section">2.45 <code>wcstoull</code>&mdash;wide string to unsigned long long</h3>
 
-<p><a name="index-wcstoull-104"></a><a name="index-g_t_005fwcstoull_005fr-105"></a><strong>Synopsis</strong>
+<p><a name="index-wcstoull-105"></a><a name="index-g_t_005fwcstoull_005fr-106"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      unsigned long long wcstoull(const wchar_t *__restrict <var>s</var>,
          wchar_t **__restrict <var>ptr</var>, int <var>base</var>);
@@ -87,7 +87,9 @@ not <code>NULL</code>).
    <p>The alternate function <code>_wcstoull_r</code> is a reentrant version.  The
 extra argument <var>reent</var> is a pointer to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>wcstoull</code> returns <code>0</code> and sets <code>errno</code> to <code>EINVAL</code> if the value of
 <var>base</var> is not supported.
@@ -98,13 +100,17 @@ made, <code>0</code> is returned.
    <p><code>wcstoull</code> returns <code>ULLONG_MAX</code> if the magnitude of the converted
 value is too large, and sets <code>errno</code> to <code>ERANGE</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wcstoull</code> is ANSI.
 
    <p><code>wcstoull</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

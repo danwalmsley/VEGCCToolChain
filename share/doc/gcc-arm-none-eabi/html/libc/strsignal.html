@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.35 <code>strsignal</code>&mdash;convert signal number to string</h3>
+<h3 class="section">5.38 <code>strsignal</code>&mdash;convert signal number to string</h3>
 
-<p><a name="index-strsignal-445"></a><strong>Synopsis</strong>
+<p><a name="index-strsignal-451"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;string.h&gt;
      char *strsignal(int <var>signal</var>);
      
@@ -45,19 +45,25 @@ string.  If <var>signal</var> is not a known signal number, the result
 will be of the form "Unknown signal NN" where NN is the <var>signal</var>
 is a decimal number.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 This function returns a pointer to a string.  Your application must
 not modify that string.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 POSIX.1-2008 C requires <code>strsignal</code>, but does not specify the strings used
 for each signal number.
 
    <p><code>strsignal</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

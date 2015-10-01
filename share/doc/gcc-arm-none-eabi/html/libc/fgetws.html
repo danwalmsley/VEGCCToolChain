@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.14 <code>fgetws</code>, <code>fgetws_unlocked</code>&mdash;get wide character string from a file or stream</h3>
 
-<p><a name="index-fgetws-187"></a><a name="index-fgetws_005funlocked-188"></a><a name="index-g_t_005ffgetws_005fr-189"></a><a name="index-g_t_005ffgetws_005funlocked_005fr-190"></a><strong>Synopsis</strong>
+<p><a name="index-fgetws-190"></a><a name="index-fgetws_005funlocked-191"></a><a name="index-g_t_005ffgetws_005fr-192"></a><a name="index-g_t_005ffgetws_005funlocked_005fr-193"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      wchar_t *fgetws(wchar_t *__restrict <var>ws</var>, int <var>n</var>,
          FILE *__restrict <var>fp</var>);
@@ -71,20 +71,26 @@ ftrylockfile() functions.  If threads are disabled, then
 version of the above and are passed an additional reentrancy structure
 pointer: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fgetws</code> returns the buffer passed to it, with the data
 filled in. If end of file occurs with some data already
 accumulated, the data is returned with no other indication. If
 no data are read, NULL is returned instead.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fgetws</code> is required by C99 and POSIX.1-2001.
 
    <p><code>fgetws_unlocked</code> is a GNU extension.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

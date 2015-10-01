@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 
 <h3 class="section">5.9 <code>memmem</code>&mdash;find memory segment</h3>
 
-<p><a name="index-memmem-420"></a><strong>Synopsis</strong>
+<p><a name="index-memmem-423"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;string.h&gt;
      char *memmem(const void *<var>s1</var>, size_t <var>l1</var>, const void *<var>s2</var>,
          size_t <var>l2</var>);
@@ -48,18 +48,24 @@ to by <var>s2</var> of length <var>l2</var>.  If you already know the
 lengths of your haystack and needle, <code>memmem</code> can be much
 faster than <code>strstr</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 Returns a pointer to the located segment, or a null pointer if
 <var>s2</var> is not found. If <var>l2</var> is 0, <var>s1</var> is returned.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>memmem</code> is a newlib extension.
 
    <p><code>memmem</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.61 <code>sprintf</code>, <code>fprintf</code>, <code>printf</code>, <code>snprintf</code>, <code>asprintf</code>, <code>asnprintf</code>&mdash;format output</h3>
 
-<p><a name="index-fprintf-320"></a><a name="index-g_t_005ffprintf_005fr-321"></a><a name="index-printf-322"></a><a name="index-g_t_005fprintf_005fr-323"></a><a name="index-asprintf-324"></a><a name="index-g_t_005fasprintf_005fr-325"></a><a name="index-sprintf-326"></a><a name="index-g_t_005fsprintf_005fr-327"></a><a name="index-snprintf-328"></a><a name="index-g_t_005fsnprintf_005fr-329"></a><a name="index-asnprintf-330"></a><a name="index-g_t_005fasnprintf_005fr-331"></a><strong>Synopsis</strong>
+<p><a name="index-fprintf-323"></a><a name="index-g_t_005ffprintf_005fr-324"></a><a name="index-printf-325"></a><a name="index-g_t_005fprintf_005fr-326"></a><a name="index-asprintf-327"></a><a name="index-g_t_005fasprintf_005fr-328"></a><a name="index-sprintf-329"></a><a name="index-g_t_005fsprintf_005fr-330"></a><a name="index-snprintf-331"></a><a name="index-g_t_005fsnprintf_005fr-332"></a><a name="index-asnprintf-333"></a><a name="index-g_t_005fasnprintf_005fr-334"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      
      int printf(const char *restrict <var>format</var>, ...);
@@ -472,7 +472,9 @@ argument is required.  A GNU extension.
 <code>_sprintf_r</code>, <code>_snprintf_r</code>, <code>_asnprintf_r</code> are simply
 reentrant versions of the functions above.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 On success, <code>sprintf</code> and <code>asprintf</code> return the number of bytes in
 the output string, except the concluding <code>NUL</code> is not counted. 
@@ -490,11 +492,15 @@ otherwise it returns an allocated string.
 to ENOMEM if allocation fails, and for <code>snprintf</code>, <code>errno</code> may be
 set to EOVERFLOW if <var>size</var> or the output length exceeds INT_MAX.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Bugs</strong><br>
 The &ldquo;&rdquo;' (quote) flag does not work when locale's thousands_sep is not empty.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>printf</code>, <code>fprintf</code>, <code>sprintf</code>, and
 <code>snprintf</code>.  <code>asprintf</code> and <code>asnprintf</code> are newlib extensions.
@@ -509,7 +515,9 @@ supported.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

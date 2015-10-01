@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.16 <code>fmemopen</code>&mdash;open a stream around a fixed-length string</h3>
 
-<p><a name="index-fmemopen-193"></a><strong>Synopsis</strong>
+<p><a name="index-fmemopen-196"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      FILE *fmemopen(void *restrict <var>buf</var>, size_t <var>size</var>,
          const char *restrict <var>mode</var>);
@@ -74,7 +74,9 @@ NUL-terminated when the stream is flushed or closed (and the initial
 outside the bounds of <var>size</var>.  A NUL byte written during a flush is
 restored to its previous value when seeking elsewhere in the string.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The return value is an open FILE pointer on success.  On error,
 <code>NULL</code> is returned, and <code>errno</code> will be set to EINVAL if <var>size</var>
@@ -82,13 +84,17 @@ is zero or <var>mode</var> is invalid, ENOMEM if <var>buf</var> was NULL and mem
 could not be allocated, or EMFILE if too many streams are already
 open.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 This function is being added to POSIX 200x, but is not in POSIX 2001.
 
    <p>Supporting OS subroutines required: <code>sbrk</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

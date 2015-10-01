@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.60 <code>siscanf</code>, <code>fiscanf</code>, <code>iscanf</code>&mdash;scan and format non-floating input</h3>
 
-<p><a name="index-iscanf-314"></a><a name="index-g_t_005fiscanf_005fr-315"></a><a name="index-fiscanf-316"></a><a name="index-g_t_005ffiscanf_005fr-317"></a><a name="index-siscanf-318"></a><a name="index-g_t_005fsiscanf_005fr-319"></a><strong>Synopsis</strong>
+<p><a name="index-iscanf-317"></a><a name="index-g_t_005fiscanf_005fr-318"></a><a name="index-fiscanf-319"></a><a name="index-g_t_005ffiscanf_005fr-320"></a><a name="index-siscanf-321"></a><a name="index-g_t_005fsiscanf_005fr-322"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      
      int iscanf(const char *<var>format</var>, ...);
@@ -58,7 +58,9 @@ format specifiers.
 versions of <code>iscanf</code>, <code>fiscanf</code>, and <code>siscanf</code> that take an additional
 first argument pointing to a reentrancy structure.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>iscanf</code> returns the number of input fields successfully
 scanned, converted and stored; the return value does
@@ -69,14 +71,18 @@ value is <code>EOF</code>.
 
    <p>If no fields were stored, the return value is <code>0</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>iscanf</code>, <code>fiscanf</code>, and <code>siscanf</code> are newlib extensions.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

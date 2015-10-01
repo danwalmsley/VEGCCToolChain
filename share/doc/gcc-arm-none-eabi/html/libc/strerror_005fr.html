@@ -33,9 +33,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Strings.html#Strings">Strings</a>
 <hr>
 </div>
 
-<h3 class="section">5.25 <code>strerror_r</code>&mdash;convert error number to string and copy to buffer</h3>
+<h3 class="section">5.28 <code>strerror_r</code>&mdash;convert error number to string and copy to buffer</h3>
 
-<p><a name="index-strerror_005fr-435"></a><strong>Synopsis</strong>
+<p><a name="index-strerror_005fr-441"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;string.h&gt;
      #ifdef _GNU_SOURCE
      char *strerror_r(int <var>errnum</var>, char *<var>buffer</var>, size_t <var>n</var>);
@@ -53,7 +53,9 @@ error number, the result is the empty string.
 
    <p>See <code>strerror</code> for how strings are mapped to <code>errnum</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 There are two variants: the GNU version always returns a NUL-terminated
 string, which is <var>buffer</var> if all went well, but which is another
@@ -63,7 +65,9 @@ The POSIX version returns 0 on success, <var>EINVAL</var> if <code>errnum</code>
 recognized, and <var>ERANGE</var> if <var>n</var> was too small.  The variant chosen
 depends on macros that you define before inclusion of <code>string.h</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>strerror_r</code> with a <var>char *</var> result is a GNU extension. 
 <code>strerror_r</code> with an <var>int</var> result is required by POSIX 2001. 
@@ -86,7 +90,9 @@ a non-empty alternate string without assigning into its third argument.
 
    <p><code>strerror_r</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

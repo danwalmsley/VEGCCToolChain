@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Math.html#Math">Math</a>
 <hr>
 </div>
 
-<h3 class="section">1.40 <code>matherr</code>&mdash;modifiable math error handler</h3>
+<h3 class="section">1.41 <code>matherr</code>&mdash;modifiable math error handler</h3>
 
-<p><a name="index-matherr-116"></a><strong>Synopsis</strong>
+<p><a name="index-matherr-118"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;math.h&gt;
      int matherr(struct exception *<var>e</var>);
      
@@ -93,7 +93,9 @@ e.g. <code>sin(10e70)</code>.
      <br><dt><code>PLOSS</code><dd>Partial loss of precision. 
 </dl>
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The library definition for <code>matherr</code> returns <code>0</code> in all cases.
 
@@ -104,11 +106,15 @@ by modifying <code>e-&gt;retval</code>, which propagates backs to the caller.
 the error) the caller sets <code>errno</code> to an appropriate value, and prints
 an error message.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>matherr</code> is not ANSI C.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.21 <code>fputs</code>, <code>fputs_unlocked</code>&mdash;write a character string in a file or stream</h3>
 
-<p><a name="index-fputs-204"></a><a name="index-fputs_005funlocked-205"></a><a name="index-g_t_005ffputs_005fr-206"></a><a name="index-g_t_005ffputs_005funlocked_005fr-207"></a><strong>Synopsis</strong>
+<p><a name="index-fputs-207"></a><a name="index-fputs_005funlocked-208"></a><a name="index-g_t_005ffputs_005fr-209"></a><a name="index-g_t_005ffputs_005funlocked_005fr-210"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      int fputs(const char *restrict <var>s</var>, FILE *restrict <var>fp</var>);
      
@@ -65,11 +65,15 @@ ftrylockfile() functions.  If threads are disabled, then
    <p><code>_fputs_r</code> and <code>_fputs_unlocked_r</code> are simply reentrant versions of the
 above that take an additional reentrant struct pointer argument: <var>ptr</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 If successful, the result is <code>0</code>; otherwise, the result is <code>EOF</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 ANSI C requires <code>fputs</code>, but does not specify that the result on
 success must be <code>0</code>; any non-negative value is permitted.
@@ -79,7 +83,9 @@ success must be <code>0</code>; any non-negative value is permitted.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

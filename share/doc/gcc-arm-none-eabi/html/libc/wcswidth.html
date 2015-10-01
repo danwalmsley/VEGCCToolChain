@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Wchar-strings.html#Wchar-strings">Wchar
 
 <h3 class="section">6.27 <code>wcswidth</code>&mdash;number of column positions of a wide-character string</h3>
 
-<p><a name="index-wcswidth-462"></a><strong>Synopsis</strong>
+<p><a name="index-wcswidth-468"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;wchar.h&gt;
      int wcswidth(const wchar_t *<var>pwcs</var>, size_t <var>n</var>);
      
@@ -46,7 +46,9 @@ wide-character codes if a null wide-character code is encountered
 before <var>n</var> wide-character codes are exhausted) in the string pointed
 to by <var>pwcs</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 The <code>wcswidth</code> function either shall return 0 (if <var>pwcs</var> points to a
 null wide-character code), or return the number of column positions
@@ -55,12 +57,16 @@ return -1 (if any of the first <var>n</var> wide-character codes in the
 wide-character string pointed to by <var>pwcs</var> is not a printable
 wide-character code).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>wcswidth</code> has been introduced in the Single UNIX Specification Volume 2. 
 <code>wcswidth</code> has been marked as an extension in the Single UNIX Specification Volume 3.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Math.html#Math">Math</a>
 <hr>
 </div>
 
-<h3 class="section">1.47 <code>remquo</code>, <code>remquof</code>&ndash;remainder and part of quotient</h3>
+<h3 class="section">1.49 <code>remquo</code>, <code>remquof</code>&ndash;remainder and part of quotient</h3>
 
-<p><a name="index-remquo-129"></a><a name="index-remquof-130"></a><strong>Synopsis</strong>
+<p><a name="index-remquo-133"></a><a name="index-remquof-134"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;math.h&gt;
      double remquo(double <var>x</var>, double <var>y</var>, int *<var>quo</var>);
      float remquof(float <var>x</var>, float <var>y</var>, int *<var>quo</var>);
@@ -59,7 +59,9 @@ bits or more, otherwise, n is 1 less than the width of int.
 the latter case, the actual quotient of -(32769=0x8001) is reduced to -1
 because of the 15-bit limitation for the quotient.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 When either argument is NaN, NaN is returned.  If <var>y</var> is 0 or <var>x</var> is
 infinite (and neither is NaN), a domain error occurs (i.e. the "invalid"
@@ -67,16 +69,22 @@ floating point exception is raised or errno is set to EDOM), and NaN is
 returned. 
 Otherwise, the <code>remquo</code> functions return <var>x</var> REM <var>y</var>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Bugs</strong><br>
 IEEE754-2008 calls for <code>remquo</code>(subnormal, inf) to cause the "underflow"
 floating-point exception.  This implementation does not.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 C99, POSIX.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

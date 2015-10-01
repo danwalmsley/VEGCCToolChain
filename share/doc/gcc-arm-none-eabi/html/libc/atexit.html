@@ -55,13 +55,17 @@ in this list; however, after every group of 32 functions is enrolled,
 list.   The initial list of 32 functions is statically allocated, so
 you can always count on at least that many slots available.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>atexit</code> returns <code>0</code> if it succeeds in enrolling your function,
 <code>-1</code> if it fails (possible only if no space was available for
 <code>malloc</code> to extend the list of functions).
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>atexit</code> is required by the ANSI standard, which also specifies that
 implementations must support enrolling at least 32 functions.
@@ -69,7 +73,9 @@ implementations must support enrolling at least 32 functions.
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

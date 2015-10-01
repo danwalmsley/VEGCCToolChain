@@ -34,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdio.html#Stdio">Stdio</a>
 
 <h3 class="section">4.17 <code>fopen</code>&mdash;open a file</h3>
 
-<p><a name="index-fopen-194"></a><a name="index-g_t_005ffopen_005fr-195"></a><strong>Synopsis</strong>
+<p><a name="index-fopen-197"></a><a name="index-g_t_005ffopen_005fr-198"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdio.h&gt;
      FILE *fopen(const char *<var>file</var>, const char *<var>mode</var>);
      
@@ -93,21 +93,27 @@ that permits reading and writing anywhere in it; and <code>"a+"</code> (or
 <code>"ab+"</code>) to permit reading anywhere in an existing file, but writing
 only at the end.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 <code>fopen</code> returns a file pointer which you can use for other file
 operations, unless the file you requested could not be opened; in that
 situation, the result is <code>NULL</code>.  If the reason for failure was an
 invalid string at <var>mode</var>, <code>errno</code> is set to <code>EINVAL</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>fopen</code> is required by ANSI C.
 
    <p>Supporting OS subroutines required: <code>close</code>, <code>fstat</code>, <code>isatty</code>,
 <code>lseek</code>, <code>open</code>, <code>read</code>, <code>sbrk</code>, <code>write</code>.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 

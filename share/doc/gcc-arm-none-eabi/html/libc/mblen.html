@@ -32,9 +32,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Stdlib.html#Stdlib">Stdlib</a>
 <hr>
 </div>
 
-<h3 class="section">2.26 <code>mblen</code>&mdash;minimal multibyte length function</h3>
+<h3 class="section">2.27 <code>mblen</code>&mdash;minimal multibyte length function</h3>
 
-<p><a name="index-mblen-57"></a><strong>Synopsis</strong>
+<p><a name="index-mblen-58"></a><strong>Synopsis</strong>
 <pre class="example">     #include &lt;stdlib.h&gt;
      int mblen(const char *<var>s</var>, size_t <var>n</var>);
      
@@ -51,7 +51,9 @@ the conversion, passing a state variable to allow state dependent
 decoding.  The result is based on the locale setting which may
 be restricted to a defined set of locales.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Returns</strong><br>
 This implementation of <code>mblen</code> returns <code>0</code> if
 <var>s</var> is <code>NULL</code> or the empty string; it returns <code>1</code> if not _MB_CAPABLE or
@@ -59,14 +61,18 @@ the character is a single-byte character; it returns <code>-1</code>
 if the multi-byte character is invalid; otherwise it returns
 the number of bytes in the multibyte character.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 <strong>Portability</strong><br>
 <code>mblen</code> is required in the ANSI C standard.  However, the precise
 effects vary with the locale.
 
    <p><code>mblen</code> requires no supporting OS subroutines.
 
-   <p><br>
+   <pre class="sp">
+
+</pre>
 
    </body></html>
 
