@@ -1,16 +1,16 @@
 <html lang="en">
 <head>
-<title>X86 Built-in Functions - Using the GNU Compiler Collection (GCC)</title>
+<title>x86 Built-in Functions - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
 <meta name="generator" content="makeinfo 4.11">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Builtins.html#Target-Builtins" title="Target Builtins">
-<link rel="prev" href="FR_002dV-Built_002din-Functions.html#FR_002dV-Built_002din-Functions" title="FR-V Built-in Functions">
-<link rel="next" href="X86-transactional-memory-intrinsics.html#X86-transactional-memory-intrinsics" title="X86 transactional memory intrinsics">
+<link rel="prev" href="TILEPro-Built_002din-Functions.html#TILEPro-Built_002din-Functions" title="TILEPro Built-in Functions">
+<link rel="next" href="x86-transactional-memory-intrinsics.html#x86-transactional-memory-intrinsics" title="x86 transactional memory intrinsics">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <!--
-Copyright (C) 1988-2014 Free Software Foundation, Inc.
+Copyright (C) 1988-2015 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -45,17 +45,17 @@ Texts being (a) (see below), and with the Back-Cover Texts being (b)
 <body>
 <div class="node">
 <p>
-<a name="X86-Built-in-Functions"></a>
-<a name="X86-Built_002din-Functions"></a>
-Next:&nbsp;<a rel="next" accesskey="n" href="X86-transactional-memory-intrinsics.html#X86-transactional-memory-intrinsics">X86 transactional memory intrinsics</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="FR_002dV-Built_002din-Functions.html#FR_002dV-Built_002din-Functions">FR-V Built-in Functions</a>,
+<a name="x86-Built-in-Functions"></a>
+<a name="x86-Built_002din-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="x86-transactional-memory-intrinsics.html#x86-transactional-memory-intrinsics">x86 transactional memory intrinsics</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="TILEPro-Built_002din-Functions.html#TILEPro-Built_002din-Functions">TILEPro Built-in Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">Target Builtins</a>
 <hr>
 </div>
 
-<h4 class="subsection">6.57.11 X86 Built-in Functions</h4>
+<h4 class="subsection">6.58.30 x86 Built-in Functions</h4>
 
-<p>These built-in functions are available for the i386 and x86-64 family
+<p>These built-in functions are available for the x86-32 and x86-64 family
 of computers, depending on the command-line switches used.
 
  <p>If you specify command-line switches such as <samp><span class="option">-msse</span></samp>,
@@ -103,15 +103,15 @@ barrier.
 
      <dl>
 <dt><code>__float128 __builtin_infq (void)</code><dd>Similar to <code>__builtin_inf</code>, except the return type is <code>__float128</code>. 
-<a name="index-g_t_005f_005fbuiltin_005finfq-3722"></a>
+<a name="index-g_t_005f_005fbuiltin_005finfq-4140"></a>
 <br><dt><code>__float128 __builtin_huge_valq (void)</code><dd>Similar to <code>__builtin_huge_val</code>, except the return type is <code>__float128</code>. 
-<a name="index-g_t_005f_005fbuiltin_005fhuge_005fvalq-3723"></a></dl>
+<a name="index-g_t_005f_005fbuiltin_005fhuge_005fvalq-4141"></a></dl>
 
  <p>The following built-in functions are always available and can be used to
 check the target platform type.
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_cpu_init</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005finit-3724"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_cpu_init</b> (<var>void</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005finit-4142"></a></var><br>
 <blockquote><p>This function runs the CPU detection code to check the type of CPU and the
 features supported.  This built-in function needs to be invoked along with the built-in functions
 to check CPU type and features, <code>__builtin_cpu_is</code> and
@@ -141,7 +141,7 @@ don't support constructor priority.
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_cpu_is</b> (<var>const char *cpuname</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fis-3725"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_cpu_is</b> (<var>const char *cpuname</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fis-4143"></a></var><br>
 <blockquote><p>This function returns a positive integer if the run-time CPU
 is of type <var>cpuname</var>
 and returns <code>0</code> otherwise. The following CPU names can be detected:
@@ -199,7 +199,7 @@ and returns <code>0</code> otherwise. The following CPU names can be detected:
       </blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: int <b>__builtin_cpu_supports</b> (<var>const char *feature</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fsupports-3726"></a></var><br>
+&mdash; Built-in Function: int <b>__builtin_cpu_supports</b> (<var>const char *feature</var>)<var><a name="index-g_t_005f_005fbuiltin_005fcpu_005fsupports-4144"></a></var><br>
 <blockquote><p>This function returns a positive integer if the run-time CPU
 supports <var>feature</var>
 and returns <code>0</code> otherwise. The following features can be detected:
@@ -216,6 +216,7 @@ and returns <code>0</code> otherwise. The following features can be detected:
 <br><dt>&lsquo;<samp><span class="samp">sse4.2</span></samp>&rsquo;<dd>SSE4.2 instructions. 
 <br><dt>&lsquo;<samp><span class="samp">avx</span></samp>&rsquo;<dd>AVX instructions. 
 <br><dt>&lsquo;<samp><span class="samp">avx2</span></samp>&rsquo;<dd>AVX2 instructions. 
+<br><dt>&lsquo;<samp><span class="samp">avx512f</span></samp>&rsquo;<dd>AVX512F instructions. 
 </dl>
 
       <p>Here is an example:
@@ -1328,12 +1329,17 @@ instruction that is part of the name.
  <p>The following built-in functions are available when <samp><span class="option">-mrtm</span></samp> is used
 They are used for restricted transactional memory. These are the internal
 low level functions. Normally the functions in
-<a href="X86-transactional-memory-intrinsics.html#X86-transactional-memory-intrinsics">X86 transactional memory intrinsics</a> should be used instead.
+<a href="x86-transactional-memory-intrinsics.html#x86-transactional-memory-intrinsics">x86 transactional memory intrinsics</a> should be used instead.
 
 <pre class="smallexample">     int __builtin_ia32_xbegin ()
      void __builtin_ia32_xend ()
      void __builtin_ia32_xabort (status)
      int __builtin_ia32_xtest ()
+</pre>
+ <p>The following built-in functions are available when <samp><span class="option">-mmwaitx</span></samp> is used. 
+All of them generate the machine instruction that is part of the name.
+<pre class="smallexample">     void __builtin_ia32_monitorx (void *, unsigned int, unsigned int)
+     void __builtin_ia32_mwaitx (unsigned int, unsigned int, unsigned int)
 </pre>
  </body></html>
 
